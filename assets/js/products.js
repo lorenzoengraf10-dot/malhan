@@ -75,6 +75,10 @@ const CONFIG = {
    navegación de arriba, el footer y los títulos de cada sección.
    ========================================================================= */
 const CATEGORIAS = {
+  /* Lo que ya tenemos confirmado y listo para pedir (foto + precio real).
+     Al frente de todo porque es lo que un cliente puede comprar hoy. */
+  stock: { nombre: "Stock" },
+
   hombre: { nombre: "Hombre" },
   mujer: { nombre: "Mujer" },
   mixto: { nombre: "Mixto" }
@@ -117,15 +121,20 @@ const TESTIMONIOS = [
 const PRODUCTOS = {
 
   /* ======================================================================
-     HOMBRE
+     STOCK  ·  confirmados con foto y precio real
+     -----------------------------------------------------------------------
+     Género ya definido para cuando los repartas a las otras categorías:
+     Asad, Asad Bourbon, Odyssey Mandarin Sky → Hombre
+     Yara Rosa, Yara Candy, Eclaire → Mujer
+     Khamrah Qahwa, Confidential Private Gold → Mixto
      ====================================================================== */
-  hombre: [
+  stock: [
     {
       nombre: "Asad",
       familia: "Oriental",
       precio: 70999,
       desc: "Pimienta negra, tabaco y piña sobre un fondo amaderado con vainilla y ámbar.",
-      img: "",
+      img: "assets/img/stock/asad.jpg",
       detalles: ["Salida: pimienta negra, tabaco, piña", "Corazón: pachulí, café, iris", "Fondo: vainilla, ámbar, madera seca, benjuí, ládano"]
     },
     {
@@ -133,7 +142,7 @@ const PRODUCTOS = {
       familia: "Oriental gourmand",
       precio: 83999,
       desc: "Lavanda y pimienta rosa sobre cacao y vainilla bourbon. Cálido, dulce y con muy buena proyección.",
-      img: "",
+      img: "assets/img/stock/asad-bourbon.jpg",
       detalles: ["Salida: lavanda, ciruela mirabel, pimienta rosa", "Corazón: cacao, nuez moscada, davana", "Fondo: vainilla bourbon, ámbar, vetiver"]
     },
     {
@@ -141,9 +150,55 @@ const PRODUCTOS = {
       familia: "Cítrico amaderado",
       precio: 69999,
       desc: "Mandarina y naranja sobre caramelo y haba tonka, cerrando en cedro y vetiver. Fresco con fondo amaderado.",
-      img: "",
+      img: "assets/img/stock/odyssey-mandarin-sky.jpg",
       detalles: ["Salida: mandarina, naranja, azafrán, salvia", "Corazón: caramelo, haba tonka, caléndula", "Fondo: ambroxan, cedro, vetiver"]
     },
+    {
+      nombre: "Yara Rosa",
+      familia: "Oriental vainilla",
+      precio: 64999,
+      desc: "Orquídea y heliotropo sobre frutas tropicales, cerrando en vainilla y sándalo. El clásico rosa de Lattafa.",
+      img: "assets/img/stock/yara-rosa.jpg",
+      detalles: ["Salida: orquídea, heliotropo, mandarina", "Corazón: acorde gourmand, frutas tropicales", "Fondo: vainilla, almizcle, sándalo"]
+    },
+    {
+      nombre: "Yara Candy",
+      familia: "Frutal gourmand",
+      precio: 59999,
+      desc: "Grosella negra y mandarina verde sobre caramelo de fresa y gardenia. Dulce, frutal y fácil de llevar.",
+      img: "assets/img/stock/yara-candy.jpg",
+      detalles: ["Salida: grosella negra, mandarina verde", "Corazón: caramelo de fresa, gardenia", "Fondo: vainilla, almizcle, ámbar, sándalo"]
+    },
+    {
+      nombre: "Eclaire",
+      familia: "Floral gourmand",
+      precio: 82999,
+      desc: "Caramelo y leche sobre miel y flores blancas, cerrando en vainilla y praliné. Dulce y goloso.",
+      img: "assets/img/stock/eclaire.jpg",
+      detalles: ["Salida: caramelo, leche, azúcar", "Corazón: miel, flores blancas", "Fondo: vainilla, praliné, almizcle"]
+    },
+    {
+      nombre: "Khamrah Qahwa",
+      familia: "Oriental vainilla",
+      precio: 58999,
+      desc: "Canela y cardamomo sobre café, vainilla y haba tonka. Intenso y envolvente.",
+      img: "assets/img/stock/khamrah-qahwa.jpg",
+      detalles: ["Salida: canela, cardamomo, jengibre", "Corazón: praliné, frutos confitados, flores blancas", "Fondo: vainilla, café, haba tonka, benjuí, almizcle"]
+    },
+    {
+      nombre: "Confidential Private Gold",
+      familia: "Chypre frutal",
+      precio: 42999,
+      desc: "Durazno, maracuyá y frambuesa sobre un fondo de almizcle, vainilla y sándalo. Fresco y dulce.",
+      img: "assets/img/stock/confidential-private-gold.jpg",
+      detalles: ["Salida: durazno, maracuyá, pera, frambuesa, grosella negra", "Corazón: lirio de los valles", "Fondo: almizcle, vainilla, pachulí, sándalo, heliotropo"]
+    }
+  ],
+
+  /* ======================================================================
+     HOMBRE
+     ====================================================================== */
+  hombre: [
     {
       nombre: "Hawas Black",
       familia: "Aromático frutal",
@@ -173,53 +228,12 @@ const PRODUCTOS = {
   /* ======================================================================
      MUJER
      ====================================================================== */
-  mujer: [
-    {
-      nombre: "Yara Rosa",
-      familia: "Oriental vainilla",
-      precio: 64999,
-      desc: "Orquídea y heliotropo sobre frutas tropicales, cerrando en vainilla y sándalo. El clásico rosa de Lattafa.",
-      img: "",
-      detalles: ["Salida: orquídea, heliotropo, mandarina", "Corazón: acorde gourmand, frutas tropicales", "Fondo: vainilla, almizcle, sándalo"]
-    },
-    {
-      nombre: "Yara Candy",
-      familia: "Frutal gourmand",
-      precio: 59999,
-      desc: "Grosella negra y mandarina verde sobre caramelo de fresa y gardenia. Dulce, frutal y fácil de llevar.",
-      img: "",
-      detalles: ["Salida: grosella negra, mandarina verde", "Corazón: caramelo de fresa, gardenia", "Fondo: vainilla, almizcle, ámbar, sándalo"]
-    },
-    {
-      nombre: "Eclaire",
-      familia: "Floral gourmand",
-      precio: 82999,
-      desc: "Caramelo y leche sobre miel y flores blancas, cerrando en vainilla y praliné. Dulce y goloso.",
-      img: "",
-      detalles: ["Salida: caramelo, leche, azúcar", "Corazón: miel, flores blancas", "Fondo: vainilla, praliné, almizcle"]
-    }
-  ],
+  mujer: [],
 
   /* ======================================================================
      MIXTO  ·  fragancias unisex
      ====================================================================== */
   mixto: [
-    {
-      nombre: "Khamrah Qahwa",
-      familia: "Oriental vainilla",
-      precio: 58999,
-      desc: "Canela y cardamomo sobre café, vainilla y haba tonka. Intenso y envolvente.",
-      img: "",
-      detalles: ["Salida: canela, cardamomo, jengibre", "Corazón: praliné, frutos confitados, flores blancas", "Fondo: vainilla, café, haba tonka, benjuí, almizcle"]
-    },
-    {
-      nombre: "Confidential Private Gold",
-      familia: "Chypre frutal",
-      precio: 42999,
-      desc: "Durazno, maracuyá y frambuesa sobre un fondo de almizcle, vainilla y sándalo. Fresco y dulce.",
-      img: "",
-      detalles: ["Salida: durazno, maracuyá, pera, frambuesa, grosella negra", "Corazón: lirio de los valles", "Fondo: almizcle, vainilla, pachulí, sándalo, heliotropo"]
-    },
     {
       nombre: "Badee Al Oud Amethyst",
       familia: "Oriental floral",
