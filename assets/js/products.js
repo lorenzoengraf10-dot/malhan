@@ -4,16 +4,15 @@
    👉 ESTE ES EL ÚNICO ARCHIVO QUE TENÉS QUE TOCAR PARA CARGAR PRODUCTOS.
 
    Estado actual (ver PRODUCTOS más abajo):
-   - Los 127 nombres de "sin_clasificar" son los reales, de tu catálogo.
+   - Los 127 nombres de "stock" (pastilla "Nuestro stock") son los
+     reales, de tu catálogo.
    - precio y desc son INVENTADOS por ahora, para que el catálogo no se
      vea vacío. Cuando tengas fotos, aromas, género y precio real de
-     cada uno, movés ese producto de "sin_clasificar" a "hombre",
-     "mujer" o "mixto" (cortás el bloque { ... } y lo pegás en la lista
-     que corresponda) y le cambiás precio/desc/img/detalles.
-   - Cuando "sin_clasificar" quede vacío, borrá esa categoría entera de
+     cada uno, movés ese producto de "stock" a "hombre", "mujer" o
+     "mixto" (cortás el bloque { ... } y lo pegás en la lista que
+     corresponda) y le cambiás precio/desc/img/detalles.
+   - Cuando "stock" quede vacío, borrá esa categoría entera de
      CATEGORIAS (unas líneas más abajo) para que desaparezca la pastilla.
-   - Las dos reseñas de TESTIMONIOS también son de ejemplo: cambialas
-     por comentarios reales de clientes antes de publicar.
 
    Cómo agregar un producto:
    1. Guardá la foto en assets/img/<categoria>/, por ejemplo:
@@ -82,10 +81,10 @@ const CATEGORIAS = {
   mujer: { nombre: "Mujer" },
   mixto: { nombre: "Mixto" },
 
-  /* Categoría temporal: acá caen los productos que todavía no tienen
-     género asignado (ver PRODUCTOS.sin_clasificar). Borrá esta línea
-     cuando ya hayas repartido todos los productos en las tres de arriba. */
-  sin_clasificar: { nombre: "Sin clasificar" }
+  /* Categoría temporal: acá cae todo nuestro stock que todavía no tiene
+     género asignado (ver PRODUCTOS.stock). Borrá esta línea cuando ya
+     hayas repartido todos los productos en las tres de arriba. */
+  stock: { nombre: "Nuestro stock" }
 };
 
 /* =========================================================================
@@ -98,18 +97,20 @@ const CATEGORIAS = {
    autor  → nombre o usuario de Instagram de quien lo dijo.
    img    → captura de la historia o foto que mandó. Opcional.
 
-   Las dos de acá abajo son EJEMPLOS para mostrar cómo queda la sección
-   armada — reemplazalas por reseñas reales de tus clientes antes de
-   publicar. Si dejás la lista vacía, la sección entera no aparece.
+   Si dejás la lista vacía, la sección entera no aparece.
    ========================================================================= */
 const TESTIMONIOS = [
   {
-    texto: "Reseña de ejemplo — reemplazar por un comentario real de un cliente.",
-    autor: "Cliente Malhan"
+    texto: "Los mejores, siempre 🔥😪",
+    autor: "@bengocheaa_"
   },
   {
-    texto: "Otra reseña de ejemplo — misma idea, cortita y tal cual la dijo.",
-    autor: "Cliente Malhan"
+    texto: "Gracias @malhan_fragrance.",
+    autor: "@fran_fimpell"
+  },
+  {
+    texto: "Gracias @malhan_fragrance, muy buena calidad y atención.",
+    autor: "@francodasilveira_"
   }
 ];
 
@@ -120,7 +121,7 @@ const PRODUCTOS = {
   mixto: [],
 
   /* ======================================================================
-     SIN CLASIFICAR
+     NUESTRO STOCK
      -----------------------------------------------------------------------
      Los 127 nombres de acá abajo son los reales de tu catálogo (PDF que
      pasaste). precio y desc son inventados, de relleno, hasta que me
@@ -128,7 +129,7 @@ const PRODUCTOS = {
      de un producto, cortalo de esta lista y pegalo en "hombre", "mujer"
      o "mixto" de arriba.
      ====================================================================== */
-  sin_clasificar: [
+  stock: [
     { nombre: "9 AM Dive", precio: 24900, desc: "Fragancia importada de alta perfumería, buena duración y proyección.", img: "" },
     { nombre: "9 AM Rosa", precio: 24900, desc: "Un clásico de la perfumería árabe, ideal para uso diario.", img: "" },
     { nombre: "9 PM", precio: 24900, desc: "Fragancia de nicho, para quienes buscan salir de lo común.", img: "" },
