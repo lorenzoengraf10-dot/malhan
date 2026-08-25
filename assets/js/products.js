@@ -3,16 +3,11 @@
    -------------------------------------------------------------------------
    👉 ESTE ES EL ÚNICO ARCHIVO QUE TENÉS QUE TOCAR PARA CARGAR PRODUCTOS.
 
-   Antes de publicar el sitio, completá:
-   1. CONFIG.whatsapp / CONFIG.whatsappVisible → tu número real. Mientras
-      quede vacío, los botones "Agregar al pedido" y "Consultar" no van a
-      abrir ningún chat.
-   2. CONFIG.instagram → el link a tu perfil. Si lo dejás vacío, el ícono
-      de Instagram no se muestra (ni en el header ni en el footer).
-   3. Los productos de PRODUCTOS de acá abajo son EJEMPLOS para que veas
-      cómo se ve el catálogo armado. Reemplazalos por tus fragancias
-      reales (nombre, precio, descripción, foto) antes de compartir el
-      link con clientes.
+   Antes de compartir el link con clientes, completá:
+   Los productos de PRODUCTOS de acá abajo son EJEMPLOS para que veas
+   cómo se ve el catálogo armado (nombre, precio, descripción, foto).
+   Reemplazalos por tus fragancias reales, y cambiá también las dos
+   reseñas de ejemplo de TESTIMONIOS por comentarios reales de clientes.
 
    Cómo agregar un producto:
    1. Guardá la foto en assets/img/<categoria>/, por ejemplo:
@@ -58,15 +53,13 @@
 
 const CONFIG = {
   /* Número de WhatsApp en formato internacional, sin + ni espacios.
-     Argentina: 54 + 9 + característica sin 0 + número sin 15.
-     COMPLETAR ANTES DE PUBLICAR: mientras esté vacío, los botones de
-     pedido y consulta no van a poder abrir un chat. */
-  whatsapp: "",
-  whatsappVisible: "",
+     Argentina: 54 + 9 + característica sin 0 + número sin 15. */
+  whatsapp: "5492920629946",
+  whatsappVisible: "2920 629946",
 
-  /* Link completo a tu perfil, ej: "https://www.instagram.com/malhan.fragrance".
-     Si lo dejás vacío, el ícono de Instagram no aparece en el sitio. */
-  instagram: "",
+  /* Link completo a tu perfil. Si lo dejás vacío, el ícono de Instagram
+     no aparece en el sitio. */
+  instagram: "https://www.instagram.com/malhan_fragrance",
 
   moneda: "$"
 };
