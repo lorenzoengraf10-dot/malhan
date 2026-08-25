@@ -135,6 +135,14 @@ const PRODUCTOS = {
       desc: "Lavanda y pimienta rosa sobre cacao y vainilla bourbon. Cálido, dulce y con muy buena proyección.",
       img: "",
       detalles: ["Salida: lavanda, ciruela mirabel, pimienta rosa", "Corazón: cacao, nuez moscada, davana", "Fondo: vainilla bourbon, ámbar, vetiver"]
+    },
+    {
+      nombre: "Odyssey Mandarin Sky",
+      familia: "Cítrico amaderado",
+      precio: 69999,
+      desc: "Mandarina y naranja sobre caramelo y haba tonka, cerrando en cedro y vetiver. Fresco con fondo amaderado.",
+      img: "",
+      detalles: ["Salida: mandarina, naranja, azafrán, salvia", "Corazón: caramelo, haba tonka, caléndula", "Fondo: ambroxan, cedro, vetiver"]
     }
   ],
 
@@ -149,6 +157,22 @@ const PRODUCTOS = {
       desc: "Orquídea y heliotropo sobre frutas tropicales, cerrando en vainilla y sándalo. El clásico rosa de Lattafa.",
       img: "",
       detalles: ["Salida: orquídea, heliotropo, mandarina", "Corazón: acorde gourmand, frutas tropicales", "Fondo: vainilla, almizcle, sándalo"]
+    },
+    {
+      nombre: "Yara Candy",
+      familia: "Frutal gourmand",
+      precio: 59999,
+      desc: "Grosella negra y mandarina verde sobre caramelo de fresa y gardenia. Dulce, frutal y fácil de llevar.",
+      img: "",
+      detalles: ["Salida: grosella negra, mandarina verde", "Corazón: caramelo de fresa, gardenia", "Fondo: vainilla, almizcle, ámbar, sándalo"]
+    },
+    {
+      nombre: "Eclaire",
+      familia: "Floral gourmand",
+      precio: 82999,
+      desc: "Caramelo y leche sobre miel y flores blancas, cerrando en vainilla y praliné. Dulce y goloso.",
+      img: "",
+      detalles: ["Salida: caramelo, leche, azúcar", "Corazón: miel, flores blancas", "Fondo: vainilla, praliné, almizcle"]
     }
   ],
 
