@@ -108,6 +108,14 @@ const TESTIMONIOS = [
   {
     texto: "Gracias @malhan_fragrance, muy buena calidad y atención.",
     autor: "@francodasilveira_"
+  },
+  {
+    texto: "Gran atención y mejor presentación",
+    autor: "@Lorenzo_engraf"
+  },
+  {
+    texto: "Genaro asesoró muy bien en la elección",
+    autor: "@joaquin.barcia"
   }
 ];
 
