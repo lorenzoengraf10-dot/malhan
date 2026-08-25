@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malhan Fragrance | Perfumería — hombre, mujer y mixto</title>
+<meta name="description" content="Fragancias para hombre, mujer y mixto. Catálogo completo, selección por WhatsApp y entrega a coordinar.">
+<meta name="theme-color" content="#4A3222">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<!-- Nuestra hoja de estilos va primero y con ?v= para forzar recarga cuando cambia -->
+<link rel="stylesheet" href="assets/css/styles.css?v=1">
+
+<!-- Las tipografías se cargan aparte: si tardan o fallan, el sitio igual se ve bien -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Jost:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Jost:wght@400;500;600;700&display=swap"></noscript>
+</head>
+<body data-pagina="inicio">
+
+<a class="skip-link" href="#catalogo">Ir al catálogo</a>
+
+<div data-header></div>
+
+<main>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero__inner">
+      <h1 class="hero__mark">
+        <span class="hero__word">Malhan</span>
+        <span class="hero__sub">Fragrance</span>
+      </h1>
+
+      <p class="hero__tagline">Fragancias para <em>hombre</em>, <em>mujer</em> y ediciones <em>mixtas</em>, elegidas para dejar estela.</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="#catalogo">Ver el catálogo</a>
+        <a class="btn btn--ghost" data-wa="Hola Malhan! Vi la web y quería consultar por una fragancia.">Consultar por WhatsApp</a>
+      </div>
+
+      <ul class="hero__facts">
+        <li><strong>Hombre</strong>, mujer y mixto</li>
+        <li><strong>Selección</strong> curada</li>
+        <li><strong>Pedidos</strong> por WhatsApp</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================ CATÁLOGO ============================
+       Se arma entero por JS (ver renderCatalogoCompleto en site.js): una
+       .catsec por categoría (Hombre / Mujer / Mixto), cada una con su
+       grilla de productos. La barra de pastillas de arriba (parte del
+       header) filtra qué se ve. -->
+  <section class="catalogo" id="catalogo">
+    <div class="wrap sec-head">
+      <p class="eyebrow"><span class="eyebrow__dot"></span> El catálogo</p>
+      <h2 class="sec-title">Encontrá tu fragancia</h2>
+      <p class="sec-lead">Tocá la foto de cualquier producto para ver el detalle y los tamaños disponibles.</p>
+    </div>
+    <div data-catalogo></div>
+  </section>
+
+  <!-- ============================ CLIENTES ============================ -->
+  <section class="clientes" id="clientes">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow eyebrow--onphoto"><span class="eyebrow__dot"></span> Clientes</p>
+        <h2 class="sec-title sec-title--light">Lo que dicen los que ya compraron</h2>
+        <p class="sec-lead">Reseñas de quienes ya se llevaron su fragancia.</p>
+      </header>
+
+      <div class="testis" data-testimonios></div>
+    </div>
+  </section>
+
+  <!-- ============================ PREGUNTAS FRECUENTES ============================ -->
+  <section class="faq" id="preguntas">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow"><span class="eyebrow__dot"></span> Antes de pedir</p>
+        <h2 class="sec-title">Preguntas frecuentes</h2>
+      </header>
+
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary>¿Qué tamaños tienen disponibles?</summary>
+          <p>La mayoría de las fragancias vienen en más de un tamaño. Los vas a ver al tocar la foto de cada producto en el catálogo.</p>
+        </details>
+        <details class="faq__item">
+          <summary>¿Cómo hago un pedido?</summary>
+          <p>Agregá lo que te guste a tu selección (el ícono de la bolsa, arriba a la derecha) y tocá "Hacer el pedido": se abre WhatsApp con todo el detalle para coordinar pago y entrega.</p>
+        </details>
+        <details class="faq__item">
+          <summary>¿Qué medios de pago aceptan?</summary>
+          <p>Coordinamos la forma de pago por WhatsApp una vez confirmado el pedido.</p>
+        </details>
+        <details class="faq__item">
+          <summary>¿Hacen envíos?</summary>
+          <p>La entrega se coordina por WhatsApp según tu ubicación.</p>
+        </details>
+        <details class="faq__item">
+          <summary>¿Puedo cambiar un producto?</summary>
+          <p>Cualquier duda sobre cambios te la resolvemos por WhatsApp.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-footer></div>
+
+<!-- Si el hosting cachea /assets/, subir este número cada vez que cambie
+     products.js o site.js para que no quede una copia vieja en caché. -->
+<script src="assets/js/products.js?v=1"></script>
+<script src="assets/js/site.js?v=1"></script>
+</body>
+</html>
