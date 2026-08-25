@@ -143,6 +143,30 @@ const PRODUCTOS = {
       desc: "Mandarina y naranja sobre caramelo y haba tonka, cerrando en cedro y vetiver. Fresco con fondo amaderado.",
       img: "",
       detalles: ["Salida: mandarina, naranja, azafrán, salvia", "Corazón: caramelo, haba tonka, caléndula", "Fondo: ambroxan, cedro, vetiver"]
+    },
+    {
+      nombre: "Hawas Black",
+      familia: "Aromático frutal",
+      precio: null,
+      desc: "Bergamota, ananá y pomelo sobre pachulí y cedro, cerrando en musgo de roble y ámbar.",
+      img: "",
+      detalles: ["Salida: bergamota, ananá, pomelo", "Corazón: pachulí, cedro, jazmín", "Fondo: musgo de roble, madera, ámbar"]
+    },
+    {
+      nombre: "Hawas Kobra",
+      familia: "Oriental amaderado",
+      precio: null,
+      desc: "Jengibre y mandarina sobre té verde y canela, cerrando en almizcle y ámbar.",
+      img: "",
+      detalles: ["Salida: jengibre, bergamota, mandarina", "Corazón: té verde, canela, neroli", "Fondo: almizcle, madera, ámbar"]
+    },
+    {
+      nombre: "Hawas Tropical",
+      familia: "Frutal gourmand",
+      precio: null,
+      desc: "Hoja de higo, agua de coco y jengibre sobre higo y menta, cerrando en haba tonka, almizcle y sándalo.",
+      img: "",
+      detalles: ["Salida: hoja de higo, agua de coco, jengibre", "Corazón: coco, higo, menta", "Fondo: haba tonka, almizcle, sándalo"]
     }
   ],
 
@@ -195,6 +219,30 @@ const PRODUCTOS = {
       desc: "Durazno, maracuyá y frambuesa sobre un fondo de almizcle, vainilla y sándalo. Fresco y dulce.",
       img: "",
       detalles: ["Salida: durazno, maracuyá, pera, frambuesa, grosella negra", "Corazón: lirio de los valles", "Fondo: almizcle, vainilla, pachulí, sándalo, heliotropo"]
+    },
+    {
+      nombre: "Badee Al Oud Amethyst",
+      familia: "Oriental floral",
+      precio: null,
+      desc: "Pimienta rosa y bergamota sobre rosa turca y búlgara, cerrando en oud, ámbar y vainilla.",
+      img: "",
+      detalles: ["Salida: pimienta rosa, bergamota", "Corazón: rosa turca, rosa búlgara, jazmín", "Fondo: oud, ámbar, vainilla"]
+    },
+    {
+      nombre: "Gold Edition 120ml",
+      familia: "Oriental vainilla",
+      precio: null,
+      desc: "Bergamota y notas verdes sobre melón, ananá y ámbar, cerrando en vainilla y madera. Amber Oud Gold Edition, de Al Haramain.",
+      img: "",
+      detalles: ["Salida: bergamota, notas verdes", "Corazón: melón, ananá, ámbar, acorde gourmand", "Fondo: vainilla, almizcle, madera"]
+    },
+    {
+      nombre: "Hawas Malibu",
+      familia: "Aromático",
+      precio: null,
+      desc: "Ananá, naranja y pomelo sobre iris, ámbar y lavanda, cerrando en haba tonka y almizcle.",
+      img: "",
+      detalles: ["Salida: ananá, naranja, pomelo", "Corazón: iris, ámbar, lavanda", "Fondo: haba tonka, almizcle, pachulí, cashmerán"]
     }
   ]
 
