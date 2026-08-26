@@ -526,6 +526,7 @@ h1,h2,h3,h4{
 }
 
 .testi{
+  min-width:0;
   padding:12px 14px;
   border-radius:var(--radius);
   background:rgba(251,246,237,.06);
@@ -537,11 +538,13 @@ h1,h2,h3,h4{
   font-size:.88rem; font-style:italic;
   line-height:1.32;
   color:var(--cream);
+  overflow-wrap:break-word;
 }
 .testi__autor{
   font-size:.72rem; font-weight:600;
   letter-spacing:.06em;
   color:var(--gold-soft);
+  overflow-wrap:break-word;
 }
 
 .clientes__pie{ margin-top:14px; }
@@ -939,7 +942,10 @@ h1,h2,h3,h4{
 @media (max-width: 620px){
   .eyebrow{ font-size:.7rem; letter-spacing:.13em; }
 
-  .testis{ grid-template-columns:1fr; }
+  .testis{ grid-template-columns:1fr 1fr; gap:8px; }
+  .testi{ padding:10px 11px; }
+  .testi__texto{ font-size:.78rem; line-height:1.28; }
+  .testi__autor{ font-size:.66rem; }
 
   .footer__inner{ grid-template-columns:1fr; }
   .grid{ grid-template-columns:repeat(auto-fill, minmax(155px, 1fr)); gap:14px; }
