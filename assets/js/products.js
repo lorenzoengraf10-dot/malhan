@@ -210,7 +210,7 @@ const PRODUCTOS = {
     {
       nombre: "Hawas Black",
       familia: "Aromático frutal",
-      precio: null,
+      precio: 101511,
       desc: "Bergamota, ananá y pomelo sobre pachulí y cedro, cerrando en musgo de roble y ámbar.",
       img: "",
       detalles: ["Salida: bergamota, ananá, pomelo", "Corazón: pachulí, cedro, jazmín", "Fondo: musgo de roble, madera, ámbar"]
@@ -218,7 +218,7 @@ const PRODUCTOS = {
     {
       nombre: "Hawas Kobra",
       familia: "Oriental amaderado",
-      precio: null,
+      precio: 93336,
       desc: "Jengibre y mandarina sobre té verde y canela, cerrando en almizcle y ámbar.",
       img: "",
       detalles: ["Salida: jengibre, bergamota, mandarina", "Corazón: té verde, canela, neroli", "Fondo: almizcle, madera, ámbar"]
@@ -226,7 +226,7 @@ const PRODUCTOS = {
     {
       nombre: "Hawas Tropical",
       familia: "Frutal gourmand",
-      precio: null,
+      precio: 78269,
       desc: "Hoja de higo, agua de coco y jengibre sobre higo y menta, cerrando en haba tonka, almizcle y sándalo.",
       img: "",
       detalles: ["Salida: hoja de higo, agua de coco, jengibre", "Corazón: coco, higo, menta", "Fondo: haba tonka, almizcle, sándalo"]
@@ -245,7 +245,7 @@ const PRODUCTOS = {
     {
       nombre: "Badee Al Oud Amethyst",
       familia: "Oriental floral",
-      precio: null,
+      precio: 52697,
       desc: "Pimienta rosa y bergamota sobre rosa turca y búlgara, cerrando en oud, ámbar y vainilla.",
       img: "",
       detalles: ["Salida: pimienta rosa, bergamota", "Corazón: rosa turca, rosa búlgara, jazmín", "Fondo: oud, ámbar, vainilla"]
@@ -253,7 +253,7 @@ const PRODUCTOS = {
     {
       nombre: "Gold Edition 120ml",
       familia: "Oriental vainilla",
-      precio: null,
+      precio: 124195,
       desc: "Bergamota y notas verdes sobre melón, ananá y ámbar, cerrando en vainilla y madera. Amber Oud Gold Edition, de Al Haramain.",
       img: "",
       detalles: ["Salida: bergamota, notas verdes", "Corazón: melón, ananá, ámbar, acorde gourmand", "Fondo: vainilla, almizcle, madera"]
@@ -261,7 +261,7 @@ const PRODUCTOS = {
     {
       nombre: "Hawas Malibu",
       familia: "Aromático",
-      precio: null,
+      precio: 90960,
       desc: "Ananá, naranja y pomelo sobre iris, ámbar y lavanda, cerrando en haba tonka y almizcle.",
       img: "",
       detalles: ["Salida: ananá, naranja, pomelo", "Corazón: iris, ámbar, lavanda", "Fondo: haba tonka, almizcle, pachulí, cashmerán"]
