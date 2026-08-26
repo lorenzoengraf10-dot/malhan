@@ -230,6 +230,70 @@ const PRODUCTOS = {
       desc: "Hoja de higo, agua de coco y jengibre sobre higo y menta, cerrando en haba tonka, almizcle y sándalo.",
       img: "",
       detalles: ["Salida: hoja de higo, agua de coco, jengibre", "Corazón: coco, higo, menta", "Fondo: haba tonka, almizcle, sándalo"]
+    },
+    {
+      nombre: "9 PM",
+      familia: "Oriental vainilla",
+      precio: 69903,
+      desc: "Manzana, canela y lavanda silvestre sobre bergamota, con un corazón floral de azahar y lirio de los valles que cierra en vainilla, haba tonka, ámbar y pachulí.",
+      img: "",
+      detalles: ["Salida: manzana, canela, lavanda silvestre, bergamota", "Corazón: azahar, lirio de los valles", "Fondo: vainilla, haba tonka, ámbar, pachulí"]
+    },
+    {
+      nombre: "Turathi Blue",
+      familia: "Aromático acuático",
+      precio: 80837,
+      desc: "Bergamota y mandarina frescas sobre un corazón ambarino y amaderado, que cierra en almizcle, pachulí y un toque de especias.",
+      img: "",
+      detalles: ["Salida: bergamota, mandarina", "Corazón: ámbar, notas amaderadas", "Fondo: almizcle, pachulí, especias"]
+    },
+    {
+      nombre: "Dubai Night",
+      familia: "Ambarino amaderado",
+      precio: 120279,
+      desc: "Azafrán, bergamota y elemí abren con un toque especiado, sobre un corazón de oud y rosa búlgara que cierra en haba tonka, ámbar, almizcle blanco y musgo de roble.",
+      img: "",
+      detalles: ["Salida: azafrán, bergamota, elemí", "Corazón: oud, rosa búlgara, lirio de los valles", "Fondo: haba tonka, ámbar, almizcle blanco, musgo de roble"]
+    },
+    {
+      nombre: "Club de Nuit Iconic",
+      familia: "Aromático especiado",
+      precio: 95904,
+      desc: "Pomelo, limón y menta con un toque de pimienta rosa se funden en un corazón especiado de jengibre, melón y nuez moscada, que cierra en incienso, sándalo, ámbar y cedro.",
+      img: "",
+      detalles: ["Salida: pomelo, limón, menta, pimienta rosa", "Corazón: jengibre, melón, jazmín, nuez moscada", "Fondo: incienso, sándalo, ámbar, cedro, pachulí"]
+    },
+    {
+      nombre: "Club de Nuit Intense Man EDT",
+      familia: "Amaderado especiado",
+      precio: 82871,
+      desc: "Limón, ananá y bergamota dan una apertura fresca y afrutada, sobre un corazón ahumado de abedul, jazmín y rosa que cierra en almizcle, ámbar gris, pachulí y vainilla.",
+      img: "",
+      detalles: ["Salida: limón, ananá, bergamota, grosella negra", "Corazón: abedul, jazmín, rosa", "Fondo: almizcle, ámbar gris, pachulí, vainilla"]
+    },
+    {
+      nombre: "Club de Nuit Urban Man Elixir",
+      familia: "Amaderado aromático",
+      precio: 96888,
+      desc: "Bergamota, pimienta rosa y azahar abren sobre un corazón aromático de lavanda y geranio, que cierra en una base amaderada de vetiver, ámbar y pachulí.",
+      img: "",
+      detalles: ["Salida: bergamota, pimienta rosa, azahar", "Corazón: lavanda, geranio, vetiver", "Fondo: ámbar, cedro, pachulí"]
+    },
+    {
+      nombre: "Odyssey Aqua",
+      familia: "Amaderado aromático",
+      precio: 77564,
+      desc: "Naranja y pomelo con un toque herbal de artemisia dan paso a un corazón fresco de menta y lavanda, que cierra en ambroxan, ciprés y pachulí.",
+      img: "",
+      detalles: ["Salida: naranja, pomelo, artemisia", "Corazón: menta, lavanda", "Fondo: ambroxan, ciprés, pachulí"]
+    },
+    {
+      nombre: "Odyssey Homme Blanco",
+      familia: "Oriental fougère",
+      precio: 77093,
+      desc: "Pimienta rosa, pomelo y yuzu se abren sobre un corazón marino con hoja de violeta, que cierra en una base ambarina y amaderada.",
+      img: "",
+      detalles: ["Salida: pimienta rosa, pomelo, yuzu", "Corazón: notas marinas, hoja de violeta", "Fondo: madera ambarina, ámbar, madera de gaiac"]
     }
   ],
 
