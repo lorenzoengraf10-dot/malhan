@@ -97,10 +97,11 @@
   const ICONO_BOLSO =
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-.6a1 1 0 0 1 0-2H8a1 1 0 0 1 .98.8L9.3 4H20a1 1 0 0 1 .97 1.24l-1.7 6.8A2 2 0 0 1 17.33 13.6H9.9l.3 1.4H18a1 1 0 1 1 0 2H9.4a1 1 0 0 1-.98-.8L7 4Zm2.7 2 .8 5.6h6.83l1.4-5.6H9.7ZM10 18.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/></svg>';
 
-  /* Marca: "Malhan" en serif + "Fragrance" chico y espaciado debajo.
-     Se usa igual en el header, el hero (más grande, vía CSS) y el footer. */
+  /* Marca: isologo circular real + "Malhan" en serif + "Fragrance" chico
+     y espaciado debajo. Se usa igual en el header y el footer. */
   const MARCA_HTML =
-    '<span class="brand__word">Malhan</span><span class="brand__sub">Fragrance</span>';
+    '<img class="brand__logo" src="assets/img/logo.png" alt="" width="40" height="40" loading="lazy">' +
+    '<span class="brand__mark"><span class="brand__word">Malhan</span><span class="brand__sub">Fragrance</span></span>';
 
   /* ---------------------------------------------------------------------
      Encabezado
@@ -118,7 +119,7 @@
       <header class="header" id="header">
         <div class="wrap header__inner">
           <a class="brand" href="#inicio" aria-label="Malhan Fragrance — inicio">
-            <span class="brand__mark">${MARCA_HTML}</span>
+            ${MARCA_HTML}
           </a>
 
           <nav class="nav" id="nav" aria-label="Secciones del catálogo">
@@ -168,8 +169,8 @@
         <div class="wrap footer__inner">
 
           <div class="footer__col footer__brand">
-            <span class="brand__mark">${MARCA_HTML}</span>
-            <p class="footer__tag">Perfumería de nicho para hombre, mujer y fragancias mixtas.</p>
+            <span class="brand">${MARCA_HTML}</span>
+            <p class="footer__tag">Perfumería de nicho para hombre, mujer y fragancias mixtas. Envíos a todo el país.</p>
             ${tieneInstagram() ? `
             <div class="footer__social">
               <a href="${escapar(CONFIG.instagram)}" target="_blank" rel="noopener"
