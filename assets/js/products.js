@@ -232,6 +232,22 @@ const PRODUCTOS = {
       detalles: ["Salida: hoja de higo, agua de coco, jengibre", "Corazón: coco, higo, menta", "Fondo: haba tonka, almizcle, sándalo"]
     },
     {
+      nombre: "Hawas",
+      familia: "Aromático acuático",
+      precio: 66992,
+      desc: "El Hawas original de Rasasi: apertura afrutada de manzana, bergamota y limón con un toque de canela, corazón acuático de ciruela y azahar, y fondo ambarado con almizcle y pachulí.",
+      img: "",
+      detalles: ["Salida: bergamota, manzana, canela, limón", "Corazón: notas acuáticas, ciruela, azahar, cardamomo", "Fondo: ámbar gris, almizcle, madera a la deriva, pachulí"]
+    },
+    {
+      nombre: "Hawas Ice",
+      familia: "Aromático fresco",
+      precio: 98023,
+      desc: "Versión fría del Hawas, con salida cítrica de manzana, limón y bergamota siciliana realzada por anís estrellado, corazón de ciruela y azahar, y fondo amaderado con musgo y ámbar.",
+      img: "",
+      detalles: ["Salida: manzana, limón italiano, bergamota siciliana, anís estrellado", "Corazón: ciruela, azahar, cardamomo", "Fondo: almizcle, ámbar, madera a la deriva, musgo"]
+    },
+    {
       nombre: "9 PM",
       familia: "Oriental vainilla",
       precio: 69903,
@@ -438,22 +454,6 @@ const PRODUCTOS = {
       desc: "Edición parfum de mayor concentración sobre la misma base: manzana, bergamota y jengibre en la apertura, corazón de geranio, enebro y salvia, y fondo amaderado ambarado con incienso y haba tonka.",
       img: "",
       detalles: ["Salida: manzana, bergamota, jengibre", "Corazón: geranio, bayas de enebro, salvia", "Fondo: amberwood, cedro, incienso, haba tonka, vetiver"]
-    },
-    {
-      nombre: "Hawas",
-      familia: "Aromático acuático",
-      precio: 66992,
-      desc: "El Hawas original de Rasasi: apertura afrutada de manzana, bergamota y limón con un toque de canela, corazón acuático de ciruela y azahar, y fondo ambarado con almizcle y pachulí.",
-      img: "",
-      detalles: ["Salida: bergamota, manzana, canela, limón", "Corazón: notas acuáticas, ciruela, azahar, cardamomo", "Fondo: ámbar gris, almizcle, madera a la deriva, pachulí"]
-    },
-    {
-      nombre: "Hawas Ice",
-      familia: "Aromático fresco",
-      precio: 98023,
-      desc: "Versión fría del Hawas, con salida cítrica de manzana, limón y bergamota siciliana realzada por anís estrellado, corazón de ciruela y azahar, y fondo amaderado con musgo y ámbar.",
-      img: "",
-      detalles: ["Salida: manzana, limón italiano, bergamota siciliana, anís estrellado", "Corazón: ciruela, azahar, cardamomo", "Fondo: almizcle, ámbar, madera a la deriva, musgo"]
     },
     {
       nombre: "Rayhaan Wolf",
@@ -748,6 +748,14 @@ const PRODUCTOS = {
       detalles: ["Salida: ananá, naranja, pomelo", "Corazón: iris, ámbar, lavanda", "Fondo: haba tonka, almizcle, pachulí, cashmerán"]
     },
     {
+      nombre: "Hawas Fire",
+      familia: "Aromático marino",
+      precio: 90596,
+      desc: "Apertura de salvia esclarea, corazón floral marino de jazmín egipcio con notas acuáticas, y fondo salino de ámbar gris y minerales.",
+      img: "",
+      detalles: ["Salida: salvia esclarea", "Corazón: jazmín egipcio, notas marinas", "Fondo: ámbar gris, ámbar, notas minerales"]
+    },
+    {
       nombre: "9 AM Dive",
       familia: "Aromático acuático",
       precio: 75017,
@@ -1033,14 +1041,6 @@ const PRODUCTOS = {
       desc: "Apertura de pimienta rosa, violeta y enebro, corazón cálido de toffee, canela, lavanda y salvia romana, cerrando en vainilla, haba tonka, ámbar y gamuza.",
       img: "",
       detalles: ["Salida: pimienta rosa, violeta, enebro", "Corazón: toffee, canela, lavanda, salvia romana", "Fondo: vainilla, haba tonka, ámbar, gamuza"]
-    },
-    {
-      nombre: "Hawas Fire",
-      familia: "Aromático marino",
-      precio: 90596,
-      desc: "Apertura de salvia esclarea, corazón floral marino de jazmín egipcio con notas acuáticas, y fondo salino de ámbar gris y minerales.",
-      img: "",
-      detalles: ["Salida: salvia esclarea", "Corazón: jazmín egipcio, notas marinas", "Fondo: ámbar gris, ámbar, notas minerales"]
     },
     {
       nombre: "Tropical Vibes",
