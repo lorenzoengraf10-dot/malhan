@@ -142,7 +142,7 @@ const PRODUCTOS = {
       familia: "Oriental",
       precio: 73327,
       desc: "Pimienta negra, tabaco y piña sobre un fondo amaderado con vainilla y ámbar.",
-      img: "assets/img/stock/asad.jpg",
+      img: "",
       detalles: ["Salida: pimienta negra, tabaco, piña", "Corazón: pachulí, café, iris", "Fondo: vainilla, ámbar, madera seca, benjuí, ládano"]
     },
     {
@@ -150,7 +150,7 @@ const PRODUCTOS = {
       familia: "Oriental gourmand",
       precio: 89761,
       desc: "Lavanda y pimienta rosa sobre cacao y vainilla bourbon. Cálido, dulce y con muy buena proyección.",
-      img: "assets/img/stock/asad-bourbon.jpg",
+      img: "",
       detalles: ["Salida: lavanda, ciruela mirabel, pimienta rosa", "Corazón: cacao, nuez moscada, davana", "Fondo: vainilla bourbon, ámbar, vetiver"]
     },
     {
@@ -158,7 +158,7 @@ const PRODUCTOS = {
       familia: "Cítrico amaderado",
       precio: 69860,
       desc: "Mandarina y naranja sobre caramelo y haba tonka, cerrando en cedro y vetiver. Fresco con fondo amaderado.",
-      img: "assets/img/stock/odyssey-mandarin-sky.jpg",
+      img: "",
       detalles: ["Salida: mandarina, naranja, azafrán, salvia", "Corazón: caramelo, haba tonka, caléndula", "Fondo: ambroxan, cedro, vetiver"]
     },
     {
@@ -166,7 +166,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 73583,
       desc: "Orquídea y heliotropo sobre frutas tropicales, cerrando en vainilla y sándalo. El clásico rosa de Lattafa.",
-      img: "assets/img/stock/yara-rosa.jpg",
+      img: "",
       detalles: ["Salida: orquídea, heliotropo, mandarina", "Corazón: acorde gourmand, frutas tropicales", "Fondo: vainilla, almizcle, sándalo"]
     },
     {
@@ -174,7 +174,7 @@ const PRODUCTOS = {
       familia: "Frutal gourmand",
       precio: 60380,
       desc: "Grosella negra y mandarina verde sobre caramelo de fresa y gardenia. Dulce, frutal y fácil de llevar.",
-      img: "assets/img/stock/yara-candy.jpg",
+      img: "",
       detalles: ["Salida: grosella negra, mandarina verde", "Corazón: caramelo de fresa, gardenia", "Fondo: vainilla, almizcle, ámbar, sándalo"]
     },
     {
@@ -182,7 +182,7 @@ const PRODUCTOS = {
       familia: "Floral gourmand",
       precio: 94171,
       desc: "Caramelo y leche sobre miel y flores blancas, cerrando en vainilla y praliné. Dulce y goloso.",
-      img: "assets/img/stock/eclaire.jpg",
+      img: "",
       detalles: ["Salida: caramelo, leche, azúcar", "Corazón: miel, flores blancas", "Fondo: vainilla, praliné, almizcle"]
     },
     {
@@ -190,7 +190,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 59395,
       desc: "Canela y cardamomo sobre café, vainilla y haba tonka. Intenso y envolvente.",
-      img: "assets/img/stock/khamrah-qahwa.jpg",
+      img: "",
       detalles: ["Salida: canela, cardamomo, jengibre", "Corazón: praliné, frutos confitados, flores blancas", "Fondo: vainilla, café, haba tonka, benjuí, almizcle"]
     },
     {
@@ -198,7 +198,7 @@ const PRODUCTOS = {
       familia: "Chypre frutal",
       precio: 49337,
       desc: "Durazno, maracuyá y frambuesa sobre un fondo de almizcle, vainilla y sándalo. Fresco y dulce.",
-      img: "assets/img/stock/confidential-private-gold.jpg",
+      img: "",
       detalles: ["Salida: durazno, maracuyá, pera, frambuesa, grosella negra", "Corazón: lirio de los valles", "Fondo: almizcle, vainilla, pachulí, sándalo, heliotropo"]
     }
   ],
