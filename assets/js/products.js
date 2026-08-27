@@ -64,7 +64,18 @@ const CONFIG = {
      no aparece en el sitio. */
   instagram: "https://www.instagram.com/malhan_fragrance",
 
-  moneda: "$"
+  moneda: "$",
+
+  /* Datos para pagar por transferencia. Malhan solo cobra en efectivo o
+     por transferencia (no maneja tarjetas ni cobra online), así que esto
+     es el único medio de pago no-efectivo del carrito. Dejalo en null si
+     algún día hay que sacarlo — el pedido en efectivo por WhatsApp sigue
+     funcionando igual. */
+  pago: {
+    titular: "Genaro Larraburu Pezzano",
+    alias: "larraburu.g",
+    cvu: "0000003100065126407221"
+  }
 };
 
 /* =========================================================================
