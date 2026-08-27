@@ -97,6 +97,14 @@
   const ICONO_BOLSO =
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-.6a1 1 0 0 1 0-2H8a1 1 0 0 1 .98.8L9.3 4H20a1 1 0 0 1 .97 1.24l-1.7 6.8A2 2 0 0 1 17.33 13.6H9.9l.3 1.4H18a1 1 0 1 1 0 2H9.4a1 1 0 0 1-.98-.8L7 4Zm2.7 2 .8 5.6h6.83l1.4-5.6H9.7ZM10 18.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/></svg>';
 
+  const ICONO_LUPA =
+    '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.8 3a7.8 7.8 0 0 1 6.06 12.72l4.71 4.72a1 1 0 0 1-1.32 1.5l-.1-.08-4.71-4.72A7.8 7.8 0 1 1 10.8 3Zm0 2a5.8 5.8 0 1 0 0 11.6 5.8 5.8 0 0 0 0-11.6Z"/></svg>';
+
+  /* Frasco simplificado: mismo perfil que el isologo, en trazo, para usar
+     como marcador de "todavía no hay foto" en tarjetas, ficha y carrito. */
+  const ICONO_FRASCO =
+    '<svg class="frasco-ph" viewBox="0 0 48 64" fill="none" aria-hidden="true"><path d="M19 3.5h10a2 2 0 0 1 2 2V10a2 2 0 0 1-2 2h-1.5v3.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 15.4V12H19a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 15.4h13c2.5 0 4.5 2 4.5 4.5v33c0 4-3.2 7.2-7.2 7.2h-7.6c-4 0-7.2-3.2-7.2-7.2v-33c0-2.5 2-4.5 4.5-4.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 26h16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="1 4.2"/></svg>';
+
   /* Marca: isologo circular real + "Malhan" en serif + "Fragrance" chico
      y espaciado debajo. Se usa igual en el header y el footer. */
   const MARCA_HTML =
@@ -131,6 +139,10 @@
             </ul>
           </nav>
 
+          <button class="cartbtn" data-buscador-btn type="button" aria-label="Buscar un perfume" aria-expanded="false">
+            ${ICONO_LUPA}
+          </button>
+
           <button class="cartbtn" data-cart-open type="button" aria-label="Ver mi selección">
             ${ICONO_BOLSO}
             <span class="cartbtn__n" data-cart-count hidden>0</span>
@@ -141,6 +153,16 @@
           </button>
         </div>
       </header>
+
+      <div class="buscador" data-buscador>
+        <div class="buscador__backdrop" data-buscador-close></div>
+        <div class="wrap buscador__inner">
+          ${ICONO_LUPA}
+          <input type="search" class="buscador__input" data-buscador-input
+                 placeholder="Buscá tu perfume por nombre…" aria-label="Buscar un perfume">
+          <button class="buscador__limpiar" data-buscador-limpiar type="button" aria-label="Borrar búsqueda" hidden>×</button>
+        </div>
+      </div>
 
       <nav class="catnav" id="catnav" aria-label="Filtrar el catálogo">
         <div class="wrap catnav__inner">
@@ -213,6 +235,7 @@
           <button class="modal__close" data-close aria-label="Cerrar">×</button>
           <div class="modal__media">
             <img id="modal-img" src="" alt="">
+            <div class="modal__ph">${ICONO_FRASCO}<span>Foto próximamente</span></div>
             <div class="modal__thumbs" id="modal-thumbs" hidden></div>
           </div>
           <div class="modal__body">
@@ -292,12 +315,14 @@
     art.dataset.index = indice;
     art.dataset.slug = slugify(producto.nombre);
     art.dataset.variante = variante ? variante.label : "";
+    art.dataset.nombre = producto.nombre;
+    art.dataset.familia = producto.familia || "";
 
     art.innerHTML = `
       <div class="card__media" data-abrir>
         ${etiqueta}
-        <img src="${escapar(img || "")}" alt="${escapar(producto.nombre)}"
-             loading="lazy" decoding="async">
+        ${img ? `<img src="${escapar(img)}" alt="${escapar(producto.nombre)}" loading="lazy" decoding="async">` : ""}
+        <div class="card__ph">${ICONO_FRASCO}<span>Foto próximamente</span></div>
       </div>
       <div class="card__body">
         ${producto.familia ? `<span class="card__sub">${escapar(producto.familia)}</span>` : ""}
@@ -315,7 +340,7 @@
     if (!img) {
       media.classList.add("is-empty");
     } else {
-      $("img", media).addEventListener("error", () => media.classList.add("is-empty"), { once: true });
+      $("img", media)?.addEventListener("error", () => media.classList.add("is-empty"), { once: true });
     }
 
     return art;
@@ -423,6 +448,88 @@
     });
   }
 
+  /* ---------------------------------------------------------------------
+     Buscador — filtra tarjetas por nombre/familia en todo el catálogo,
+     sin importar qué pastilla de categoría esté activa.
+     --------------------------------------------------------------------- */
+
+  const normalizarTexto = (s) =>
+    String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+  function initBusqueda() {
+    const wrap = $("[data-buscador]");
+    const btn = $("[data-buscador-btn]");
+    if (!wrap || !btn) return;
+
+    const input = $("[data-buscador-input]", wrap);
+    const limpiar = $("[data-buscador-limpiar]", wrap);
+    const catnav = $("#catnav");
+    const secciones = $$(".catsec");
+
+    function aplicar() {
+      const q = normalizarTexto(input.value.trim());
+      limpiar.hidden = !q;
+
+      if (!q) {
+        $$(".card").forEach((c) => { c.hidden = false; });
+        secciones.forEach((s) => { s.classList.remove("catsec--sin-resultados"); });
+        const activo = $(".pill.is-active[data-filtro]", catnav);
+        const filtro = activo ? activo.dataset.filtro : "todos";
+        secciones.forEach((s) => { s.hidden = filtro !== "todos" && s.dataset.cat !== filtro; });
+        return;
+      }
+
+      $$(".pill[data-filtro]", catnav).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === "todos"));
+
+      let totalVisible = 0;
+      secciones.forEach((sec) => {
+        sec.hidden = false;
+        let visiblesEnSeccion = 0;
+        $$(".card", sec).forEach((card) => {
+          const va = card.dataset.nombre && (
+            normalizarTexto(card.dataset.nombre).includes(q) ||
+            normalizarTexto(card.dataset.familia).includes(q)
+          );
+          card.hidden = !va;
+          if (va) { visiblesEnSeccion++; totalVisible++; }
+        });
+        sec.classList.toggle("catsec--sin-resultados", visiblesEnSeccion === 0);
+      });
+
+      $("[data-buscador-vacio]")?.remove();
+      if (totalVisible === 0) {
+        const cont = $("[data-catalogo]");
+        if (cont) {
+          const vacio = document.createElement("div");
+          vacio.dataset.buscadorVacio = "";
+          vacio.className = "wrap";
+          vacio.innerHTML = `<div class="empty"><strong>No encontramos "${escapar(input.value.trim())}"</strong>Probá con otro nombre, o escribinos por WhatsApp y te ayudamos a encontrarlo.</div>`;
+          cont.prepend(vacio);
+        }
+      }
+    }
+
+    function abrir() {
+      wrap.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+      input.focus();
+    }
+    function cerrar() {
+      wrap.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+
+    btn.addEventListener("click", () => {
+      wrap.classList.contains("is-open") ? cerrar() : abrir();
+    });
+    $("[data-buscador-close]", wrap)?.addEventListener("click", cerrar);
+    limpiar.addEventListener("click", () => { input.value = ""; aplicar(); input.focus(); });
+    input.addEventListener("input", aplicar);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && wrap.classList.contains("is-open")) cerrar();
+    });
+  }
+
   /* Pastillas de tamaño en la tarjeta: tocar una cambia precio/foto de esa
      tarjeta sin abrir la ficha, y queda como la variante que se agrega. */
   function initVariantesTarjeta() {
@@ -444,10 +551,19 @@
       card.dataset.variante = variante.label;
 
       const media = $(".card__media", card);
-      const img = $("img", media);
-      if (img && variante.img) {
+      let img = $("img", media);
+      if (variante.img) {
+        if (!img) {
+          img = document.createElement("img");
+          img.alt = producto.nombre;
+          img.loading = "lazy";
+          img.decoding = "async";
+          media.insertBefore(img, media.firstChild);
+        }
         img.src = variante.img;
         media.classList.remove("is-empty");
+      } else if (img) {
+        media.classList.add("is-empty");
       }
 
       const precioViejo = $(".card__price", card);
@@ -656,8 +772,8 @@
           : "A consultar";
         return `
           <article class="citem${enPausa ? " citem--pausa" : ""}" data-cat="${escapar(it.categoria)}" data-slug="${escapar(it.slug)}" data-variante="${escapar(it.variante || "")}">
-            <div class="citem__media">
-              ${p.img ? `<img src="${escapar(p.img)}" alt="" loading="lazy">` : ""}
+            <div class="citem__media${p.img ? "" : " is-empty"}">
+              ${p.img ? `<img src="${escapar(p.img)}" alt="" loading="lazy">` : ICONO_FRASCO}
             </div>
             <div class="citem__body">
               <h3 class="citem__nombre">${escapar(p.nombre)}</h3>
@@ -811,7 +927,7 @@
         elVariantes.hidden = true;
       }
 
-      if (elAdd) elAdd.hidden = !p.variantes;
+      if (elAdd) elAdd.hidden = !!efectivo.agotado;
 
       elWa.dataset.wa = `Hola Malhan! Quería consultar por ${elTit.textContent}. ¿Tenés disponible?`;
       activarLinksWa(modal);
@@ -991,6 +1107,7 @@
     initModal();
     initHeader();
     initFiltroCatalogo();
+    initBusqueda();
     initVariantesTarjeta();
     initReveal();
 
