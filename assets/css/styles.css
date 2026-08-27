@@ -787,6 +787,109 @@ h1,h2,h3,h4{
 }
 .cart__vaciar:hover{ color:var(--gold); }
 
+/* ---------------------------- Medio de pago ---------------------------- */
+
+.cart__pago{ margin-bottom:14px; }
+.cart__pago-label{
+  margin:0 0 8px;
+  font-size:.82rem;
+  font-weight:600;
+  color:var(--muted);
+}
+.cart__pago-opciones{ display:flex; gap:8px; }
+.pago-opcion{
+  flex:1;
+  min-height:44px;
+  padding:0 10px;
+  border-radius:999px;
+  box-shadow:inset 0 0 0 1.5px var(--line);
+  background:transparent;
+  color:var(--brown);
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:.9rem;
+  transition:background-color .18s ease, box-shadow .18s ease, color .18s ease;
+}
+.pago-opcion:hover{ background:rgba(74,50,34,.06); }
+.pago-opcion.is-activo{ background:var(--brown); color:var(--cream); box-shadow:none; }
+
+.cart__pago-nota{
+  margin:0 0 12px;
+  font-size:.82rem;
+  color:var(--muted);
+  text-align:center;
+}
+.cart__pago-nota--aviso{ color:var(--brown-soft); font-weight:600; }
+
+.pago-transferencia{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:14px;
+  margin-bottom:14px;
+  border-radius:var(--radius);
+  background:var(--cream-2);
+  box-shadow:inset 0 0 0 1px var(--line);
+}
+.pago-transferencia-title{
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--brown-soft);
+}
+.pago-transferencia-datos{ display:flex; flex-direction:column; gap:6px; }
+.pago-dato-row{ display:flex; align-items:center; gap:8px; }
+.pago-dato-label{ flex:none; width:3.4rem; font-size:.72rem; color:var(--muted); }
+.pago-dato-valor{
+  flex:1; min-width:0;
+  font-size:.85rem; font-weight:700;
+  color:var(--brown);
+  word-break:break-word;
+}
+.pago-dato-copy{
+  flex:none;
+  min-height:32px;
+  padding:0 12px;
+  border-radius:999px;
+  box-shadow:inset 0 0 0 1.5px var(--line);
+  background:var(--cream);
+  color:var(--brown);
+  font-size:.72rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+}
+.pago-dato-copy:hover{ background:rgba(74,50,34,.06); }
+.pago-dato-copy.is-ok{ background:var(--green); color:var(--cream); box-shadow:none; }
+
+.pago-transferencia-nota{ margin:0; font-size:.78rem; color:var(--muted); }
+.pago-transferencia-nombre{
+  width:100%;
+  min-height:44px;
+  padding:0 12px;
+  border-radius:12px;
+  background:var(--cream);
+  box-shadow:inset 0 0 0 1.5px var(--line);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:.9rem;
+}
+.pago-transferencia-nombre:focus-visible{ outline:2px solid var(--gold); outline-offset:1px; }
+
+.pago-transferencia-check{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:.85rem;
+  font-weight:600;
+  color:var(--brown);
+  cursor:pointer;
+}
+.pago-transferencia-check input{ width:18px; height:18px; flex:none; accent-color:var(--gold); }
+
+.pago-transferencia-error{ margin:0; font-size:.8rem; font-weight:600; color:#A6402C; }
+
 /* ============================ FICHA DE PRODUCTO (MODAL) ============================ */
 
 .modal{ position:fixed; inset:0; z-index:140; }

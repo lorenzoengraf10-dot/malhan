@@ -476,6 +476,17 @@
 
   const CARRITO_KEY = "malhan-pedido";
 
+  /* Medio de pago elegido en el carrito: "efectivo" no pide nada más,
+     "transferencia" pide nombre + confirmación antes de armar el mensaje
+     de WhatsApp (ver pintarPago/confirmarPorTransferencia más abajo). No
+     se guarda en localStorage: cada visita arranca sin medio elegido. */
+  const Pago = {
+    metodo: null,
+    nombre: "",
+    confirmado: false,
+    error: null
+  };
+
   const Carrito = {
     items: [],
 
@@ -568,7 +579,10 @@
       return { suma, aConsultar };
     },
 
-    mensaje() {
+    /* pago (opcional) es el objeto Pago de más arriba: si viene con medio
+       elegido, se le agregan al mensaje las líneas de medio de pago (y,
+       para transferencia, el nombre para identificarla). */
+    mensaje(pago) {
       const { suma, aConsultar } = this.total();
 
       const lineas = this.items
@@ -587,6 +601,13 @@
 
       if (suma > 0) txt += `\n\nTotal: ${CONFIG.moneda} ${formatoPrecio.format(suma)}`;
       if (aConsultar > 0) txt += suma > 0 ? `\n(+ ${aConsultar} producto(s) a consultar)` : "";
+
+      if (pago && pago.metodo === "efectivo") {
+        txt += `\n\nMedio de pago: Efectivo`;
+      } else if (pago && pago.metodo === "transferencia") {
+        txt += `\n\nMedio de pago: Transferencia`;
+        txt += `\nYa realicé la transferencia a nombre de ${pago.nombre}. ¡Muchas gracias!`;
+      }
 
       return txt;
     }
@@ -610,11 +631,16 @@
           <footer class="cart__foot" data-cart-foot hidden>
             <div class="cart__total" data-cart-total></div>
 
-            <a class="btn btn--wa cart__cta" id="cart-wa">${ICONO_WA} <span>Hacer el pedido</span></a>
-            <p class="cart__nota">
-              Se abre WhatsApp con el pedido ya escrito. Ahí te confirmamos stock,
-              precio final y forma de entrega.
-            </p>
+            <div class="cart__pago">
+              <p class="cart__pago-label">¿Cómo vas a pagar?</p>
+              <div class="cart__pago-opciones">
+                <button type="button" class="pago-opcion" data-pago-metodo="efectivo" aria-pressed="false">Efectivo</button>
+                <button type="button" class="pago-opcion" data-pago-metodo="transferencia" aria-pressed="false">Transferencia</button>
+              </div>
+            </div>
+
+            <div data-pago-detalle></div>
+
             <button class="btn btn--ghost-dark cart__cerrar" data-cart-close type="button">Seguir viendo el catálogo</button>
             <button class="cart__vaciar" data-cart-vaciar type="button">Vaciar la selección</button>
           </footer>
@@ -685,12 +711,125 @@
         : `<span>Total</span><strong>A consultar</strong>`;
     }
 
-    const wa = $("#cart-wa");
-    if (wa) {
-      wa.setAttribute("href", waLink(Carrito.mensaje()));
-      wa.setAttribute("target", "_blank");
-      wa.setAttribute("rel", "noopener");
+    pintarPago();
+  }
+
+  /* =====================================================================
+     MEDIO DE PAGO
+     ---------------------------------------------------------------------
+     Malhan solo cobra en efectivo o por transferencia (sin tarjetas ni
+     cobro online). "Efectivo" abre WhatsApp directo; "Transferencia"
+     muestra alias/CVU/titular de CONFIG.pago con botón de copiar cada
+     dato, pide nombre y confirmación de que ya transfirió, y recién ahí
+     arma el mensaje de WhatsApp — el dueño siempre verifica la
+     transferencia en su cuenta antes de coordinar la entrega.
+     ===================================================================== */
+
+  function pintarPago() {
+    $$(".pago-opcion").forEach((btn) => {
+      const activo = btn.dataset.pagoMetodo === Pago.metodo;
+      btn.classList.toggle("is-activo", activo);
+      btn.setAttribute("aria-pressed", activo ? "true" : "false");
+    });
+
+    const cont = $("[data-pago-detalle]");
+    if (!cont) return;
+
+    if (Pago.metodo === "efectivo") {
+      cont.innerHTML = `
+        <p class="cart__pago-nota">Pagás en efectivo al recibir o retirar tu pedido.</p>
+        <a class="btn btn--wa cart__cta" id="cart-wa" href="${escapar(waLink(Carrito.mensaje(Pago)))}" target="_blank" rel="noopener">${ICONO_WA} <span>Hacer el pedido</span></a>
+        <p class="cart__nota">Se abre WhatsApp con el pedido ya escrito. Ahí te confirmamos stock y coordinamos la entrega.</p>`;
+      return;
     }
+
+    if (Pago.metodo === "transferencia") {
+      const datoRow = (etiqueta, valor) => `
+        <div class="pago-dato-row">
+          <span class="pago-dato-label">${escapar(etiqueta)}</span>
+          <span class="pago-dato-valor">${escapar(valor)}</span>
+          <button type="button" class="pago-dato-copy" data-pago-copiar="${escapar(valor)}">Copiar</button>
+        </div>`;
+
+      const { suma } = Carrito.total();
+
+      cont.innerHTML = `
+        <div class="pago-transferencia">
+          <span class="pago-transferencia-title">Datos para transferir</span>
+          <div class="pago-transferencia-datos">
+            ${datoRow("Titular", CONFIG.pago.titular)}
+            ${datoRow("Alias", CONFIG.pago.alias)}
+            ${datoRow("CVU", CONFIG.pago.cvu)}
+          </div>
+          <p class="pago-transferencia-nota">Transferí ${suma > 0 ? `el total (${CONFIG.moneda} ${formatoPrecio.format(suma)})` : "el total de tu pedido"} y dejanos tu nombre para poder identificarla.</p>
+          <input type="text" class="pago-transferencia-nombre" data-pago-nombre placeholder="Tu nombre y apellido" aria-label="Tu nombre y apellido, para identificar la transferencia" value="${escapar(Pago.nombre)}">
+          <label class="pago-transferencia-check">
+            <input type="checkbox" data-pago-confirmado ${Pago.confirmado ? "checked" : ""}>
+            Ya realicé la transferencia
+          </label>
+          ${Pago.error ? `<p class="pago-transferencia-error">${escapar(Pago.error)}</p>` : ""}
+          <button type="button" class="btn btn--wa cart__cta" data-pago-confirmar>${ICONO_WA} <span>Confirmar pedido por transferencia</span></button>
+        </div>`;
+      return;
+    }
+
+    cont.innerHTML = `<p class="cart__pago-nota cart__pago-nota--aviso">Elegí Efectivo o Transferencia para hacer el pedido.</p>`;
+  }
+
+  function copiarAlPortapapeles(valor) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(valor).catch(() => copiarConTextarea(valor));
+    }
+    return copiarConTextarea(valor);
+  }
+
+  function copiarConTextarea(valor) {
+    const tmp = document.createElement("textarea");
+    tmp.value = valor;
+    tmp.style.position = "fixed";
+    tmp.style.opacity = "0";
+    document.body.appendChild(tmp);
+    tmp.select();
+    try { document.execCommand("copy"); } catch { /* último recurso, sin más fallback */ }
+    document.body.removeChild(tmp);
+    return Promise.resolve();
+  }
+
+  function copiarDato(btn) {
+    copiarAlPortapapeles(btn.dataset.pagoCopiar).then(() => {
+      const original = btn.textContent;
+      btn.textContent = "¡Copiado!";
+      btn.classList.add("is-ok");
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove("is-ok");
+      }, 1200);
+    });
+  }
+
+  function confirmarPorTransferencia() {
+    if (!Carrito.items.some((it) => it.cantidad > 0)) return;
+
+    if (!Pago.confirmado) {
+      Pago.error = 'Marcá "Ya realicé la transferencia" antes de confirmar.';
+      pintarPago();
+      return;
+    }
+    const nombre = (Pago.nombre || "").trim();
+    if (!nombre) {
+      Pago.error = "Escribí tu nombre y apellido para identificar la transferencia.";
+      pintarPago();
+      return;
+    }
+
+    window.open(waLink(Carrito.mensaje({ metodo: "transferencia", nombre })), "_blank", "noopener");
+
+    Carrito.vaciar();
+    Pago.metodo = null;
+    Pago.nombre = "";
+    Pago.confirmado = false;
+    Pago.error = null;
+    pintarPago();
   }
 
   function initCarrito() {
@@ -728,7 +867,29 @@
         if (e.target.closest("[data-mas]"))    Carrito.cambiar(cat, slug, variante, +1);
         if (e.target.closest("[data-menos]"))  Carrito.cambiar(cat, slug, variante, -1);
         if (e.target.closest("[data-quitar]")) Carrito.quitar(cat, slug, variante);
+        return;
       }
+
+      const btnMetodo = e.target.closest("[data-pago-metodo]");
+      if (btnMetodo) {
+        Pago.metodo = Pago.metodo === btnMetodo.dataset.pagoMetodo ? null : btnMetodo.dataset.pagoMetodo;
+        Pago.error = null;
+        pintarPago();
+        return;
+      }
+
+      const btnCopiar = e.target.closest("[data-pago-copiar]");
+      if (btnCopiar) { copiarDato(btnCopiar); return; }
+
+      if (e.target.closest("[data-pago-confirmar]")) { confirmarPorTransferencia(); return; }
+    });
+
+    document.addEventListener("input", (e) => {
+      if (e.target.matches("[data-pago-nombre]")) Pago.nombre = e.target.value;
+    });
+
+    document.addEventListener("change", (e) => {
+      if (e.target.matches("[data-pago-confirmado]")) Pago.confirmado = e.target.checked;
     });
 
     document.addEventListener("keydown", (e) => {
