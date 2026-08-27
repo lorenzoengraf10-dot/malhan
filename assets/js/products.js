@@ -142,7 +142,7 @@ const PRODUCTOS = {
       familia: "Oriental",
       precio: 73327,
       desc: "Pimienta negra, tabaco y piña sobre un fondo amaderado con vainilla y ámbar.",
-      img: "",
+      img: "assets/img/stock/asad.jpg",
       detalles: ["Salida: pimienta negra, tabaco, piña", "Corazón: pachulí, café, iris", "Fondo: vainilla, ámbar, madera seca, benjuí, ládano"]
     },
     {
@@ -150,7 +150,7 @@ const PRODUCTOS = {
       familia: "Oriental gourmand",
       precio: 89761,
       desc: "Lavanda y pimienta rosa sobre cacao y vainilla bourbon. Cálido, dulce y con muy buena proyección.",
-      img: "",
+      img: "assets/img/stock/asad-bourbon.jpg",
       detalles: ["Salida: lavanda, ciruela mirabel, pimienta rosa", "Corazón: cacao, nuez moscada, davana", "Fondo: vainilla bourbon, ámbar, vetiver"]
     },
     {
@@ -158,7 +158,7 @@ const PRODUCTOS = {
       familia: "Cítrico amaderado",
       precio: 69860,
       desc: "Mandarina y naranja sobre caramelo y haba tonka, cerrando en cedro y vetiver. Fresco con fondo amaderado.",
-      img: "",
+      img: "assets/img/stock/odyssey-mandarin-sky.jpg",
       detalles: ["Salida: mandarina, naranja, azafrán, salvia", "Corazón: caramelo, haba tonka, caléndula", "Fondo: ambroxan, cedro, vetiver"]
     },
     {
@@ -166,7 +166,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 73583,
       desc: "Orquídea y heliotropo sobre frutas tropicales, cerrando en vainilla y sándalo. El clásico rosa de Lattafa.",
-      img: "",
+      img: "assets/img/stock/yara-rosa.jpg",
       detalles: ["Salida: orquídea, heliotropo, mandarina", "Corazón: acorde gourmand, frutas tropicales", "Fondo: vainilla, almizcle, sándalo"]
     },
     {
@@ -174,7 +174,7 @@ const PRODUCTOS = {
       familia: "Frutal gourmand",
       precio: 60380,
       desc: "Grosella negra y mandarina verde sobre caramelo de fresa y gardenia. Dulce, frutal y fácil de llevar.",
-      img: "",
+      img: "assets/img/stock/yara-candy.jpg",
       detalles: ["Salida: grosella negra, mandarina verde", "Corazón: caramelo de fresa, gardenia", "Fondo: vainilla, almizcle, ámbar, sándalo"]
     },
     {
