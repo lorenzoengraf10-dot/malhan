@@ -223,7 +223,7 @@ const PRODUCTOS = {
       familia: "Aromático frutal",
       precio: 101511,
       desc: "Bergamota, ananá y pomelo sobre pachulí y cedro, cerrando en musgo de roble y ámbar.",
-      img: "",
+      img: "assets/img/hombre/hawas-black.jpg",
       detalles: ["Salida: bergamota, ananá, pomelo", "Corazón: pachulí, cedro, jazmín", "Fondo: musgo de roble, madera, ámbar"]
     },
     {
@@ -239,7 +239,7 @@ const PRODUCTOS = {
       familia: "Frutal gourmand",
       precio: 78269,
       desc: "Hoja de higo, agua de coco y jengibre sobre higo y menta, cerrando en haba tonka, almizcle y sándalo.",
-      img: "",
+      img: "assets/img/hombre/hawas-tropical.jpg",
       detalles: ["Salida: hoja de higo, agua de coco, jengibre", "Corazón: coco, higo, menta", "Fondo: haba tonka, almizcle, sándalo"]
     },
     {
@@ -255,7 +255,7 @@ const PRODUCTOS = {
       familia: "Aromático fresco",
       precio: 98023,
       desc: "Versión fría del Hawas, con salida cítrica de manzana, limón y bergamota siciliana realzada por anís estrellado, corazón de ciruela y azahar, y fondo amaderado con musgo y ámbar.",
-      img: "",
+      img: "assets/img/hombre/hawas-ice.jpg",
       detalles: ["Salida: manzana, limón italiano, bergamota siciliana, anís estrellado", "Corazón: ciruela, azahar, cardamomo", "Fondo: almizcle, ámbar, madera a la deriva, musgo"]
     },
     {
@@ -263,7 +263,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 69903,
       desc: "Manzana, canela y lavanda silvestre sobre bergamota, con un corazón floral de azahar y lirio de los valles que cierra en vainilla, haba tonka, ámbar y pachulí.",
-      img: "",
+      img: "assets/img/hombre/9-pm.jpg",
       detalles: ["Salida: manzana, canela, lavanda silvestre, bergamota", "Corazón: azahar, lirio de los valles", "Fondo: vainilla, haba tonka, ámbar, pachulí"]
     },
     {
@@ -629,7 +629,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 94684,
       desc: "Apertura jugosa de frutos rojos, ruibarbo y lychee sobre un corazón de rosa, incienso y cedro, cerrando en vainilla, almizcle y ámbar gris.",
-      img: "",
+      img: "assets/img/mujer/hawas-diva.jpg",
       detalles: ["Salida: frutos rojos, ruibarbo, lychee", "Corazón: rosa, incienso, cedro", "Fondo: vainilla, almizcle, ámbar gris"]
     },
     {
