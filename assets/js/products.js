@@ -193,7 +193,7 @@ const PRODUCTOS = {
       familia: "Floral gourmand",
       precio: 94171,
       desc: "Caramelo y leche sobre miel y flores blancas, cerrando en vainilla y praliné. Dulce y goloso.",
-      img: "",
+      img: "assets/img/stock/eclaire.jpg",
       detalles: ["Salida: caramelo, leche, azúcar", "Corazón: miel, flores blancas", "Fondo: vainilla, praliné, almizcle"]
     },
     {
@@ -201,7 +201,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 59395,
       desc: "Canela y cardamomo sobre café, vainilla y haba tonka. Intenso y envolvente.",
-      img: "",
+      img: "assets/img/stock/khamrah-qahwa.jpg",
       detalles: ["Salida: canela, cardamomo, jengibre", "Corazón: praliné, frutos confitados, flores blancas", "Fondo: vainilla, café, haba tonka, benjuí, almizcle"]
     },
     {
@@ -209,7 +209,7 @@ const PRODUCTOS = {
       familia: "Chypre frutal",
       precio: 49337,
       desc: "Durazno, maracuyá y frambuesa sobre un fondo de almizcle, vainilla y sándalo. Fresco y dulce.",
-      img: "",
+      img: "assets/img/stock/confidential-private-gold.jpg",
       detalles: ["Salida: durazno, maracuyá, pera, frambuesa, grosella negra", "Corazón: lirio de los valles", "Fondo: almizcle, vainilla, pachulí, sándalo, heliotropo"]
     }
   ],
