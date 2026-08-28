@@ -431,7 +431,7 @@ const PRODUCTOS = {
       familia: "Aromático cítrico",
       precio: 99284,
       desc: "Mandarina, limón y bergamota sobre cedro, cerrando en sándalo y ámbar.",
-      img: "",
+      img: "assets/img/hombre/pisa.jpg",
       detalles: ["Salida: mandarina, limón, bergamota", "Corazón: cedro", "Fondo: sándalo, ámbar"]
     },
     {
@@ -439,7 +439,7 @@ const PRODUCTOS = {
       familia: "Oriental fougère",
       precio: 63055,
       desc: "Apertura fresca de bergamota que da paso a un corazón especiado de lavanda, pimienta de Sichuán, anís estrellado y nuez moscada, sobre un fondo ambroxado con vainilla.",
-      img: "",
+      img: "assets/img/hombre/salvo.jpg",
       detalles: ["Salida: bergamota", "Corazón: lavanda, pimienta de Sichuán, anís estrellado, nuez moscada", "Fondo: ambroxán, vainilla"]
     },
     {
@@ -447,7 +447,7 @@ const PRODUCTOS = {
       familia: "Aromático especiado",
       precio: 57020,
       desc: "Versión más intensa del Salvo: pomelo, cardamomo, canela y nuez moscada en la salida, corazón de vainilla y lavanda, y un fondo ambarado con vetiver, regaliz y pachulí.",
-      img: "",
+      img: "assets/img/hombre/salvo-elixir.jpg",
       detalles: ["Salida: pomelo, cardamomo, canela, nuez moscada", "Corazón: vainilla, lavanda", "Fondo: ámbar, vetiver, regaliz, pachulí"]
     },
     {
@@ -455,7 +455,7 @@ const PRODUCTOS = {
       familia: "Aromático frutal",
       precio: 51520,
       desc: "Salida frutal de manzana y jengibre sobre bergamota, corazón herbal de salvia, enebro y geranio, y fondo amaderado con cedro, vetiver e incienso.",
-      img: "",
+      img: "assets/img/hombre/yeah-man.jpg",
       detalles: ["Salida: manzana, jengibre, bergamota", "Corazón: salvia, bayas de enebro, geranio", "Fondo: amberwood, cedro, vetiver, incienso, haba tonka"]
     },
     {
@@ -463,7 +463,7 @@ const PRODUCTOS = {
       familia: "Aromático frutal",
       precio: 50835,
       desc: "Edición parfum de mayor concentración sobre la misma base: manzana, bergamota y jengibre en la apertura, corazón de geranio, enebro y salvia, y fondo amaderado ambarado con incienso y haba tonka.",
-      img: "",
+      img: "assets/img/hombre/yeah-man-parfum.jpg",
       detalles: ["Salida: manzana, bergamota, jengibre", "Corazón: geranio, bayas de enebro, salvia", "Fondo: amberwood, cedro, incienso, haba tonka, vetiver"]
     },
     {
