@@ -271,7 +271,7 @@ const PRODUCTOS = {
       familia: "Aromático acuático",
       precio: 80837,
       desc: "Bergamota y mandarina frescas sobre un corazón ambarino y amaderado, que cierra en almizcle, pachulí y un toque de especias.",
-      img: "",
+      img: "assets/img/hombre/turathi-blue.jpg",
       detalles: ["Salida: bergamota, mandarina", "Corazón: ámbar, notas amaderadas", "Fondo: almizcle, pachulí, especias"]
     },
     {
@@ -279,7 +279,7 @@ const PRODUCTOS = {
       familia: "Ambarino amaderado",
       precio: 120279,
       desc: "Azafrán, bergamota y elemí abren con un toque especiado, sobre un corazón de oud y rosa búlgara que cierra en haba tonka, ámbar, almizcle blanco y musgo de roble.",
-      img: "",
+      img: "assets/img/hombre/dubai-night.jpg",
       detalles: ["Salida: azafrán, bergamota, elemí", "Corazón: oud, rosa búlgara, lirio de los valles", "Fondo: haba tonka, ámbar, almizcle blanco, musgo de roble"]
     },
     {
@@ -287,7 +287,7 @@ const PRODUCTOS = {
       familia: "Aromático especiado",
       precio: 95904,
       desc: "Pomelo, limón y menta con un toque de pimienta rosa se funden en un corazón especiado de jengibre, melón y nuez moscada, que cierra en incienso, sándalo, ámbar y cedro.",
-      img: "",
+      img: "assets/img/hombre/club-de-nuit-iconic.jpg",
       detalles: ["Salida: pomelo, limón, menta, pimienta rosa", "Corazón: jengibre, melón, jazmín, nuez moscada", "Fondo: incienso, sándalo, ámbar, cedro, pachulí"]
     },
     {
@@ -295,7 +295,7 @@ const PRODUCTOS = {
       familia: "Amaderado especiado",
       precio: 82871,
       desc: "Limón, ananá y bergamota dan una apertura fresca y afrutada, sobre un corazón ahumado de abedul, jazmín y rosa que cierra en almizcle, ámbar gris, pachulí y vainilla.",
-      img: "",
+      img: "assets/img/hombre/club-de-nuit-intense-man-edt.jpg",
       detalles: ["Salida: limón, ananá, bergamota, grosella negra", "Corazón: abedul, jazmín, rosa", "Fondo: almizcle, ámbar gris, pachulí, vainilla"]
     },
     {
