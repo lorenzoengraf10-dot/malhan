@@ -351,7 +351,7 @@ const PRODUCTOS = {
       familia: "Amaderado aromático",
       precio: 94812,
       desc: "Jengibre, cardamomo y bergamota abren con un toque especiado, seguidos de pimienta rosa, grosella negra y rosa turca en el corazón. El fondo de vainilla, cedro y pachulí cierra cálido y amaderado.",
-      img: "",
+      img: "assets/img/hombre/spectre-ghost.jpg",
       detalles: ["Salida: jengibre, cardamomo, bergamota", "Corazón: pimienta rosa, grosella negra, rosa", "Fondo: vainilla, cedro, pachulí"]
     },
     {
@@ -359,7 +359,7 @@ const PRODUCTOS = {
       familia: "Amaderado gourmand",
       precio: 104079,
       desc: "Canela, azahar y cardamomo se mezclan con bergamota fresca, sobre un corazón de vainilla bourbon. Cierra dulce y amaderado, con praliné, almizcle y madera de guayaco.",
-      img: "",
+      img: "assets/img/hombre/liquid-brun.jpg",
       detalles: ["Salida: canela, azahar, cardamomo, bergamota", "Corazón: vainilla bourbon, elemí", "Fondo: praliné, ambroxan, almizcle, madera de guayaco"]
     },
     {
@@ -367,7 +367,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 85439,
       desc: "Pimienta rosa, azafrán y pomelo dan una apertura especiada, con tabaco y vainilla en el corazón. El fondo de ámbar claro, incienso y pachulí lo hace denso y envolvente, ideal para la noche.",
-      img: "",
+      img: "assets/img/hombre/asad-elixir.jpg",
       detalles: ["Salida: pimienta rosa, azafrán, pomelo", "Corazón: tabaco, vainilla, cedro", "Fondo: ámbar claro, incienso, pachulí, cashmerán"]
     },
     {
@@ -375,7 +375,7 @@ const PRODUCTOS = {
       familia: "Oriental acuático",
       precio: 60743,
       desc: "Lavanda y pimienta negra abren con frescura, seguidas de agua de coco, iris y un toque salino en el corazón. Cierra cálido, con vainilla e incienso de fondo, en un perfil tropical poco convencional.",
-      img: "",
+      img: "assets/img/hombre/asad-zanzibar.jpg",
       detalles: ["Salida: lavanda, pimienta negra", "Corazón: agua de coco, iris, sal", "Fondo: vainilla, incienso"]
     },
     {
