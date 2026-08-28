@@ -391,7 +391,7 @@ const PRODUCTOS = {
       familia: "Aromático amaderado",
       precio: 56869,
       desc: "Manzana, jengibre y bergamota sobre lavanda, salvia y enebro, cerrando en madera de ámbar, cedro y vetiver.",
-      img: "",
+      img: "assets/img/hombre/fakhar-silver.jpg",
       detalles: ["Salida: manzana, jengibre, bergamota", "Corazón: lavanda, salvia, enebro", "Fondo: madera de ámbar, haba tonka, cedro, vetiver"]
     },
     {
@@ -407,7 +407,7 @@ const PRODUCTOS = {
       familia: "Amaderado aromático",
       precio: 44479,
       desc: "Manzana y bergamota sobre canela y notas amaderadas, cerrando en almizcle y vainilla.",
-      img: "",
+      img: "assets/img/hombre/hayaati-masc.jpg",
       detalles: ["Salida: manzana, bergamota", "Corazón: canela, notas amaderadas", "Fondo: almizcle, vainilla"]
     },
     {
@@ -415,7 +415,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 80667,
       desc: "Mandarina, canela y lavanda sobre iris, ciprés y benjuí, cerrando en vainilla, haba tonka y ámbar.",
-      img: "",
+      img: "assets/img/hombre/his-confession.jpg",
       detalles: ["Salida: mandarina, canela, lavanda", "Corazón: iris, ciprés, benjuí", "Fondo: vainilla, haba tonka, pachulí, ámbar"]
     },
     {
@@ -423,7 +423,7 @@ const PRODUCTOS = {
       familia: "Oriental especiado",
       precio: 58004,
       desc: "Especias, pimienta de Jamaica y mandarina sobre incienso, labdano y azahar, cerrando en tabaco, praliné y ámbar.",
-      img: "",
+      img: "assets/img/hombre/khamrah-dukhan.jpg",
       detalles: ["Salida: especias, pimienta de Jamaica, mandarina", "Corazón: incienso, labdano, azahar", "Fondo: praliné, tabaco, ámbar, haba tonka"]
     },
     {
