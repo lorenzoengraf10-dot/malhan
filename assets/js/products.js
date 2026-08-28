@@ -399,7 +399,7 @@ const PRODUCTOS = {
       familia: "Aromático amaderado",
       precio: 57768,
       desc: "Cardamomo, pimienta y bergamota sobre lavanda, canela y salvia, cerrando en sándalo, almizcle y pachulí.",
-      img: "",
+      img: "assets/img/hombre/habik-for-men.jpg",
       detalles: ["Salida: cardamomo, pimienta, bergamota", "Corazón: lavanda, canela, salvia", "Fondo: haba tonka, sándalo, almizcle, pachulí"]
     },
     {
@@ -495,7 +495,7 @@ const PRODUCTOS = {
       familia: "Aromático afrutado",
       precio: 169241,
       desc: "Mismo perfil que el Bharara King en formato grande: naranja, bergamota y limón en la salida, corazón frutal dulce, y fondo de vainilla, almizcle blanco y ámbar.",
-      img: "",
+      img: "assets/img/hombre/bharara-king-150ml.jpg",
       detalles: ["Salida: naranja, bergamota, limón", "Corazón: notas frutales", "Fondo: vainilla, almizcle blanco, ámbar"]
     },
     {
