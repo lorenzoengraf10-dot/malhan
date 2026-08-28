@@ -343,7 +343,7 @@ const PRODUCTOS = {
       familia: "Aromático amaderado",
       precio: 60529,
       desc: "Jengibre, bergamota y limón dan una apertura fresca y especiada, con albahaca y hojas de violeta en el corazón. Cierra amaderado, con haba tonka, vara de oro y cedro de fondo.",
-      img: "",
+      img: "assets/img/hombre/uomo-intense.jpg",
       detalles: ["Salida: jengibre, bergamota, limón", "Corazón: especias, pimienta blanca, albahaca, hojas de violeta", "Fondo: haba tonka, vara de oro, cedro"]
     },
     {
