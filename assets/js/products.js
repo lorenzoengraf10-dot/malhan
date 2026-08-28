@@ -311,7 +311,7 @@ const PRODUCTOS = {
       familia: "Amaderado aromático",
       precio: 77564,
       desc: "Naranja y pomelo con un toque herbal de artemisia dan paso a un corazón fresco de menta y lavanda, que cierra en ambroxan, ciprés y pachulí.",
-      img: "",
+      img: "assets/img/hombre/odyssey-aqua.jpg",
       detalles: ["Salida: naranja, pomelo, artemisia", "Corazón: menta, lavanda", "Fondo: ambroxan, ciprés, pachulí"]
     },
     {
@@ -319,7 +319,7 @@ const PRODUCTOS = {
       familia: "Oriental fougère",
       precio: 77093,
       desc: "Pimienta rosa, pomelo y yuzu se abren sobre un corazón marino con hoja de violeta, que cierra en una base ambarina y amaderada.",
-      img: "",
+      img: "assets/img/hombre/odyssey-homme-blanco.jpg",
       detalles: ["Salida: pimienta rosa, pomelo, yuzu", "Corazón: notas marinas, hoja de violeta", "Fondo: madera ambarina, ámbar, madera de gaiac"]
     },
     {
@@ -327,7 +327,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 59695,
       desc: "Cardamomo, mandarina y neroli abren paso a azahar y rosa, sobre un fondo envolvente de vainilla, sándalo y ámbar. Un oriental amaderado potente, pensado para la noche.",
-      img: "",
+      img: "assets/img/hombre/odyssey-homme-negro.jpg",
       detalles: ["Salida: cardamomo, mandarina, neroli", "Corazón: azahar, rosa", "Fondo: vainilla, sándalo, ámbar"]
     },
     {
@@ -335,7 +335,7 @@ const PRODUCTOS = {
       familia: "Aromático amaderado",
       precio: 59373,
       desc: "Naranja, limón y bergamota frescos se apoyan en salvia y enebro, sobre una base amaderada de cedro, vetiver y haba tonka. Versátil, pensado para el uso diario.",
-      img: "",
+      img: "assets/img/hombre/odyssey-mega.jpg",
       detalles: ["Salida: naranja, limón, bergamota, jengibre", "Corazón: ananá, salvia, enebro, geranio", "Fondo: almizcle, cedro, haba tonka, vetiver"]
     },
     {
