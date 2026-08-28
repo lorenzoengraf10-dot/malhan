@@ -866,7 +866,7 @@ const PRODUCTOS = {
       familia: "Oriental fougère",
       precio: 150901,
       desc: "Versión extrait de Liquid Brun, con cardamomo, lavanda y cítricos en la apertura y azahar y rosa en el corazón. El fondo de vainilla, haba tonka, ámbar y musgo de roble le da mayor cuerpo y duración que el original.",
-      img: "",
+      img: "assets/img/mixto/liquid-brun-limited-edition.jpg",
       detalles: ["Salida: cardamomo, lavanda, cítricos", "Corazón: azahar, madera de guayaco, rosa", "Fondo: vainilla, haba tonka, ámbar, musgo de roble"]
     },
     {
