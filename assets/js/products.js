@@ -471,7 +471,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 87065,
       desc: "Fragancia cálida y envolvente pensada para la noche, con salida especiada de cardamomo, corazón dulce de toffee y fondo amaderado ambarado.",
-      img: "",
+      img: "assets/img/hombre/rayhaan-wolf.jpg",
       detalles: ["Salida: cardamomo", "Corazón: toffee", "Fondo: amberwood"]
     },
     {
@@ -479,7 +479,7 @@ const PRODUCTOS = {
       familia: "Oriental especiado",
       precio: 127212,
       desc: "Apertura fresca de lavanda, limón y bergamota que da paso a un corazón cálido de miel, canela, cashmeran y jazmín, y cierra en vainilla, tabaco y haba tonka.",
-      img: "",
+      img: "assets/img/hombre/rayhaan-italia.jpg",
       detalles: ["Salida: lavanda, limón, bergamota", "Corazón: miel, canela, cashmeran, jazmín", "Fondo: vainilla, hoja de tabaco, haba tonka"]
     },
     {
@@ -487,7 +487,7 @@ const PRODUCTOS = {
       familia: "Aromático afrutado",
       precio: 131000,
       desc: "Salida cítrica de naranja, bergamota y limón sobre un corazón de notas frutales dulces, con fondo cálido de vainilla, almizcle blanco y ámbar.",
-      img: "",
+      img: "assets/img/hombre/bharara-king-100ml.jpg",
       detalles: ["Salida: naranja, bergamota, limón", "Corazón: notas frutales", "Fondo: vainilla, almizcle blanco, ámbar"]
     },
     {
@@ -503,7 +503,7 @@ const PRODUCTOS = {
       familia: "Aromático especiado",
       precio: 67207,
       desc: "Lavanda, menta y salvia sobre un corazón dulce de vainilla, tabaco y azahar, cerrando en haba tonka, benjuí y ládano. Elegante y envolvente, con ese perfil dulce-especiado de los grandes clásicos franceses.",
-      img: "",
+      img: "assets/img/hombre/the-kingdom.jpg",
       detalles: ["Salida: lavanda, menta, salvia", "Corazón: vainilla, tabaco, azahar", "Fondo: haba tonka, benjuí, ládano"]
     },
     {
@@ -511,7 +511,7 @@ const PRODUCTOS = {
       familia: "Aromático fougère",
       precio: 58496,
       desc: "Jengibre, pomelo y bergamota sobre un corazón herbal de romero, salvia y geranio, cerrando en ambroxán, ámbar y ládano. Fresco y moderno, para el día y la noche.",
-      img: "",
+      img: "assets/img/hombre/jean-lowe-inmortal.jpg",
       detalles: ["Salida: jengibre, pomelo, bergamota", "Corazón: romero, notas acuáticas, salvia, geranio", "Fondo: ambroxán, ámbar, ládano"]
     }
   ],
