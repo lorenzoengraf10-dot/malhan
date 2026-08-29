@@ -891,7 +891,7 @@ const PRODUCTOS = {
       familia: "Aromático frutal",
       precio: 109021,
       desc: "Manzana y canela con un toque ahumado en la apertura, tabaco y musgo en el corazón. Cierra con vainilla bourbon y almizcle, en un perfil aromático frutal con carácter.",
-      img: "",
+      img: "assets/img/mixto/veneno.jpg",
       detalles: ["Salida: manzana, humo, canela", "Corazón: tabaco, musgo", "Fondo: vainilla bourbon, almizcle"]
     },
     {
@@ -899,7 +899,7 @@ const PRODUCTOS = {
       familia: "Floral amaderado",
       precio: 114072,
       desc: "Mango, limón y jengibre abren jugosos y frescos, con pimienta rosa, jazmín y praliné en el corazón. El fondo de haba tonka, cedro y ámbar gris lo cierra cálido y envolvente.",
-      img: "",
+      img: "assets/img/mixto/vulcan-feu.jpg",
       detalles: ["Salida: mango, limón, jengibre, ruibarbo", "Corazón: pimienta rosa, jazmín, violeta, praliné", "Fondo: haba tonka, cedro, ámbar gris, musgo"]
     },
     {
@@ -1059,7 +1059,7 @@ const PRODUCTOS = {
       familia: "Oriental ambarado",
       precio: 41868,
       desc: "Composición lineal y envolvente centrada en el ámbar: apertura de lavanda fresca que se funde con un corazón ambarado y un fondo de vainilla.",
-      img: "",
+      img: "assets/img/mixto/your-touch-amber.jpg",
       detalles: ["Salida: lavanda", "Corazón: ámbar", "Fondo: vainilla"]
     },
     {
@@ -1067,7 +1067,7 @@ const PRODUCTOS = {
       familia: "Oriental vainillado",
       precio: 58389,
       desc: "Apertura de pimienta rosa, violeta y enebro, corazón cálido de toffee, canela, lavanda y salvia romana, cerrando en vainilla, haba tonka, ámbar y gamuza.",
-      img: "",
+      img: "assets/img/mixto/your-touch-intense.jpg",
       detalles: ["Salida: pimienta rosa, violeta, enebro", "Corazón: toffee, canela, lavanda, salvia romana", "Fondo: vainilla, haba tonka, ámbar, gamuza"]
     },
     {
