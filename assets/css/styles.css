@@ -580,6 +580,8 @@ h1,h2,h3,h4{
 /* ============================ CLIENTES ============================ */
 
 .clientes{
+  position:relative;
+  overflow:hidden;
   padding:clamp(26px, 3.5vw, 44px) 0;
   background:var(--brown-deep);
   color:var(--cream);
@@ -1128,11 +1130,11 @@ h1,h2,h3,h4{
 @media (max-width: 620px){
   .eyebrow{ font-size:.7rem; letter-spacing:.13em; }
 
-  .testis{ grid-template-columns:1fr 1fr; gap:8px; }
-  .testi{ padding:14px 11px 10px; }
-  .testi::before{ font-size:1.6rem; left:10px; }
-  .testi__texto{ font-size:.78rem; line-height:1.28; }
-  .testi__autor{ font-size:.66rem; }
+  .testis{ grid-template-columns:1fr 1fr; gap:11px; }
+  .testi{ padding:19px 15px 15px; }
+  .testi::before{ font-size:2rem; left:12px; }
+  .testi__texto{ font-size:.88rem; line-height:1.34; }
+  .testi__autor{ font-size:.74rem; }
 
   .footer__inner{ grid-template-columns:1fr; }
   .grid{ grid-template-columns:repeat(auto-fill, minmax(155px, 1fr)); gap:14px; }
