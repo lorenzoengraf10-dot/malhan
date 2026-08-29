@@ -404,6 +404,33 @@
   }
 
   /* ---------------------------------------------------------------------
+     Menú de categorías (tarjetas grandes con foto)
+     -------------------------------------------------------------------
+     "Todos" va siempre primero y a mano (mismo criterio que la pastilla
+     "Todos" del header); el resto sale de CATEGORIAS, en su orden.
+     --------------------------------------------------------------------- */
+
+  function renderCategoryShowcase() {
+    const cont = $("[data-menu-cats]");
+    if (!cont) return;
+
+    const tile = (id, nombre, foto, activaPorDefecto, ancha) => `
+      <button type="button"
+              class="catshowcase__tile${foto ? "" : " catshowcase__tile--sinfoto"}${activaPorDefecto ? " catshowcase__tile--active" : ""}${ancha ? " catshowcase__tile--wide" : ""}"
+              data-filtro-tile="${id}">
+        ${foto ? `<img class="catshowcase__photo" src="${escapar(foto)}" alt="" loading="lazy">` : ""}
+        <span class="catshowcase__scrim"></span>
+        <span class="catshowcase__label">${escapar(nombre)}</span>
+      </button>`;
+
+    cont.innerHTML = `
+      <div class="catshowcase__grid">
+        ${tile("todos", "Todos", FOTO_TODOS, true, true)}
+        ${Object.entries(CATEGORIAS).map(([id, cat]) => tile(id, cat.nombre, cat.foto, false, false)).join("")}
+      </div>`;
+  }
+
+  /* ---------------------------------------------------------------------
      Catálogo completo
      --------------------------------------------------------------------- */
 
@@ -436,16 +463,28 @@
     const secciones = $$(".catsec");
     if (!barra || !secciones.length) return;
 
+    function aplicarFiltro(filtro) {
+      $$(".pill[data-filtro]", barra).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === filtro));
+      $$(".catshowcase__tile[data-filtro-tile]").forEach((t) => t.classList.toggle("catshowcase__tile--active", t.dataset.filtroTile === filtro));
+      secciones.forEach((s) => { s.hidden = filtro !== "todos" && s.dataset.cat !== filtro; });
+    }
+
     barra.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-filtro]");
       if (!btn) return;
-      const filtro = btn.dataset.filtro;
-
-      $$(".pill[data-filtro]", barra).forEach((p) => p.classList.toggle("is-active", p === btn));
-      secciones.forEach((s) => { s.hidden = filtro !== "todos" && s.dataset.cat !== filtro; });
-
+      aplicarFiltro(btn.dataset.filtro);
       $("#catalogo")?.scrollIntoView({ block: "start" });
     });
+
+    const vidriera = $("[data-menu-cats]");
+    if (vidriera) {
+      vidriera.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-filtro-tile]");
+        if (!btn) return;
+        aplicarFiltro(btn.dataset.filtroTile);
+        $("#catalogo")?.scrollIntoView({ block: "start" });
+      });
+    }
   }
 
   /* ---------------------------------------------------------------------
@@ -480,6 +519,7 @@
       }
 
       $$(".pill[data-filtro]", catnav).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === "todos"));
+      $$(".catshowcase__tile[data-filtro-tile]").forEach((t) => t.classList.toggle("catshowcase__tile--active", t.dataset.filtroTile === "todos"));
 
       let totalVisible = 0;
       secciones.forEach((sec) => {
@@ -1263,6 +1303,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     renderHeader();
+    renderCategoryShowcase();
     renderCatalogoCompleto();
     renderTestimonios();
     renderFooter();
