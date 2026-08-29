@@ -97,7 +97,7 @@ const CONFIG = {
 const CATEGORIAS = {
   hombre: { nombre: "Hombre", foto: "assets/img/categorias/hombre.jpg" },
   mujer: { nombre: "Mujer", foto: "assets/img/categorias/mujer.jpg" },
-  mixto: { nombre: "Mixto", foto: "" },
+  mixto: { nombre: "Mixto", foto: "assets/img/categorias/mixto.jpg" },
 
   /* Selección propia: los perfumes que más recomendamos, de cualquier
      género. No se arma sola juntando las otras categorías — hay que
