@@ -83,17 +83,34 @@ const CONFIG = {
    -------------------------------------------------------------------------
    Cada categoría es una sección del catálogo (viven todas en la misma
    página, index.html). De acá salen solas la barra de filtros, la
-   navegación de arriba, el footer y los títulos de cada sección.
+   navegación de arriba, el footer, los títulos de cada sección y las
+   tarjetas grandes con foto de arriba del catálogo (el menú de portadas,
+   igual que en ROAR).
+
+   El orden acá abajo es el orden en que aparecen los menús en el sitio
+   (después de "Todos", que va siempre primero y no se edita acá).
+
+   foto (texto) OPCIONAL. Portada para la tarjeta grande de esa categoría.
+                Dejala en "" hasta tener la imagen: la tarjeta se ve igual,
+                con un fondo liso en vez de foto.
    ========================================================================= */
 const CATEGORIAS = {
-  /* Lo que ya tenemos confirmado y listo para pedir (foto + precio real).
-     Al frente de todo porque es lo que un cliente puede comprar hoy. */
-  stock: { nombre: "Stock" },
+  hombre: { nombre: "Hombre", foto: "" },
+  mujer: { nombre: "Mujer", foto: "" },
+  mixto: { nombre: "Mixto", foto: "" },
 
-  hombre: { nombre: "Hombre" },
-  mujer: { nombre: "Mujer" },
-  mixto: { nombre: "Mixto" }
+  /* Selección propia: los perfumes que más recomendamos, de cualquier
+     género. No se arma sola juntando las otras categorías — hay que
+     cargar sus productos a mano en PRODUCTOS.recomendacion, más abajo. */
+  recomendacion: { nombre: "Nuestra Recomendación", foto: "" },
+
+  /* Lo que ya tenemos confirmado y listo para pedir (foto + precio real). */
+  stock: { nombre: "Stock", foto: "" }
 };
+
+/* Portada de la tarjeta "Todos" (la que muestra el catálogo completo).
+   Dejala en "" hasta tener la imagen. */
+const FOTO_TODOS = "";
 
 /* =========================================================================
    CLIENTES
@@ -1181,6 +1198,14 @@ const PRODUCTOS = {
       img: "",
       detalles: ["Salida: naranja, bergamota, limón", "Corazón: frutas", "Fondo: vainilla de Madagascar, almizcle blanco, ámbar"]
     }
-  ]
+  ],
+
+  /* ======================================================================
+     NUESTRA RECOMENDACIÓN  ·  selección propia, cualquier género
+     -----------------------------------------------------------------------
+     Se carga a mano: pegá acá el producto que quieras destacar (puede
+     repetir uno que ya esté en Hombre/Mujer/Mixto/Stock) o sumá uno nuevo.
+     ====================================================================== */
+  recomendacion: []
 
 };
