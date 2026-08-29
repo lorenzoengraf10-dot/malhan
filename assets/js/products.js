@@ -231,7 +231,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 93336,
       desc: "Jengibre y mandarina sobre té verde y canela, cerrando en almizcle y ámbar.",
-      img: "",
+      img: "assets/img/hombre/hawas-kobra.jpg",
       detalles: ["Salida: jengibre, bergamota, mandarina", "Corazón: té verde, canela, neroli", "Fondo: almizcle, madera, ámbar"]
     },
     {
@@ -303,7 +303,7 @@ const PRODUCTOS = {
       familia: "Amaderado aromático",
       precio: 96888,
       desc: "Bergamota, pimienta rosa y azahar abren sobre un corazón aromático de lavanda y geranio, que cierra en una base amaderada de vetiver, ámbar y pachulí.",
-      img: "",
+      img: "assets/img/hombre/club-de-nuit-urban-man-elixir.jpg",
       detalles: ["Salida: bergamota, pimienta rosa, azahar", "Corazón: lavanda, geranio, vetiver", "Fondo: ámbar, cedro, pachulí"]
     },
     {
@@ -383,7 +383,7 @@ const PRODUCTOS = {
       familia: "Amaderado dulce",
       precio: 66564,
       desc: "Manzana, bergamota y jengibre abren frescos y ligeramente dulces, con lavanda y salvia en el corazón. El fondo de haba tonka, cedro y vetiver lo deja amaderado y versátil para el día a día.",
-      img: "",
+      img: "assets/img/hombre/fakhar-black.jpg",
       detalles: ["Salida: manzana, bergamota, jengibre", "Corazón: lavanda, salvia, enebro, geranio", "Fondo: haba tonka, cedro, madera de ámbar, vetiver"]
     },
     {
