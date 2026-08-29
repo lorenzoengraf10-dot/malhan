@@ -512,11 +512,15 @@
     function abrir() {
       wrap.classList.add("is-open");
       btn.setAttribute("aria-expanded", "true");
+      btn.setAttribute("aria-label", "Cerrar búsqueda");
+      btn.innerHTML = '<span class="buscador__toggle-x" aria-hidden="true">×</span>';
       input.focus();
     }
     function cerrar() {
       wrap.classList.remove("is-open");
       btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Buscar un perfume");
+      btn.innerHTML = ICONO_LUPA;
     }
 
     btn.addEventListener("click", () => {

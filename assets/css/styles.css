@@ -285,6 +285,7 @@ h1,h2,h3,h4{
   background:var(--brown); color:var(--cream);
   box-shadow:none;
 }
+.buscador__toggle-x{ font-size:1.6rem; line-height:1; }
 
 .buscador{ position:fixed; inset:0 0 auto; z-index:65; pointer-events:none; }
 .buscador__backdrop{
