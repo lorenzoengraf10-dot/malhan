@@ -105,7 +105,7 @@ const CATEGORIAS = {
   recomendacion: { nombre: "Nuestra Recomendación", foto: "assets/img/categorias/recomendacion.jpg" },
 
   /* Lo que ya tenemos confirmado y listo para pedir (foto + precio real). */
-  stock: { nombre: "Stock", foto: "" }
+  stock: { nombre: "Stock", foto: "assets/img/categorias/stock.jpg" }
 };
 
 /* Portada de la tarjeta "Todos" (la que muestra el catálogo completo).
