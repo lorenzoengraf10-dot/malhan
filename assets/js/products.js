@@ -247,7 +247,7 @@ const PRODUCTOS = {
       familia: "Aromático acuático",
       precio: 66992,
       desc: "El Hawas original de Rasasi: apertura afrutada de manzana, bergamota y limón con un toque de canela, corazón acuático de ciruela y azahar, y fondo ambarado con almizcle y pachulí.",
-      img: "",
+      img: "assets/img/hombre/hawas.jpg",
       detalles: ["Salida: bergamota, manzana, canela, limón", "Corazón: notas acuáticas, ciruela, azahar, cardamomo", "Fondo: ámbar gris, almizcle, madera a la deriva, pachulí"]
     },
     {
