@@ -102,7 +102,7 @@ const CATEGORIAS = {
   /* Selección propia: los perfumes que más recomendamos, de cualquier
      género. No se arma sola juntando las otras categorías — hay que
      cargar sus productos a mano en PRODUCTOS.recomendacion, más abajo. */
-  recomendacion: { nombre: "Nuestra Recomendación", foto: "" },
+  recomendacion: { nombre: "Nuestra Recomendación", foto: "assets/img/categorias/recomendacion.jpg" },
 
   /* Lo que ya tenemos confirmado y listo para pedir (foto + precio real). */
   stock: { nombre: "Stock", foto: "" }
