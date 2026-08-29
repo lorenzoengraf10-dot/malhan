@@ -422,9 +422,22 @@ h1,h2,h3,h4{
 }
 .hero__inner{ position:relative; max-width:640px; }
 
-.hero__mark{ margin:0 0 22px; }
+.hero__mark{
+  position:relative;
+  display:flex; justify-content:center;
+  margin:0 0 22px;
+}
+.hero__mark::before{
+  content:"";
+  position:absolute; top:50%; left:50%;
+  width:min(90%, 420px); aspect-ratio:1;
+  transform:translate(-50%, -50%);
+  background:radial-gradient(circle, rgba(251,246,237,.24) 0%, rgba(251,246,237,0) 68%);
+  pointer-events:none;
+}
 .hero__mark img{
-  width:clamp(220px, 52vw, 320px);
+  position:relative;
+  width:clamp(260px, 62vw, 380px);
   height:auto;
 }
 
