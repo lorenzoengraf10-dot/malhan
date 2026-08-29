@@ -95,7 +95,7 @@ const CONFIG = {
                 con un fondo liso en vez de foto.
    ========================================================================= */
 const CATEGORIAS = {
-  hombre: { nombre: "Hombre", foto: "" },
+  hombre: { nombre: "Hombre", foto: "assets/img/categorias/hombre.jpg" },
   mujer: { nombre: "Mujer", foto: "" },
   mixto: { nombre: "Mixto", foto: "" },
 
