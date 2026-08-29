@@ -110,7 +110,7 @@ const CATEGORIAS = {
 
 /* Portada de la tarjeta "Todos" (la que muestra el catálogo completo).
    Dejala en "" hasta tener la imagen. */
-const FOTO_TODOS = "";
+const FOTO_TODOS = "assets/img/categorias/todos.jpg";
 
 /* =========================================================================
    CLIENTES

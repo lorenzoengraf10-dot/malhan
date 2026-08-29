@@ -414,9 +414,9 @@
     const cont = $("[data-menu-cats]");
     if (!cont) return;
 
-    const tile = (id, nombre, foto, activaPorDefecto) => `
+    const tile = (id, nombre, foto, activaPorDefecto, ancha) => `
       <button type="button"
-              class="catshowcase__tile${foto ? "" : " catshowcase__tile--sinfoto"}${activaPorDefecto ? " catshowcase__tile--active" : ""}"
+              class="catshowcase__tile${foto ? "" : " catshowcase__tile--sinfoto"}${activaPorDefecto ? " catshowcase__tile--active" : ""}${ancha ? " catshowcase__tile--wide" : ""}"
               data-filtro-tile="${id}">
         ${foto ? `<img class="catshowcase__photo" src="${escapar(foto)}" alt="" loading="lazy">` : ""}
         <span class="catshowcase__scrim"></span>
@@ -425,8 +425,8 @@
 
     cont.innerHTML = `
       <div class="catshowcase__grid">
-        ${tile("todos", "Todos", FOTO_TODOS, true)}
-        ${Object.entries(CATEGORIAS).map(([id, cat]) => tile(id, cat.nombre, cat.foto, false)).join("")}
+        ${tile("todos", "Todos", FOTO_TODOS, true, true)}
+        ${Object.entries(CATEGORIAS).map(([id, cat]) => tile(id, cat.nombre, cat.foto, false, false)).join("")}
       </div>`;
   }
 
