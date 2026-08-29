@@ -358,6 +358,55 @@ h1,h2,h3,h4{
 }
 .pill--sm{ min-height:44px; padding:7px 15px; font-size:.82rem; }
 
+/* ============================ MENÚ DE CATEGORÍAS ============================
+   Tarjetas grandes con foto (Todos / Hombre / Mujer / Mixto / Nuestra
+   Recomendación / Stock). Tocar una hace lo mismo que tocar su pastilla
+   en .catnav — ver initFiltroCatalogo en site.js. Sin foto todavía
+   (foto:""), la tarjeta queda con el degradé de fondo nomás. */
+.catshowcase{ padding:clamp(28px, 4vw, 40px) 0 6px; }
+.catshowcase__grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));
+  gap:14px;
+}
+.catshowcase__tile{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  background:linear-gradient(135deg, var(--brown), var(--brown-deep));
+  box-shadow:var(--shadow-md);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.catshowcase__tile:hover{ box-shadow:var(--shadow-lg); }
+.catshowcase__tile:active{ transform:scale(.98); }
+.catshowcase__tile--active{ box-shadow:0 0 0 2px var(--gold), var(--shadow-md); }
+.catshowcase__tile--wide{ grid-column:1 / -1; aspect-ratio:21/9; }
+.catshowcase__photo{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+}
+.catshowcase__scrim{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(36,26,18,0) 45%, rgba(36,26,18,.85) 100%);
+}
+.catshowcase__tile--sinfoto .catshowcase__scrim{ background:none; }
+.catshowcase__label{
+  position:absolute; left:14px; right:14px; bottom:13px;
+  z-index:1;
+  color:var(--cream);
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.05rem;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--gold);
+}
+
 /* ============================ HERO ============================
    Sin foto: fondo tejido con gradiente + una textura sutil tipo cuero
    grabado (SVG inline), liviano y sin depender de una imagen real. */
@@ -1166,6 +1215,9 @@ h1,h2,h3,h4{
   .testi__autor{ font-size:.72rem; }
 
   .footer__inner{ grid-template-columns:1fr; }
+  .catshowcase__grid{ grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px; }
+  .catshowcase__tile--wide{ aspect-ratio:16/9; }
+  .catshowcase__label{ font-size:.92rem; left:11px; right:11px; bottom:10px; }
   .grid{ grid-template-columns:repeat(auto-fill, minmax(155px, 1fr)); gap:14px; }
   .card__body{ padding:13px 13px 15px; }
   .card__name{ font-size:1rem; }
