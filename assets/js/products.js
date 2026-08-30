@@ -550,7 +550,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 91324,
       desc: "Lichi, bergamota y pimienta rosa se posan sobre un corazón de iris, que cierra en un fondo goloso de praliné, sándalo y ambroxan.",
-      img: "",
+      img: "assets/img/mujer/club-de-nuit-maleka.jpg",
       detalles: ["Salida: lichi, bergamota, pimienta rosa", "Corazón: iris", "Fondo: praliné, sándalo, ambroxan"]
     },
     {
@@ -566,7 +566,7 @@ const PRODUCTOS = {
       familia: "Frutal gourmand",
       precio: 57640,
       desc: "Frutilla, frambuesa y durazno se envuelven en un corazón goloso de caramelo y maracuyá, cerrando en almizcle, ámbar y pachulí.",
-      img: "",
+      img: "assets/img/mujer/odyssey-candy.jpg",
       detalles: ["Salida: frutilla, frambuesa, durazno, bergamota", "Corazón: caramelo, jazmín, maracuyá", "Fondo: pachulí, almizcle, ámbar"]
     },
     {
@@ -582,7 +582,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 68255,
       desc: "Ruibarbo, lichi y bergamota dan una apertura jugosa, con rosa turca, peonía y lirio en el corazón. Cierra suave, con almizcle blanco, vainilla y cashmerán de fondo.",
-      img: "",
+      img: "assets/img/mujer/delilah.jpg",
       detalles: ["Salida: ruibarbo, lichi, bergamota", "Corazón: rosa turca, peonía, lirio", "Fondo: almizcle blanco, vainilla, cashmerán"]
     },
     {
