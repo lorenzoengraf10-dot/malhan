@@ -1313,7 +1313,7 @@ const PRODUCTOS = {
       aroma: ["floral", "fresco"],
       precio: 91731,
       desc: "Salida jugosa de mango, ananá, bergamota y ron, corazón cremoso de coco y flores blancas con un toque marino, y fondo amaderado de almizcle, ámbar, sándalo y vetiver.",
-      img: "",
+      img: "assets/img/mixto/tropical-vibes.jpg",
       detalles: ["Salida: mango, ananá, bergamota, ron", "Corazón: coco, flores blancas, notas marinas", "Fondo: almizcle, ámbar, sándalo, vetiver"]
     },
     {
