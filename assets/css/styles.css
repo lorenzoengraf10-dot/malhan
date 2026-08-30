@@ -375,6 +375,45 @@ h1,h2,h3,h4{
   display:flex; flex-direction:column; gap:12px;
   padding-block:12px;
 }
+.catnav__panel-head{
+  display:flex; align-items:center; gap:10px;
+  padding-bottom:2px;
+  border-bottom:1px solid var(--line);
+}
+.catnav__panel-headtxt{
+  flex:1; min-width:0;
+  display:flex; flex-direction:column; gap:1px;
+}
+.catnav__panel-title{
+  font-family:var(--font-display);
+  font-weight:700; font-size:1.05rem;
+  color:var(--brown);
+}
+.catnav__panel-count{
+  font-family:var(--font-body);
+  font-size:.78rem;
+  color:var(--brown-soft);
+}
+.catnav__limpiar{
+  flex:none;
+  min-height:44px; padding:0 10px;
+  font-family:var(--font-body);
+  font-weight:600; font-size:.82rem;
+  color:var(--gold);
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.catnav__limpiar[hidden]{ display:none; }
+.catnav__panel-close{
+  flex:none;
+  width:44px; height:44px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  font-size:1.5rem; line-height:1;
+  color:var(--brown);
+  background:rgba(74,50,34,.06);
+}
+.catnav__panel-close:active{ background:rgba(74,50,34,.14); }
 .catnav__group{ display:flex; flex-direction:column; gap:7px; }
 .catnav__label{
   font-family:var(--font-body);

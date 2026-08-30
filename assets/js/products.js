@@ -1003,7 +1003,7 @@ const PRODUCTOS = {
       aroma: ["fresco", "floral"],
       precio: 115527,
       desc: "Notas verdes, bergamota y mandarina dan una apertura fresca, sobre un corazón jugoso de melón, ananá y grosella negra que cierra en almizcle y vainilla.",
-      img: "",
+      img: "assets/img/mixto/aqua-dubai.jpg",
       detalles: ["Salida: notas verdes, bergamota, mandarina", "Corazón: melón, ananá, grosella negra, ámbar", "Fondo: almizcle, galbano, vainilla"]
     },
     {

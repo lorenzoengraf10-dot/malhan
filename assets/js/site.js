@@ -182,6 +182,14 @@
 
         <div class="catnav__panel" id="filtros-panel" data-filtros-panel hidden>
           <div class="wrap catnav__panel-inner">
+            <div class="catnav__panel-head">
+              <div class="catnav__panel-headtxt">
+                <span class="catnav__panel-title">Filtros</span>
+                <span class="catnav__panel-count" data-filtros-count></span>
+              </div>
+              <button class="catnav__limpiar" data-filtros-limpiar type="button" hidden>Limpiar</button>
+              <button class="catnav__panel-close" data-filtros-cerrar type="button" aria-label="Cerrar filtros">×</button>
+            </div>
             <div class="catnav__group">
               <span class="catnav__label">Género</span>
               <div class="catnav__row">
@@ -560,8 +568,11 @@
     $$(".pill[data-temporada]").forEach((p) => p.classList.toggle("is-active", p.dataset.temporada === Filtros.temporada));
     $$(".pill[data-orden]").forEach((p) => p.classList.toggle("is-active", p.dataset.orden === Filtros.orden));
 
+    const sinFiltrosExtra = Filtros.temporada === "todas" && Filtros.aroma === "todos" && Filtros.orden === "relevancia" && Filtros.genero === "todos";
     const dot = $("[data-filtros-dot]");
-    if (dot) dot.hidden = Filtros.temporada === "todas" && Filtros.aroma === "todos" && Filtros.orden === "relevancia" && Filtros.genero === "todos";
+    if (dot) dot.hidden = sinFiltrosExtra;
+    const limpiarBtn = $("[data-filtros-limpiar]");
+    if (limpiarBtn) limpiarBtn.hidden = sinFiltrosExtra;
 
     let totalVisible = 0;
     secciones.forEach((sec) => {
@@ -603,6 +614,9 @@
       }
     }
 
+    const contador = $("[data-filtros-count]");
+    if (contador) contador.textContent = `${totalVisible} fragancia${totalVisible === 1 ? "" : "s"}`;
+
     aplicarOrden();
   }
 
@@ -617,6 +631,15 @@
       if (!panel || !toggle) return;
       panel.hidden = false;
       toggle.setAttribute("aria-expanded", "true");
+      aplicarFiltros();
+    }
+
+    function cerrarPanelFiltros() {
+      const panel = $("[data-filtros-panel]", barra);
+      const toggle = $("[data-filtros-toggle]", barra);
+      if (!panel || !toggle || panel.hidden) return;
+      panel.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
     }
 
     /* Elegir una categoría "normal" (Todos / Hombre / Mujer / Mixto /
@@ -626,9 +649,12 @@
        abre el panel de filtros para que ahí elijan a gusto. */
     function irACategoria(id) {
       Filtros.categoria = id;
-      if (id === "recomendacion") abrirPanelFiltros();
-      else Filtros.genero = "todos";
-      aplicarFiltros();
+      if (id === "recomendacion") {
+        abrirPanelFiltros();
+      } else {
+        Filtros.genero = "todos";
+        aplicarFiltros();
+      }
       $("#catalogo")?.scrollIntoView({ block: "start" });
     }
 
@@ -644,7 +670,6 @@
         Filtros.categoria = "recomendacion";
         Filtros.genero = btnGenero.dataset.genero;
         abrirPanelFiltros();
-        aplicarFiltros();
         return;
       }
 
@@ -673,11 +698,29 @@
       if (toggle) {
         const panel = $("[data-filtros-panel]", barra);
         if (!panel) return;
-        const abierto = panel.hidden;
-        panel.hidden = !abierto;
-        toggle.setAttribute("aria-expanded", String(abierto));
+        panel.hidden ? abrirPanelFiltros() : cerrarPanelFiltros();
         return;
       }
+
+      const btnCerrar = e.target.closest("[data-filtros-cerrar]");
+      if (btnCerrar) {
+        cerrarPanelFiltros();
+        return;
+      }
+
+      const btnLimpiar = e.target.closest("[data-filtros-limpiar]");
+      if (btnLimpiar) {
+        Filtros.genero = "todos";
+        Filtros.aroma = "todos";
+        Filtros.temporada = "todas";
+        Filtros.orden = "relevancia";
+        aplicarFiltros();
+        return;
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") cerrarPanelFiltros();
     });
 
     const vidriera = $("[data-menu-cats]");
