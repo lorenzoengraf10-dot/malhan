@@ -542,7 +542,7 @@ const PRODUCTOS = {
       familia: "Oriental frutal",
       precio: 85931,
       desc: "Mandarina, pomelo y bergamota abren paso a un corazón frutal de frambuesa y grosella negra, que cierra en almizcle, ámbar y naranja.",
-      img: "",
+      img: "assets/img/mujer/9-am-rosa.jpg",
       detalles: ["Salida: mandarina, pomelo, bergamota", "Corazón: frambuesa, grosella negra", "Fondo: almizcle, ámbar, naranja"]
     },
     {
@@ -574,7 +574,7 @@ const PRODUCTOS = {
       familia: "Floral gourmand",
       precio: 59759,
       desc: "Leche de rosas en la apertura, con merengue y almendra en el corazón, sobre un fondo cremoso de vainilla, sándalo y almizcle. Perfil gourmand floral, dulce y suave.",
-      img: "",
+      img: "assets/img/mujer/badee-al-oud-noble-blush.jpg",
       detalles: ["Salida: leche de rosas", "Corazón: merengue, almendra", "Fondo: vainilla, sándalo, almizcle"]
     },
     {
@@ -606,7 +606,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 68768,
       desc: "Champagne, frutilla y mandarina sobre gardenia, jazmín y orquídea vainilla, cerrando en ámbar, sándalo y castaña.",
-      img: "",
+      img: "assets/img/mujer/haya.jpg",
       detalles: ["Salida: champagne, frutilla, mandarina, naranja sanguina", "Corazón: gardenia, jazmín, orquídea vainilla", "Fondo: ámbar, sándalo, castaña"]
     },
     {
@@ -622,7 +622,7 @@ const PRODUCTOS = {
       familia: "Ámbar vainilla",
       precio: 82913,
       desc: "Canela y especias sobre tuberosa, jazmín e incienso, cerrando en vainilla, almizcle y haba tonka.",
-      img: "",
+      img: "assets/img/mujer/her-confession.jpg",
       detalles: ["Salida: canela, especias", "Corazón: tuberosa, jazmín, incienso", "Fondo: vainilla, almizcle, haba tonka"]
     },
     {
@@ -630,7 +630,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 55928,
       desc: "Lichi, frambuesa y hoja de violeta sobre rosa blanca, peonía y jazmín, cerrando en almizcle y vainilla.",
-      img: "",
+      img: "assets/img/mujer/mayar.jpg",
       detalles: ["Salida: lichi, frambuesa, hoja de violeta", "Corazón: rosa blanca, peonía, jazmín", "Fondo: almizcle, vainilla"]
     },
     {
