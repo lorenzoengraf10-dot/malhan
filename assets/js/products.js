@@ -166,7 +166,7 @@ const TESTIMONIOS = [
   },
   {
     texto: "Genaro asesoró muy bien en la elección",
-    autor: "@joaquin.barcia"
+    autor: "@joacobarciia"
   }
 ];
 
