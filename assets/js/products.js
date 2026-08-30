@@ -923,7 +923,7 @@ const PRODUCTOS = {
       aroma: ["floral"],
       precio: 52697,
       desc: "Pimienta rosa y bergamota sobre rosa turca y búlgara, cerrando en oud, ámbar y vainilla.",
-      img: "",
+      img: "assets/img/mixto/badee-al-oud-amethyst.jpg",
       detalles: ["Salida: pimienta rosa, bergamota", "Corazón: rosa turca, rosa búlgara, jazmín", "Fondo: oud, ámbar, vainilla"]
     },
     {
@@ -933,7 +933,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 124195,
       desc: "Bergamota y notas verdes sobre melón, ananá y ámbar, cerrando en vainilla y madera. Amber Oud Gold Edition, de Al Haramain.",
-      img: "",
+      img: "assets/img/mixto/gold-edition-120ml.jpg",
       detalles: ["Salida: bergamota, notas verdes", "Corazón: melón, ananá, ámbar, acorde gourmand", "Fondo: vainilla, almizcle, madera"]
     },
     {
@@ -943,7 +943,7 @@ const PRODUCTOS = {
       aroma: ["fresco"],
       precio: 90960,
       desc: "Ananá, naranja y pomelo sobre iris, ámbar y lavanda, cerrando en haba tonka y almizcle.",
-      img: "",
+      img: "assets/img/mixto/hawas-malibu.jpg",
       detalles: ["Salida: ananá, naranja, pomelo", "Corazón: iris, ámbar, lavanda", "Fondo: haba tonka, almizcle, pachulí, cashmerán"]
     },
     {
@@ -953,7 +953,7 @@ const PRODUCTOS = {
       aroma: ["fresco"],
       precio: 90596,
       desc: "Apertura de salvia esclarea, corazón floral marino de jazmín egipcio con notas acuáticas, y fondo salino de ámbar gris y minerales.",
-      img: "",
+      img: "assets/img/mixto/hawas-fire.jpg",
       detalles: ["Salida: salvia esclarea", "Corazón: jazmín egipcio, notas marinas", "Fondo: ámbar gris, ámbar, notas minerales"]
     },
     {
