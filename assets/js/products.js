@@ -590,7 +590,7 @@ const PRODUCTOS = {
       familia: "Chipre floral",
       precio: 57919,
       desc: "Azahar, grosella negra y bergamota abren frescos y afrutados, con nardo, jazmín y caléndula en el corazón. Cierra en almizcle, vainilla, cedro y pachulí, con muy buena estela.",
-      img: "",
+      img: "assets/img/mujer/emaan.jpg",
       detalles: ["Salida: azahar, grosella negra, bergamota", "Corazón: nardo, jazmín, caléndula", "Fondo: almizcle, vainilla, cedro, pachulí"]
     },
     {
