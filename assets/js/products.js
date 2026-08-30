@@ -1292,7 +1292,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 60380,
       desc: "Apertura cítrica y afrutada de mandarina verde, bergamota y grosella negra, con un corazón floral y especiado de lavanda, jazmín y pimienta rosa, sobre un fondo amaderado de almizcle, ámbar y vetiver.",
-      img: "",
+      img: "assets/img/mixto/spectre-malachite.jpg",
       detalles: ["Salida: mandarina verde, bergamota, grosella negra", "Corazón: lavanda, jazmín, pimienta rosa", "Fondo: almizcle, ámbar, madera, vetiver"]
     },
     {
@@ -1332,7 +1332,7 @@ const PRODUCTOS = {
       aroma: ["floral"],
       precio: 150837,
       desc: "Apertura de bergamota, jazmín y heliotropo, corazón floral y dulce de lirio, haba tonka y geranio, sobre un fondo de vetiver, vainilla y almizcle.",
-      img: "",
+      img: "assets/img/mixto/copa-del-mundo.jpg",
       detalles: ["Salida: bergamota, jazmín, heliotropo", "Corazón: lirio (orris), haba tonka, geranio", "Fondo: vetiver de Haití, vainilla, almizcle"]
     },
     {
@@ -1342,7 +1342,7 @@ const PRODUCTOS = {
       aroma: ["citrico", "floral"],
       precio: 367020,
       desc: "Apertura chispeante de naranja, bergamota y limón sicilianos, corazón de una canasta de frutas mediterráneas (durazno, manzana, melón y ananá), y fondo cremoso de almizcle blanco, vainilla y ámbar.",
-      img: "",
+      img: "assets/img/mixto/erba-pura-100ml.jpg",
       detalles: ["Salida: naranja siciliana, bergamota, limón siciliano", "Corazón: durazno, manzana, melón, ananá", "Fondo: almizcle blanco, vainilla, ámbar"]
     },
     {
