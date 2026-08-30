@@ -190,6 +190,15 @@
               </div>
             </div>
             <div class="catnav__group">
+              <span class="catnav__label">Aroma</span>
+              <div class="catnav__row">
+                <button class="pill pill--sm is-active" data-aroma="todos" type="button">Todos</button>
+                ${Object.entries(AROMAS)
+                  .map(([id, nombre]) => `<button class="pill pill--sm" data-aroma="${id}" type="button">${escapar(nombre)}</button>`)
+                  .join("")}
+              </div>
+            </div>
+            <div class="catnav__group">
               <span class="catnav__label">Temporada</span>
               <div class="catnav__row">
                 <button class="pill pill--sm is-active" data-temporada="todas" type="button">Todas</button>
@@ -369,6 +378,7 @@
     art.dataset.nombre = producto.nombre;
     art.dataset.familia = producto.familia || "";
     art.dataset.temporadas = (producto.temporada || []).join(" ");
+    art.dataset.aromas = (producto.aroma || []).join(" ");
     art.dataset.precio = String(precioOrden(producto));
 
     art.innerHTML = `
@@ -518,7 +528,7 @@
      más; el orden solo reordena, nunca esconde nada.
      --------------------------------------------------------------------- */
 
-  const Filtros = { categoria: "todos", busqueda: "", temporada: "todas", orden: "relevancia", genero: "todos" };
+  const Filtros = { categoria: "todos", busqueda: "", temporada: "todas", aroma: "todos", orden: "relevancia", genero: "todos" };
 
   function normalizarBusqueda(s) {
     return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -546,11 +556,12 @@
     $$(".pill[data-filtro]", catnav).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === Filtros.categoria));
     $$(".catshowcase__tile[data-filtro-tile]").forEach((t) => t.classList.toggle("catshowcase__tile--active", t.dataset.filtroTile === Filtros.categoria));
     $$(".pill[data-genero]").forEach((p) => p.classList.toggle("is-active", p.dataset.genero === Filtros.genero));
+    $$(".pill[data-aroma]").forEach((p) => p.classList.toggle("is-active", p.dataset.aroma === Filtros.aroma));
     $$(".pill[data-temporada]").forEach((p) => p.classList.toggle("is-active", p.dataset.temporada === Filtros.temporada));
     $$(".pill[data-orden]").forEach((p) => p.classList.toggle("is-active", p.dataset.orden === Filtros.orden));
 
     const dot = $("[data-filtros-dot]");
-    if (dot) dot.hidden = Filtros.temporada === "todas" && Filtros.orden === "relevancia" && Filtros.genero === "todos";
+    if (dot) dot.hidden = Filtros.temporada === "todas" && Filtros.aroma === "todos" && Filtros.orden === "relevancia" && Filtros.genero === "todos";
 
     let totalVisible = 0;
     secciones.forEach((sec) => {
@@ -571,7 +582,9 @@
         ));
         const matchTemporada = Filtros.temporada === "todas" ||
           (card.dataset.temporadas || "").split(" ").includes(Filtros.temporada);
-        const visible = matchTexto && matchTemporada;
+        const matchAroma = Filtros.aroma === "todos" ||
+          (card.dataset.aromas || "").split(" ").includes(Filtros.aroma);
+        const visible = matchTexto && matchTemporada && matchAroma;
         card.hidden = !visible;
         if (visible) { visiblesEnSeccion++; totalVisible++; }
       });
@@ -638,6 +651,13 @@
       const btnTemporada = e.target.closest("[data-temporada]");
       if (btnTemporada) {
         Filtros.temporada = btnTemporada.dataset.temporada;
+        aplicarFiltros();
+        return;
+      }
+
+      const btnAroma = e.target.closest("[data-aroma]");
+      if (btnAroma) {
+        Filtros.aroma = btnAroma.dataset.aroma;
         aplicarFiltros();
         return;
       }
