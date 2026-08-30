@@ -661,6 +661,10 @@ h1,h2,h3,h4{
 }
 
 .testi{
+  /* <figure> trae margen por defecto del navegador (bastante ancho a los
+     costados): sin resetearlo a 0, la tarjeta queda angosta adentro de
+     su columna del grid aunque el grid le dé todo el ancho. */
+  margin:0;
   position:relative;
   min-width:0;
   padding:16px 14px 12px;
@@ -1206,10 +1210,10 @@ h1,h2,h3,h4{
 @media (max-width: 620px){
   .eyebrow{ font-size:.7rem; letter-spacing:.13em; }
 
-  .clientes{ --gutter: 4px; }
-  .testis{ grid-template-columns:1fr 1fr; gap:5px; }
-  .testi{ padding:10px 8px 8px; }
-  .testi::before{ font-size:1.6rem; left:8px; }
+  .clientes{ --gutter: 2px; }
+  .testis{ grid-template-columns:1fr 1fr; gap:3px; }
+  .testi{ padding:10px 7px 8px; }
+  .testi::before{ font-size:1.6rem; left:7px; }
   .testi__texto{ font-size:.78rem; line-height:1.24; }
   .testi__autor{ font-size:.66rem; }
 
