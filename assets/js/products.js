@@ -1353,7 +1353,7 @@ const PRODUCTOS = {
       aroma: ["floral", "dulce"],
       precio: 39557,
       desc: "Coco, ananá y cítricos sobre un corazón floral de ylang-ylang, frangipani y jazmín, cerrando en vainilla, sándalo y almizcle. Tropical y cremoso, pensado para el día.",
-      img: "",
+      img: "assets/img/mixto/qaed-al-fursan-unlimited.jpg",
       detalles: ["Salida: coco, ananá, cítricos", "Corazón: ylang-ylang, frangipani, jazmín", "Fondo: vainilla, almizcle, sándalo"]
     },
     {
@@ -1363,7 +1363,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 41976,
       desc: "Cardamomo, canela y mandarina sobre un corazón especiado de lavanda, salvia y ciprés con un toque de caramelo, cerrando en ámbar, cedro y vetiver. Cálido e intenso, ideal para la noche.",
-      img: "",
+      img: "assets/img/mixto/qaed-al-fursan-untamed.jpg",
       detalles: ["Salida: cardamomo, canela, mandarina, nuez moscada", "Corazón: caramelo, lavanda, ciprés", "Fondo: ámbar, cedro, vetiver, ládano"]
     },
     {
@@ -1373,7 +1373,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 80688,
       desc: "Azafrán y bergamota sobre un corazón de licor de ciruela y canela, cerrando en ámbar, haba tonka y benjuí. Denso y dulce, con gran proyección para el frío.",
-      img: "",
+      img: "assets/img/mixto/teriaq-intense.jpg",
       detalles: ["Salida: azafrán, bergamota", "Corazón: licor de ciruela, canela", "Fondo: ámbar, haba tonka, benjuí"]
     },
     {
@@ -1383,7 +1383,7 @@ const PRODUCTOS = {
       aroma: ["dulce", "citrico"],
       precio: 66971,
       desc: "Tarta de limón merengada sobre un corazón floral de neroli, rosa y jazmín, cerrando en vainilla, almizcle y ámbar. Jugoso y luminoso, para el uso diario.",
-      img: "",
+      img: "assets/img/mixto/victoria.jpg",
       detalles: ["Salida: tarta de limón merengada, cítricos", "Corazón: neroli, rosa, jazmín", "Fondo: vainilla, almizcle, ámbar"]
     },
     {
@@ -1393,7 +1393,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 69347,
       desc: "Lavanda, salvia y bergamota sobre un corazón de ciruela, palo santo y pimienta negra, cerrando en sándalo y oud. Limpio y amaderado, con un toque metálico particular.",
-      img: "",
+      img: "assets/img/mixto/vintage-radio.jpg",
       detalles: ["Salida: lavanda, salvia, bergamota", "Corazón: ciruela, palo santo, pimienta negra", "Fondo: sándalo, oud"]
     },
     {
