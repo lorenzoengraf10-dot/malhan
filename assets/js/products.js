@@ -558,7 +558,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 86937,
       desc: "Naranja, pomelo y durazno abren con frescura frutal, sobre un corazón floral de rosa y jazmín que cierra en pachulí, vainilla y almizcle.",
-      img: "",
+      img: "assets/img/mujer/club-de-nuit-woman.jpg",
       detalles: ["Salida: naranja, bergamota, pomelo, durazno", "Corazón: rosa, jazmín, geranio, lichi", "Fondo: pachulí, almizcle, vainilla, vetiver"]
     },
     {
@@ -614,7 +614,7 @@ const PRODUCTOS = {
       familia: "Floral frutal gourmand",
       precio: 49593,
       desc: "Lychee, pomelo y grosella roja sobre rosa, durazno y cedro, cerrando en vainilla, praliné y ámbar.",
-      img: "",
+      img: "assets/img/mujer/hayaati-rosa.jpg",
       detalles: ["Salida: lychee, pomelo, grosella roja", "Corazón: rosa, durazno, cedro", "Fondo: vainilla, praliné, ámbar"]
     },
     {
