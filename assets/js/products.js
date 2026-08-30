@@ -1413,7 +1413,7 @@ const PRODUCTOS = {
       aroma: ["floral"],
       precio: 38316,
       desc: "Mandarina y pimienta rosa sobre un corazón floral de azahar, jazmín y rosa, cerrando en ámbar y vainilla. Sensual y audaz, cítrico al inicio y amaderado cálido al final.",
-      img: "",
+      img: "assets/img/mixto/extravagant-lover.jpg",
       detalles: ["Salida: mandarina, pimienta rosa", "Corazón: azahar, jazmín, rosa", "Fondo: ámbar, vainilla"]
     },
     {
