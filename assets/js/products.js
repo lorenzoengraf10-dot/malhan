@@ -816,7 +816,7 @@ const PRODUCTOS = {
       temporada: ["primavera"],
       precio: 79683,
       desc: "Frutas exóticas y mandarina sobre un corazón de azahar, peonía y vainilla, cerrando en haba tonka, ambroxán y vainilla. Dulce y frutal, gourmand suave.",
-      img: "",
+      img: "assets/img/mujer/papillon-dor.jpg",
       detalles: ["Salida: frutas exóticas, mandarina", "Corazón: azahar, peonía, vainilla", "Fondo: haba tonka, ambroxán, vainilla"]
     },
     {
