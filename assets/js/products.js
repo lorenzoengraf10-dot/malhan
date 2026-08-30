@@ -1023,7 +1023,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 132925,
       desc: "Ananá, limón y caramelo abren con frescura frutal, sobre un corazón de musgo de roble y jazmín que cierra en cuero, ámbar, almizcle blanco y vainilla.",
-      img: "Club-de-Nuit-Precieux.jpg",
+      img: "assets/img/mixto/Club-de-Nuit-Precieux.jpg",
       detalles: ["Salida: ananá, limón, bergamota, caramelo", "Corazón: musgo de roble, jazmín, lirio de los valles", "Fondo: ambroxan, cuero, ámbar, vainilla"]
     },
     {
@@ -1033,7 +1033,7 @@ const PRODUCTOS = {
       aroma: ["floral", "amaderado"],
       precio: 83941,
       desc: "Bergamota, limón y lima dan una apertura cítrica, sobre un corazón floral de rosa e iris que cierra en sándalo, cedro y almizcle.",
-      img: "Club-Acqua-di-Profumo.jpg",
+      img: "assets/img/mixto/Club-Acqua-di-Profumo.jpg",
       detalles: ["Salida: bergamota, limón, lima, grosella negra", "Corazón: rosa, iris, jazmín", "Fondo: ambroxan, almizcle, sándalo, cedro"]
     },
     {
@@ -1053,7 +1053,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 94299,
       desc: "Mandarina y naranja se especian con cardamomo y lavanda, sobre un corazón goloso de caramelo y haba tonka que cierra en vainilla, vetiver y pachulí.",
-      img: "Odyssey-Mandarin-Sky-Elixir.jpg",
+      img: "assets/img/mixto/Odyssey-Mandarin-Sky-Elixir.jpg",
       detalles: ["Salida: mandarina, naranja, lavanda, cardamomo", "Corazón: caramelo, haba tonka, pachulí, incienso", "Fondo: vainilla, vetiver"]
     },
     {
@@ -1072,7 +1072,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 61279,
       desc: "Cardamomo y violeta abren paso a un corazón de ámbar e iris, sobre una base amaderada de sándalo, cuero y cedro de Virginia. Envolvente, muy cercano a Santal 33.",
-      img: "Emper Stallion 53 Unisex Fragrance – 100ml + Free 20ml Mini _ Emper.jpg",
+      img: "assets/img/mixto/Emper Stallion 53 Unisex Fragrance – 100ml + Free 20ml Mini _ Emper.jpg",
       detalles: ["Salida: cardamomo, violeta", "Corazón: ámbar, iris", "Fondo: sándalo, cuero, cedro de Virginia, papiro"]
     },
     {
