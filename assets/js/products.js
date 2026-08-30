@@ -1222,7 +1222,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 109343,
       desc: "Nuez moscada, pimienta de Jamaica y jengibre sobre violeta, pachulí y cashmerán, cerrando en cuero, incienso y vetiver.",
-      img: "",
+      img: "assets/img/mixto/khanjar.jpg",
       detalles: ["Salida: nuez moscada, pimienta de Jamaica, jengibre", "Corazón: violeta, pachulí, cashmerán", "Fondo: cuero, incienso, almizcle, vetiver"]
     },
     {
@@ -1232,7 +1232,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 52889,
       desc: "Frutilla y bergamota sobre mermelada de cereza y cacao, cerrando en vainilla, ámbar y pachulí.",
-      img: "",
+      img: "assets/img/mixto/mayar-cherry-intense.jpg",
       detalles: ["Salida: frutilla, bergamota", "Corazón: mermelada de cereza, cacao", "Fondo: vainilla, ámbar, pachulí"]
     },
     {
@@ -1262,7 +1262,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 80089,
       desc: "Frutos rojos y mandarina sobre vainilla, cacao y rosa, cerrando en azúcar, haba tonka y ámbar.",
-      img: "",
+      img: "assets/img/mixto/nebras-pride.jpg",
       detalles: ["Salida: frutos rojos, mandarina", "Corazón: vainilla, cacao, rosa", "Fondo: azúcar, haba tonka, ámbar, almizcle"]
     },
     {
@@ -1272,7 +1272,7 @@ const PRODUCTOS = {
       aroma: ["floral"],
       precio: 50428,
       desc: "Mango, pomelo y jengibre sobre jazmín, cedro y violeta, cerrando en ámbar gris, musgo de roble y benjuí.",
-      img: "",
+      img: "assets/img/mixto/opulent-dubai.jpg",
       detalles: ["Salida: mango, pomelo, limón, jengibre", "Corazón: jazmín, cedro, violeta", "Fondo: ámbar gris, musgo de roble, benjuí"]
     },
     {
@@ -1282,7 +1282,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 48309,
       desc: "Ananá y azafrán sobre abeto balsámico y jazmín, cerrando en cedro, ámbar y oud.",
-      img: "",
+      img: "assets/img/mixto/qaed-al-fursan.jpg",
       detalles: ["Salida: ananá, azafrán", "Corazón: abeto balsámico, jazmín", "Fondo: cedro, ámbar, oud"]
     },
     {
