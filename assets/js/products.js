@@ -654,7 +654,7 @@ const PRODUCTOS = {
       familia: "Floral amaderado",
       precio: 50899,
       desc: "Salida cítrica sobre un corazón de almizcle blanco y aloe vera, con un fondo floral y amaderado de jazmín, madera y oud.",
-      img: "",
+      img: "assets/img/mujer/ameerat-al-arab.jpg",
       detalles: ["Salida: cítricos, bergamota", "Corazón: almizcle blanco, aloe vera", "Fondo: jazmín, almizcle, madera, oud"]
     },
     {
@@ -662,7 +662,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 55051,
       desc: "Apertura frutal de frambuesa, bergamota y rosa, corazón floral de jazmín, peonía y más rosa, sobre un fondo cálido de sándalo, almizcle, ámbar y pachulí.",
-      img: "",
+      img: "assets/img/mujer/ameerat-al-arab-prive-rose.jpg",
       detalles: ["Salida: frambuesa, bergamota, rosa", "Corazón: jazmín, peonía, rosa", "Fondo: sándalo, almizcle, ámbar, pachulí"]
     },
     {
@@ -670,7 +670,7 @@ const PRODUCTOS = {
       familia: "Floral oriental",
       precio: 48503,
       desc: "Apertura vibrante de pimienta rosa y mandarina, corazón dulce de cacao, azahar y jazmín sambac, y fondo cálido de vainilla, haba tonka y pachulí.",
-      img: "",
+      img: "assets/img/mujer/al-wataniah-sabah-al-ward.jpg",
       detalles: ["Salida: pimienta rosa, mandarina", "Corazón: cacao, azahar, jazmín sambac", "Fondo: vainilla, haba tonka, pachulí"]
     },
     {
@@ -678,7 +678,7 @@ const PRODUCTOS = {
       familia: "Floral frutal gourmand",
       precio: 64211,
       desc: "Pera, grosella negra y peonía sobre un corazón de jazmín, praliné y haba tonka, cerrando en vainilla, sándalo, ámbar y almizcle. Floral, dulce y envolvente.",
-      img: "",
+      img: "assets/img/mujer/the-kingdom-fem.jpg",
       detalles: ["Salida: pera, grosella negra, peonía", "Corazón: jazmín, praliné, haba tonka", "Fondo: vainilla, sándalo, ámbar, almizcle"]
     },
     {
@@ -694,7 +694,7 @@ const PRODUCTOS = {
       familia: "Floral frutal gourmand",
       precio: 54537,
       desc: "Pera, pimienta rosa y grosella negra sobre un corazón cremoso de nardo, jazmín y almendra, cerrando en vainilla, cashmerán y pachulí. La más intensa de la línea Yara.",
-      img: "",
+      img: "assets/img/mujer/yara-moi.jpg",
       detalles: ["Salida: pera, pimienta rosa, grosella negra", "Corazón: nardo, jazmín, almendra", "Fondo: vainilla, cashmerán, pachulí"]
     },
     {
