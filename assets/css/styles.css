@@ -358,6 +358,38 @@ h1,h2,h3,h4{
 }
 .pill--sm{ min-height:44px; padding:7px 15px; font-size:.82rem; }
 
+.pill--filtros{ position:relative; }
+.pill__dot{
+  width:8px; height:8px; margin-left:7px;
+  border-radius:50%;
+  background:var(--gold);
+}
+.pill__dot[hidden]{ display:none; }
+
+/* Panel plegable de Temporada + Orden por precio: se abre con la
+   pastilla "Filtros" (ver initFiltroCatalogo en site.js). Colapsado
+   por defecto para no sumarle altura fija a la barra pegajosa. */
+.catnav__panel{ border-top:1px solid var(--line); }
+.catnav__panel[hidden]{ display:none; }
+.catnav__panel-inner{
+  display:flex; flex-direction:column; gap:12px;
+  padding-block:12px;
+}
+.catnav__group{ display:flex; flex-direction:column; gap:7px; }
+.catnav__label{
+  font-family:var(--font-body);
+  font-size:.74rem; font-weight:600;
+  letter-spacing:.03em; text-transform:uppercase;
+  color:var(--brown-soft, var(--brown));
+}
+.catnav__row{
+  display:flex; gap:8px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.catnav__row::-webkit-scrollbar{ display:none; }
+
 /* ============================ MENÚ DE CATEGORÍAS ============================
    Tarjetas grandes con foto (Todos / Hombre / Mujer / Mixto / Nuestra
    Recomendación / Stock). Tocar una hace lo mismo que tocar su pastilla

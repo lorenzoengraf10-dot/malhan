@@ -170,6 +170,31 @@
           ${Object.entries(CATEGORIAS)
             .map(([id, cat]) => `<button class="pill" data-filtro="${id}" type="button">${escapar(cat.nombre)}</button>`)
             .join("")}
+          <button class="pill pill--filtros" data-filtros-toggle type="button" aria-expanded="false" aria-controls="filtros-panel">
+            Filtros<span class="pill__dot" data-filtros-dot hidden></span>
+          </button>
+        </div>
+
+        <div class="catnav__panel" id="filtros-panel" data-filtros-panel hidden>
+          <div class="wrap catnav__panel-inner">
+            <div class="catnav__group">
+              <span class="catnav__label">Temporada</span>
+              <div class="catnav__row">
+                <button class="pill pill--sm is-active" data-temporada="todas" type="button">Todas</button>
+                ${Object.entries(TEMPORADAS)
+                  .map(([id, nombre]) => `<button class="pill pill--sm" data-temporada="${id}" type="button">${escapar(nombre)}</button>`)
+                  .join("")}
+              </div>
+            </div>
+            <div class="catnav__group">
+              <span class="catnav__label">Ordenar por precio</span>
+              <div class="catnav__row">
+                <button class="pill pill--sm is-active" data-orden="relevancia" type="button">Relevancia</button>
+                <button class="pill pill--sm" data-orden="precio-asc" type="button">Menor a mayor</button>
+                <button class="pill pill--sm" data-orden="precio-desc" type="button">Mayor a menor</button>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>`;
   }
@@ -284,6 +309,20 @@
     return '<span class="card__price">A consultar<small>Te pasamos el precio</small></span>';
   }
 
+  /* Valor numérico para ordenar por precio (siempre el más bajo
+     disponible). Sin precio real (agotado / a consultar) va al final,
+     tanto de menor-a-mayor como de mayor-a-menor. */
+  function precioOrden(producto) {
+    if (producto.variantes) {
+      const precios = producto.variantes
+        .filter((v) => !v.agotado && typeof v.precio === "number" && v.precio > 0)
+        .map((v) => v.precio);
+      return precios.length ? Math.min(...precios) : Infinity;
+    }
+    if (producto.agotado) return Infinity;
+    return typeof producto.precio === "number" && producto.precio > 0 ? producto.precio : Infinity;
+  }
+
   function tarjeta(producto, categoria, indice) {
     const etiqueta = producto.etiqueta
       ? `<span class="card__tag card__tag--${producto.color || "dorado"}">${escapar(producto.etiqueta)}</span>`
@@ -317,6 +356,8 @@
     art.dataset.variante = variante ? variante.label : "";
     art.dataset.nombre = producto.nombre;
     art.dataset.familia = producto.familia || "";
+    art.dataset.temporadas = (producto.temporada || []).join(" ");
+    art.dataset.precio = String(precioOrden(producto));
 
     art.innerHTML = `
       <div class="card__media" data-abrir>
@@ -458,22 +499,119 @@
     activarLinksWa(cont);
   }
 
+  /* ---------------------------------------------------------------------
+     Filtros del catálogo — categoría, búsqueda, temporada y orden por
+     precio, todos combinados en un solo estado. La categoría (y la
+     búsqueda) deciden qué tarjetas existen; la temporada las recorta
+     más; el orden solo reordena, nunca esconde nada.
+     --------------------------------------------------------------------- */
+
+  const Filtros = { categoria: "todos", busqueda: "", temporada: "todas", orden: "relevancia" };
+
+  function normalizarBusqueda(s) {
+    return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  }
+
+  function aplicarOrden() {
+    $$(".grid").forEach((grid) => {
+      const cards = $$(".card", grid);
+      if (!cards.length) return;
+      const clave =
+        Filtros.orden === "precio-asc" ? (c) => Number(c.dataset.precio) :
+        Filtros.orden === "precio-desc" ? (c) => -Number(c.dataset.precio) :
+        (c) => Number(c.dataset.index);
+      cards
+        .sort((a, b) => clave(a) - clave(b))
+        .forEach((c) => grid.appendChild(c));
+    });
+  }
+
+  function aplicarFiltros() {
+    const catnav = $("#catnav");
+    const secciones = $$(".catsec");
+    const q = normalizarBusqueda(Filtros.busqueda);
+
+    $$(".pill[data-filtro]", catnav).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === Filtros.categoria));
+    $$(".catshowcase__tile[data-filtro-tile]").forEach((t) => t.classList.toggle("catshowcase__tile--active", t.dataset.filtroTile === Filtros.categoria));
+    $$(".pill[data-temporada]").forEach((p) => p.classList.toggle("is-active", p.dataset.temporada === Filtros.temporada));
+    $$(".pill[data-orden]").forEach((p) => p.classList.toggle("is-active", p.dataset.orden === Filtros.orden));
+
+    const dot = $("[data-filtros-dot]");
+    if (dot) dot.hidden = Filtros.temporada === "todas" && Filtros.orden === "relevancia";
+
+    let totalVisible = 0;
+    secciones.forEach((sec) => {
+      const mostrarSeccion = Filtros.categoria === "todos" || sec.dataset.cat === Filtros.categoria;
+      sec.hidden = !mostrarSeccion;
+      if (!mostrarSeccion) return;
+
+      let visiblesEnSeccion = 0;
+      $$(".card", sec).forEach((card) => {
+        const matchTexto = !q || (card.dataset.nombre && (
+          normalizarBusqueda(card.dataset.nombre).includes(q) ||
+          normalizarBusqueda(card.dataset.familia).includes(q)
+        ));
+        const matchTemporada = Filtros.temporada === "todas" ||
+          (card.dataset.temporadas || "").split(" ").includes(Filtros.temporada);
+        const visible = matchTexto && matchTemporada;
+        card.hidden = !visible;
+        if (visible) { visiblesEnSeccion++; totalVisible++; }
+      });
+      sec.classList.toggle("catsec--sin-resultados", visiblesEnSeccion === 0);
+    });
+
+    $("[data-buscador-vacio]")?.remove();
+    if (q && totalVisible === 0) {
+      const cont = $("[data-catalogo]");
+      if (cont) {
+        const vacio = document.createElement("div");
+        vacio.dataset.buscadorVacio = "";
+        vacio.className = "wrap";
+        vacio.innerHTML = `<div class="empty"><strong>No encontramos "${escapar(Filtros.busqueda.trim())}"</strong>Probá con otro nombre, o escribinos por WhatsApp y te ayudamos a encontrarlo.</div>`;
+        cont.prepend(vacio);
+      }
+    }
+
+    aplicarOrden();
+  }
+
   function initFiltroCatalogo() {
     const barra = $("#catnav");
     const secciones = $$(".catsec");
     if (!barra || !secciones.length) return;
 
-    function aplicarFiltro(filtro) {
-      $$(".pill[data-filtro]", barra).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === filtro));
-      $$(".catshowcase__tile[data-filtro-tile]").forEach((t) => t.classList.toggle("catshowcase__tile--active", t.dataset.filtroTile === filtro));
-      secciones.forEach((s) => { s.hidden = filtro !== "todos" && s.dataset.cat !== filtro; });
-    }
-
     barra.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-filtro]");
-      if (!btn) return;
-      aplicarFiltro(btn.dataset.filtro);
-      $("#catalogo")?.scrollIntoView({ block: "start" });
+      const btnFiltro = e.target.closest("[data-filtro]");
+      if (btnFiltro) {
+        Filtros.categoria = btnFiltro.dataset.filtro;
+        aplicarFiltros();
+        $("#catalogo")?.scrollIntoView({ block: "start" });
+        return;
+      }
+
+      const btnTemporada = e.target.closest("[data-temporada]");
+      if (btnTemporada) {
+        Filtros.temporada = btnTemporada.dataset.temporada;
+        aplicarFiltros();
+        return;
+      }
+
+      const btnOrden = e.target.closest("[data-orden]");
+      if (btnOrden) {
+        Filtros.orden = btnOrden.dataset.orden;
+        aplicarFiltros();
+        return;
+      }
+
+      const toggle = e.target.closest("[data-filtros-toggle]");
+      if (toggle) {
+        const panel = $("[data-filtros-panel]", barra);
+        if (!panel) return;
+        const abierto = panel.hidden;
+        panel.hidden = !abierto;
+        toggle.setAttribute("aria-expanded", String(abierto));
+        return;
+      }
     });
 
     const vidriera = $("[data-menu-cats]");
@@ -481,7 +619,8 @@
       vidriera.addEventListener("click", (e) => {
         const btn = e.target.closest("[data-filtro-tile]");
         if (!btn) return;
-        aplicarFiltro(btn.dataset.filtroTile);
+        Filtros.categoria = btn.dataset.filtroTile;
+        aplicarFiltros();
         $("#catalogo")?.scrollIntoView({ block: "start" });
       });
     }
@@ -492,9 +631,6 @@
      sin importar qué pastilla de categoría esté activa.
      --------------------------------------------------------------------- */
 
-  const normalizarTexto = (s) =>
-    String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-
   function initBusqueda() {
     const wrap = $("[data-buscador]");
     const btn = $("[data-buscador-btn]");
@@ -502,51 +638,13 @@
 
     const input = $("[data-buscador-input]", wrap);
     const limpiar = $("[data-buscador-limpiar]", wrap);
-    const catnav = $("#catnav");
-    const secciones = $$(".catsec");
 
     function aplicar() {
-      const q = normalizarTexto(input.value.trim());
+      const q = input.value.trim();
       limpiar.hidden = !q;
-
-      if (!q) {
-        $$(".card").forEach((c) => { c.hidden = false; });
-        secciones.forEach((s) => { s.classList.remove("catsec--sin-resultados"); });
-        const activo = $(".pill.is-active[data-filtro]", catnav);
-        const filtro = activo ? activo.dataset.filtro : "todos";
-        secciones.forEach((s) => { s.hidden = filtro !== "todos" && s.dataset.cat !== filtro; });
-        return;
-      }
-
-      $$(".pill[data-filtro]", catnav).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === "todos"));
-      $$(".catshowcase__tile[data-filtro-tile]").forEach((t) => t.classList.toggle("catshowcase__tile--active", t.dataset.filtroTile === "todos"));
-
-      let totalVisible = 0;
-      secciones.forEach((sec) => {
-        sec.hidden = false;
-        let visiblesEnSeccion = 0;
-        $$(".card", sec).forEach((card) => {
-          const va = card.dataset.nombre && (
-            normalizarTexto(card.dataset.nombre).includes(q) ||
-            normalizarTexto(card.dataset.familia).includes(q)
-          );
-          card.hidden = !va;
-          if (va) { visiblesEnSeccion++; totalVisible++; }
-        });
-        sec.classList.toggle("catsec--sin-resultados", visiblesEnSeccion === 0);
-      });
-
-      $("[data-buscador-vacio]")?.remove();
-      if (totalVisible === 0) {
-        const cont = $("[data-catalogo]");
-        if (cont) {
-          const vacio = document.createElement("div");
-          vacio.dataset.buscadorVacio = "";
-          vacio.className = "wrap";
-          vacio.innerHTML = `<div class="empty"><strong>No encontramos "${escapar(input.value.trim())}"</strong>Probá con otro nombre, o escribinos por WhatsApp y te ayudamos a encontrarlo.</div>`;
-          cont.prepend(vacio);
-        }
-      }
+      if (q) Filtros.categoria = "todos";
+      Filtros.busqueda = q;
+      aplicarFiltros();
     }
 
     function abrir() {
