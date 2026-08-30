@@ -718,7 +718,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 54495,
       desc: "Grosella negra y pera sobre un corazón floral de iris, azahar y jazmín, cerrando en pachulí, haba tonka, praliné y vainilla. Fresco al inicio, cremoso y dulce al final.",
-      img: "",
+      img: "assets/img/mujer/la-vivacite.jpg",
       detalles: ["Salida: grosella negra, pera", "Corazón: iris, azahar, jazmín", "Fondo: pachulí, haba tonka, praliné, vainilla"]
     },
     {
@@ -726,7 +726,7 @@ const PRODUCTOS = {
       familia: "Floral blanco",
       precio: 67827,
       desc: "Azahar y bergamota sobre un corazón blanco de nardo y jazmín indio, cerrando en vainilla de Madagascar, almizcle blanco y cedro. Floral blanco clásico y de gran presencia.",
-      img: "",
+      img: "assets/img/mujer/la-voie.jpg",
       detalles: ["Salida: azahar, bergamota", "Corazón: nardo, jazmín indio", "Fondo: vainilla de Madagascar, almizcle blanco, cedro"]
     },
     {
