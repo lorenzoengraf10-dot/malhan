@@ -1403,7 +1403,7 @@ const PRODUCTOS = {
       aroma: ["amaderado", "fresco"],
       precio: 48439,
       desc: "Azafrán y almendra sobre un corazón amaderado de cedro y jazmín egipcio, cerrando en ámbar gris, madera y almizcle. Cremoso y dulce, en la línea de los ambarados franceses de culto.",
-      img: "",
+      img: "assets/img/mixto/baroque-extreme.jpg",
       detalles: ["Salida: azafrán, almendra", "Corazón: notas amaderadas, cedro, jazmín egipcio", "Fondo: ámbar gris, madera, almizcle"]
     },
     {
@@ -1423,7 +1423,7 @@ const PRODUCTOS = {
       aroma: ["floral"],
       precio: 48716,
       desc: "Bergamota y pera verde sobre un corazón floral con un toque de cuero, cerrando en vainilla, vetiver, ámbar y almizcle. Fresco y sensual, con dulzura frutal.",
-      img: "",
+      img: "assets/img/mixto/glacier-bella.jpg",
       detalles: ["Salida: bergamota, pera verde", "Corazón: notas florales, cuero", "Fondo: vainilla, vetiver, ámbar, almizcle"]
     },
     {
@@ -1433,7 +1433,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 44928,
       desc: "Bergamota y coco sobre un corazón especiado de cúrcuma, canela y pimienta negra, cerrando en haba tonka, vainilla y sándalo. Fresco al inicio, cada vez más envolvente.",
-      img: "",
+      img: "assets/img/mixto/glacier-bold.jpg",
       detalles: ["Salida: bergamota, coco", "Corazón: cúrcuma, canela, pimienta negra", "Fondo: haba tonka, vainilla, sándalo"]
     },
     {
@@ -1443,7 +1443,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 59952,
       desc: "Oud e incienso sobre un corazón de rosa, frambuesa y azafrán, cerrando en ámbar, benjuí y geranio. Intenso y de gran duración; conviene usarlo con moderación.",
-      img: "",
+      img: "assets/img/mixto/jean-lowe-noir.jpg",
       detalles: ["Salida: oud, incienso", "Corazón: rosa, frambuesa, azafrán, abedul", "Fondo: ámbar, benjuí, geranio"]
     },
     {
@@ -1453,7 +1453,7 @@ const PRODUCTOS = {
       aroma: ["floral"],
       precio: 42104,
       desc: "Azafrán, pera y mandarina sobre un corazón floral de jazmín, ylang-ylang y lirio, cerrando en ámbar, madera de cachemira y almizcle. Dulce y envolvente.",
-      img: "",
+      img: "assets/img/mixto/la-baroque-rouge.jpg",
       detalles: ["Salida: azafrán, pera, mandarina", "Corazón: jazmín, ylang-ylang, lirio", "Fondo: ámbar, madera de cachemira, almizcle"]
     },
     {
