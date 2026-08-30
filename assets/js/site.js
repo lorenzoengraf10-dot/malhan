@@ -111,6 +111,11 @@
     '<img class="brand__logo" src="assets/img/logo.png" alt="" width="40" height="40" loading="lazy">' +
     '<span class="brand__mark"><span class="brand__word">Malhan</span><span class="brand__sub">Fragrance</span></span>';
 
+  /* Los únicos ids de CATEGORIAS que son un género (para el filtro de
+     Género dentro de "Nuestra Recomendación" — deja afuera recomendacion
+     y stock, que no son un género). */
+  const GENEROS = ["hombre", "mujer", "mixto"];
+
   /* ---------------------------------------------------------------------
      Encabezado
      --------------------------------------------------------------------- */
@@ -177,6 +182,13 @@
 
         <div class="catnav__panel" id="filtros-panel" data-filtros-panel hidden>
           <div class="wrap catnav__panel-inner">
+            <div class="catnav__group">
+              <span class="catnav__label">Género</span>
+              <div class="catnav__row">
+                <button class="pill pill--sm is-active" data-genero="todos" type="button">Todos</button>
+                ${GENEROS.map((id) => `<button class="pill pill--sm" data-genero="${id}" type="button">${escapar(CATEGORIAS[id].nombre)}</button>`).join("")}
+              </div>
+            </div>
             <div class="catnav__group">
               <span class="catnav__label">Temporada</span>
               <div class="catnav__row">
@@ -506,7 +518,7 @@
      más; el orden solo reordena, nunca esconde nada.
      --------------------------------------------------------------------- */
 
-  const Filtros = { categoria: "todos", busqueda: "", temporada: "todas", orden: "relevancia" };
+  const Filtros = { categoria: "todos", busqueda: "", temporada: "todas", orden: "relevancia", genero: "todos" };
 
   function normalizarBusqueda(s) {
     return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -533,15 +545,21 @@
 
     $$(".pill[data-filtro]", catnav).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === Filtros.categoria));
     $$(".catshowcase__tile[data-filtro-tile]").forEach((t) => t.classList.toggle("catshowcase__tile--active", t.dataset.filtroTile === Filtros.categoria));
+    $$(".pill[data-genero]").forEach((p) => p.classList.toggle("is-active", p.dataset.genero === Filtros.genero));
     $$(".pill[data-temporada]").forEach((p) => p.classList.toggle("is-active", p.dataset.temporada === Filtros.temporada));
     $$(".pill[data-orden]").forEach((p) => p.classList.toggle("is-active", p.dataset.orden === Filtros.orden));
 
     const dot = $("[data-filtros-dot]");
-    if (dot) dot.hidden = Filtros.temporada === "todas" && Filtros.orden === "relevancia";
+    if (dot) dot.hidden = Filtros.temporada === "todas" && Filtros.orden === "relevancia" && Filtros.genero === "todos";
 
     let totalVisible = 0;
     secciones.forEach((sec) => {
-      const mostrarSeccion = Filtros.categoria === "todos" || sec.dataset.cat === Filtros.categoria;
+      /* "Nuestra Recomendación" no es una lista fija: junta Hombre/Mujer/
+         Mixto (recortado por Género si se eligió uno) y deja afuera Stock
+         y la sección "recomendacion" en sí, que siempre está vacía. */
+      const mostrarSeccion = Filtros.categoria === "recomendacion"
+        ? GENEROS.includes(sec.dataset.cat) && (Filtros.genero === "todos" || sec.dataset.cat === Filtros.genero)
+        : Filtros.categoria === "todos" || sec.dataset.cat === Filtros.categoria;
       sec.hidden = !mostrarSeccion;
       if (!mostrarSeccion) return;
 
@@ -580,12 +598,40 @@
     const secciones = $$(".catsec");
     if (!barra || !secciones.length) return;
 
+    function abrirPanelFiltros() {
+      const panel = $("[data-filtros-panel]", barra);
+      const toggle = $("[data-filtros-toggle]", barra);
+      if (!panel || !toggle) return;
+      panel.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+    }
+
+    /* Elegir una categoría "normal" (Todos / Hombre / Mujer / Mixto /
+       Stock) sale del modo "Nuestra Recomendación": el Género deja de
+       tener efecto, así que lo reseteamos para no dejar un filtro
+       fantasma activo. Elegir "Nuestra Recomendación" hace lo inverso:
+       abre el panel de filtros para que ahí elijan a gusto. */
+    function irACategoria(id) {
+      Filtros.categoria = id;
+      if (id === "recomendacion") abrirPanelFiltros();
+      else Filtros.genero = "todos";
+      aplicarFiltros();
+      $("#catalogo")?.scrollIntoView({ block: "start" });
+    }
+
     barra.addEventListener("click", (e) => {
       const btnFiltro = e.target.closest("[data-filtro]");
       if (btnFiltro) {
-        Filtros.categoria = btnFiltro.dataset.filtro;
+        irACategoria(btnFiltro.dataset.filtro);
+        return;
+      }
+
+      const btnGenero = e.target.closest("[data-genero]");
+      if (btnGenero) {
+        Filtros.categoria = "recomendacion";
+        Filtros.genero = btnGenero.dataset.genero;
+        abrirPanelFiltros();
         aplicarFiltros();
-        $("#catalogo")?.scrollIntoView({ block: "start" });
         return;
       }
 
@@ -619,9 +665,7 @@
       vidriera.addEventListener("click", (e) => {
         const btn = e.target.closest("[data-filtro-tile]");
         if (!btn) return;
-        Filtros.categoria = btn.dataset.filtroTile;
-        aplicarFiltros();
-        $("#catalogo")?.scrollIntoView({ block: "start" });
+        irACategoria(btn.dataset.filtroTile);
       });
     }
   }
@@ -642,7 +686,7 @@
     function aplicar() {
       const q = input.value.trim();
       limpiar.hidden = !q;
-      if (q) Filtros.categoria = "todos";
+      if (q) { Filtros.categoria = "todos"; Filtros.genero = "todos"; }
       Filtros.busqueda = q;
       aplicarFiltros();
     }
