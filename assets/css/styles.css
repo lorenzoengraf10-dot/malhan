@@ -311,7 +311,7 @@ h1,h2,h3,h4{
 .buscador__input::-webkit-search-cancel-button{ -webkit-appearance:none; appearance:none; }
 .buscador__limpiar{
   display:flex; align-items:center; justify-content:center;
-  width:34px; height:34px; flex:none;
+  width:44px; height:44px; flex:none;
   border-radius:50%;
   font-size:1.25rem;
   color:var(--muted);
@@ -824,7 +824,7 @@ h1,h2,h3,h4{
 .footer__col ul{ display:flex; flex-direction:column; gap:10px; }
 .footer__col li{ font-size:.9rem; color:rgba(251,246,237,.72); }
 .footer__col a{
-  display:inline-flex; align-items:center; min-height:32px;
+  display:inline-flex; align-items:center; min-height:44px;
   color:rgba(251,246,237,.86);
 }
 .footer__col a:hover{ color:var(--gold-soft); }
@@ -882,7 +882,7 @@ h1,h2,h3,h4{
 .cart__title{ font-size:1.32rem; }
 .cart__close{
   display:flex; align-items:center; justify-content:center;
-  width:40px; height:40px;
+  width:44px; height:44px;
   border-radius:50%;
   font-size:1.4rem;
   color:var(--brown);
@@ -922,7 +922,7 @@ h1,h2,h3,h4{
 }
 .citem__media img{ width:100%; height:100%; object-fit:cover; }
 .citem__media.is-empty .frasco-ph{ width:22px; height:30px; color:var(--brown-soft); opacity:.55; }
-.citem__body{ flex:1; min-width:0; padding-right:26px; }
+.citem__body{ flex:1; min-width:0; padding-right:40px; }
 .citem__nombre{
   margin:0 0 3px;
   font-family:var(--font-display);
@@ -932,14 +932,14 @@ h1,h2,h3,h4{
 .citem__precio{ margin:0 0 8px; font-size:.86rem; color:var(--muted); }
 .citem__cant{
   display:inline-flex; align-items:center;
-  min-height:34px;
+  min-height:44px;
   border-radius:999px;
   box-shadow:inset 0 0 0 1.5px var(--line);
   overflow:hidden;
 }
 .citem__cant button{
   display:flex; align-items:center; justify-content:center;
-  width:32px; height:34px;
+  width:40px; height:44px;
   font-size:1.1rem;
   color:var(--brown);
 }
@@ -947,9 +947,10 @@ h1,h2,h3,h4{
 .citem__cant button:disabled{ opacity:.4; cursor:default; }
 .citem__cant span{ min-width:26px; text-align:center; font-weight:600; font-size:.92rem; }
 .citem__quitar{
-  position:absolute; top:14px; right:0;
+  position:absolute; top:50%; right:0;
+  transform:translateY(-50%);
   display:flex; align-items:center; justify-content:center;
-  width:32px; height:32px;
+  width:44px; height:44px;
   border-radius:50%;
   font-size:1.15rem;
   color:var(--muted);
@@ -1051,7 +1052,7 @@ h1,h2,h3,h4{
 }
 .pago-dato-copy{
   flex:none;
-  min-height:32px;
+  min-height:44px;
   padding:0 12px;
   border-radius:999px;
   box-shadow:inset 0 0 0 1.5px var(--line);
@@ -1113,9 +1114,9 @@ h1,h2,h3,h4{
   box-shadow:var(--shadow-lg);
 }
 .modal__close{
-  position:absolute; top:12px; right:12px; z-index:2;
+  position:absolute; top:10px; right:10px; z-index:2;
   display:flex; align-items:center; justify-content:center;
-  width:40px; height:40px;
+  width:44px; height:44px;
   border-radius:50%;
   background:rgba(251,246,237,.9);
   font-size:1.4rem;
