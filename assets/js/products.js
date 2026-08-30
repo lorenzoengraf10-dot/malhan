@@ -1072,7 +1072,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 61279,
       desc: "Cardamomo y violeta abren paso a un corazón de ámbar e iris, sobre una base amaderada de sándalo, cuero y cedro de Virginia. Envolvente, muy cercano a Santal 33.",
-      img: "",
+      img: "Emper Stallion 53 Unisex Fragrance – 100ml + Free 20ml Mini _ Emper.jpg",
       detalles: ["Salida: cardamomo, violeta", "Corazón: ámbar, iris", "Fondo: sándalo, cuero, cedro de Virginia, papiro"]
     },
     {
