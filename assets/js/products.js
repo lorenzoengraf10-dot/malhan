@@ -1463,7 +1463,7 @@ const PRODUCTOS = {
       aroma: ["fresco", "floral"],
       precio: 51413,
       desc: "Naranja, bergamota y limón sobre un corazón frutal jugoso, cerrando en vainilla de Madagascar, almizcle blanco y ámbar. Fresco y cítrico, ideal para el día.",
-      img: "",
+      img: "assets/img/mixto/philos-pura.jpg",
       detalles: ["Salida: naranja, bergamota, limón", "Corazón: frutas", "Fondo: vainilla de Madagascar, almizcle blanco, ámbar"]
     }
   ],
