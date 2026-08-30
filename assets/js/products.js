@@ -598,7 +598,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 75637,
       desc: "Frutas, lirio y granada sobre tuberosa, jazmín y gardenia, cerrando en vainilla, sándalo y almizcle blanco.",
-      img: "",
+      img: "assets/img/mujer/fakhar-rosa.jpg",
       detalles: ["Salida: frutas, lirio, granada", "Corazón: tuberosa, jazmín, gardenia, rosa", "Fondo: vainilla, almizcle blanco, sándalo"]
     },
     {
@@ -638,7 +638,7 @@ const PRODUCTOS = {
       familia: "Floral acuático",
       precio: 54088,
       desc: "Mandarina verde, higo y agua de coco sobre loto, nenúfar y jazmín, cerrando en almizcle, sándalo y vainilla.",
-      img: "",
+      img: "assets/img/mujer/mayar-natural-intense.jpg",
       detalles: ["Salida: mandarina verde, higo, agua de coco, melón", "Corazón: loto, nenúfar, jazmín", "Fondo: almizcle, ambroxan, vainilla, sándalo"]
     },
     {
