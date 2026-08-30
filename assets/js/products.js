@@ -1242,7 +1242,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 91773,
       desc: "Lavanda, nuez moscada y salvia sobre cedro y geranio, cerrando en haba tonka, ámbar y pachulí.",
-      img: "",
+      img: "assets/img/mixto/musaman-black.jpg",
       detalles: ["Salida: lavanda, nuez moscada, salvia, bergamota", "Corazón: cedro, geranio", "Fondo: haba tonka, ámbar, pachulí"]
     },
     {
@@ -1252,7 +1252,7 @@ const PRODUCTOS = {
       aroma: ["floral"],
       precio: 107203,
       desc: "Especias, bergamota y naranja sobre coco, ylang-ylang y ambroxan, cerrando en sándalo, almizcle y benjuí.",
-      img: "",
+      img: "assets/img/mixto/musaman-white.jpg",
       detalles: ["Salida: especias, bergamota, naranja", "Corazón: coco, ylang-ylang, ambroxan", "Fondo: sándalo, almizcle, benjuí"]
     },
     {
@@ -1352,7 +1352,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 83256,
       desc: "Apertura fresca de menta y bergamota, corazón cálido de lavanda y benjuí, y fondo dulce de vainilla y haba tonka.",
-      img: "",
+      img: "assets/img/mixto/rayhaan-elixir.jpg",
       detalles: ["Salida: menta, bergamota", "Corazón: lavanda, benjuí", "Fondo: vainilla, haba tonka"]
     },
     {
