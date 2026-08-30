@@ -1112,7 +1112,7 @@ const PRODUCTOS = {
       aroma: ["floral"],
       precio: 44095,
       desc: "Bergamota y lichi dan una apertura frutal y fresca, con jazmín, rosas y canela en el corazón. Cierra amaderado, con cedro, sándalo, ámbar y almizcle de fondo.",
-      img: "",
+      img: "assets/img/mixto/ajwad.jpg",
       detalles: ["Salida: bergamota, lichi", "Corazón: jazmín, rosas, canela", "Fondo: cedro, sándalo, ámbar, almizcle"]
     },
     {
@@ -1122,7 +1122,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 65216,
       desc: "Jengibre, mandarina y pimienta rosa abren con energía, seguidos de lavanda, praliné, cacao y jazmín en el corazón. Cierra en un fondo cálido de vainilla, ámbar y almizcle.",
-      img: "",
+      img: "assets/img/mixto/angham.jpg",
       detalles: ["Salida: jengibre, mandarina, pimienta rosa", "Corazón: lavanda, praliné, cacao, jazmín", "Fondo: vainilla, ámbar, almizcle"]
     },
     {
@@ -1132,7 +1132,7 @@ const PRODUCTOS = {
       aroma: ["citrico", "fresco"],
       precio: 84625,
       desc: "Mandarina, bergamota y jengibre se combinan con un toque fresco de menta, mientras pera y azahar aparecen en el corazón. El fondo de almizcle, ámbar y cedro le da calidez amaderada.",
-      img: "",
+      img: "assets/img/mixto/art-of-universe.jpg",
       detalles: ["Salida: mandarina, jengibre, bergamota, menta", "Corazón: pera, azahar", "Fondo: almizcle, ámbar, cedro"]
     },
     {
@@ -1142,7 +1142,7 @@ const PRODUCTOS = {
       aroma: ["fresco"],
       precio: 77007,
       desc: "Notas marinas, sal y limón abren con frescura acuática, sobre un corazón de davana e iris. Cierra amaderado, con ámbar gris, musgo de roble y sándalo de fondo.",
-      img: "",
+      img: "assets/img/mixto/atlas.jpg",
       detalles: ["Salida: notas marinas, sal, limón", "Corazón: davana, iris", "Fondo: ámbar gris, musgo de roble, sándalo"]
     },
     {
