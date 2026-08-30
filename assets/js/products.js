@@ -762,7 +762,7 @@ const PRODUCTOS = {
       temporada: ["invierno"],
       precio: 74781,
       desc: "Frutilla y grosella negra sobre un corazón floral de jazmín y azahar, cerrando en vainilla, caramelo, ámbar y almizcle. Dulce, envolvente y adictivo.",
-      img: "",
+      img: "assets/img/mujer/yara-elixir.jpg",
       detalles: ["Salida: frutilla, grosella negra", "Corazón: jazmín, azahar", "Fondo: vainilla, caramelo, ámbar, almizcle"]
     },
     {
