@@ -780,7 +780,7 @@ const PRODUCTOS = {
       temporada: ["primavera"],
       precio: 54344,
       desc: "Mango, coco y maracuyá sobre un corazón floral de jazmín, azahar y heliotropo, cerrando en vainilla, almizcle y cashmerán. Tropical y veraniego.",
-      img: "",
+      img: "assets/img/mujer/yara-tous.jpg",
       detalles: ["Salida: mango, coco, maracuyá", "Corazón: jazmín, azahar, heliotropo", "Fondo: vainilla, almizcle, cashmerán"]
     },
     {
@@ -789,7 +789,7 @@ const PRODUCTOS = {
       temporada: ["primavera", "invierno"],
       precio: 47540,
       desc: "Pera y bergamota sobre un corazón floral de azahar y jazmín, cerrando en pachulí y vetiver. Sofisticado y sensual.",
-      img: "",
+      img: "assets/img/mujer/intrude.jpg",
       detalles: ["Salida: pera, bergamota", "Corazón: azahar, jazmín", "Fondo: pachulí, vetiver"]
     },
     {
@@ -825,7 +825,7 @@ const PRODUCTOS = {
       temporada: ["primavera"],
       precio: 62433,
       desc: "Pimienta rosa y champagne rosé sobre un corazón de rosa y flor de durazno, cerrando en madera y almizcle blanco. Chispeante y romántico.",
-      img: "",
+      img: "assets/img/mujer/rose-seduction-vip.jpg",
       detalles: ["Salida: pimienta rosa, champagne rosé", "Corazón: rosa, flor de durazno", "Fondo: notas amaderadas, almizcle blanco"]
     }
   ],
