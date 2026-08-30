@@ -542,7 +542,7 @@ const PRODUCTOS = {
       familia: "Oriental frutal",
       precio: 85931,
       desc: "Mandarina, pomelo y bergamota abren paso a un corazón frutal de frambuesa y grosella negra, que cierra en almizcle, ámbar y naranja.",
-      img: "assets/img/mujer/9-am-rosa.jpg",
+      img: "",
       detalles: ["Salida: mandarina, pomelo, bergamota", "Corazón: frambuesa, grosella negra", "Fondo: almizcle, ámbar, naranja"]
     },
     {
@@ -550,7 +550,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 91324,
       desc: "Lichi, bergamota y pimienta rosa se posan sobre un corazón de iris, que cierra en un fondo goloso de praliné, sándalo y ambroxan.",
-      img: "assets/img/mujer/club-de-nuit-maleka.jpg",
+      img: "",
       detalles: ["Salida: lichi, bergamota, pimienta rosa", "Corazón: iris", "Fondo: praliné, sándalo, ambroxan"]
     },
     {
@@ -558,7 +558,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 86937,
       desc: "Naranja, pomelo y durazno abren con frescura frutal, sobre un corazón floral de rosa y jazmín que cierra en pachulí, vainilla y almizcle.",
-      img: "assets/img/mujer/club-de-nuit-woman.jpg",
+      img: "",
       detalles: ["Salida: naranja, bergamota, pomelo, durazno", "Corazón: rosa, jazmín, geranio, lichi", "Fondo: pachulí, almizcle, vainilla, vetiver"]
     },
     {
@@ -574,7 +574,7 @@ const PRODUCTOS = {
       familia: "Floral gourmand",
       precio: 59759,
       desc: "Leche de rosas en la apertura, con merengue y almendra en el corazón, sobre un fondo cremoso de vainilla, sándalo y almizcle. Perfil gourmand floral, dulce y suave.",
-      img: "assets/img/mujer/badee-al-oud-noble-blush.jpg",
+      img: "",
       detalles: ["Salida: leche de rosas", "Corazón: merengue, almendra", "Fondo: vainilla, sándalo, almizcle"]
     },
     {
@@ -582,7 +582,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 68255,
       desc: "Ruibarbo, lichi y bergamota dan una apertura jugosa, con rosa turca, peonía y lirio en el corazón. Cierra suave, con almizcle blanco, vainilla y cashmerán de fondo.",
-      img: "assets/img/mujer/delilah.jpg",
+      img: "",
       detalles: ["Salida: ruibarbo, lichi, bergamota", "Corazón: rosa turca, peonía, lirio", "Fondo: almizcle blanco, vainilla, cashmerán"]
     },
     {
@@ -590,7 +590,7 @@ const PRODUCTOS = {
       familia: "Chipre floral",
       precio: 57919,
       desc: "Azahar, grosella negra y bergamota abren frescos y afrutados, con nardo, jazmín y caléndula en el corazón. Cierra en almizcle, vainilla, cedro y pachulí, con muy buena estela.",
-      img: "assets/img/mujer/emaan.jpg",
+      img: "",
       detalles: ["Salida: azahar, grosella negra, bergamota", "Corazón: nardo, jazmín, caléndula", "Fondo: almizcle, vainilla, cedro, pachulí"]
     },
     {
@@ -598,7 +598,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 75637,
       desc: "Frutas, lirio y granada sobre tuberosa, jazmín y gardenia, cerrando en vainilla, sándalo y almizcle blanco.",
-      img: "assets/img/mujer/fakhar-rosa.jpg",
+      img: "",
       detalles: ["Salida: frutas, lirio, granada", "Corazón: tuberosa, jazmín, gardenia, rosa", "Fondo: vainilla, almizcle blanco, sándalo"]
     },
     {
@@ -606,7 +606,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 68768,
       desc: "Champagne, frutilla y mandarina sobre gardenia, jazmín y orquídea vainilla, cerrando en ámbar, sándalo y castaña.",
-      img: "assets/img/mujer/haya.jpg",
+      img: "",
       detalles: ["Salida: champagne, frutilla, mandarina, naranja sanguina", "Corazón: gardenia, jazmín, orquídea vainilla", "Fondo: ámbar, sándalo, castaña"]
     },
     {
@@ -614,7 +614,7 @@ const PRODUCTOS = {
       familia: "Floral frutal gourmand",
       precio: 49593,
       desc: "Lychee, pomelo y grosella roja sobre rosa, durazno y cedro, cerrando en vainilla, praliné y ámbar.",
-      img: "assets/img/mujer/hayaati-rosa.jpg",
+      img: "",
       detalles: ["Salida: lychee, pomelo, grosella roja", "Corazón: rosa, durazno, cedro", "Fondo: vainilla, praliné, ámbar"]
     },
     {
@@ -622,7 +622,7 @@ const PRODUCTOS = {
       familia: "Ámbar vainilla",
       precio: 82913,
       desc: "Canela y especias sobre tuberosa, jazmín e incienso, cerrando en vainilla, almizcle y haba tonka.",
-      img: "assets/img/mujer/her-confession.jpg",
+      img: "",
       detalles: ["Salida: canela, especias", "Corazón: tuberosa, jazmín, incienso", "Fondo: vainilla, almizcle, haba tonka"]
     },
     {
@@ -630,7 +630,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 55928,
       desc: "Lichi, frambuesa y hoja de violeta sobre rosa blanca, peonía y jazmín, cerrando en almizcle y vainilla.",
-      img: "assets/img/mujer/mayar.jpg",
+      img: "",
       detalles: ["Salida: lichi, frambuesa, hoja de violeta", "Corazón: rosa blanca, peonía, jazmín", "Fondo: almizcle, vainilla"]
     },
     {
@@ -638,7 +638,7 @@ const PRODUCTOS = {
       familia: "Floral acuático",
       precio: 54088,
       desc: "Mandarina verde, higo y agua de coco sobre loto, nenúfar y jazmín, cerrando en almizcle, sándalo y vainilla.",
-      img: "assets/img/mujer/mayar-natural-intense.jpg",
+      img: "",
       detalles: ["Salida: mandarina verde, higo, agua de coco, melón", "Corazón: loto, nenúfar, jazmín", "Fondo: almizcle, ambroxan, vainilla, sándalo"]
     },
     {
@@ -654,7 +654,7 @@ const PRODUCTOS = {
       familia: "Floral amaderado",
       precio: 50899,
       desc: "Salida cítrica sobre un corazón de almizcle blanco y aloe vera, con un fondo floral y amaderado de jazmín, madera y oud.",
-      img: "assets/img/mujer/ameerat-al-arab.jpg",
+      img: "",
       detalles: ["Salida: cítricos, bergamota", "Corazón: almizcle blanco, aloe vera", "Fondo: jazmín, almizcle, madera, oud"]
     },
     {
@@ -662,7 +662,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 55051,
       desc: "Apertura frutal de frambuesa, bergamota y rosa, corazón floral de jazmín, peonía y más rosa, sobre un fondo cálido de sándalo, almizcle, ámbar y pachulí.",
-      img: "assets/img/mujer/ameerat-al-arab-prive-rose.jpg",
+      img: "",
       detalles: ["Salida: frambuesa, bergamota, rosa", "Corazón: jazmín, peonía, rosa", "Fondo: sándalo, almizcle, ámbar, pachulí"]
     },
     {
@@ -670,7 +670,7 @@ const PRODUCTOS = {
       familia: "Floral oriental",
       precio: 48503,
       desc: "Apertura vibrante de pimienta rosa y mandarina, corazón dulce de cacao, azahar y jazmín sambac, y fondo cálido de vainilla, haba tonka y pachulí.",
-      img: "assets/img/mujer/al-wataniah-sabah-al-ward.jpg",
+      img: "",
       detalles: ["Salida: pimienta rosa, mandarina", "Corazón: cacao, azahar, jazmín sambac", "Fondo: vainilla, haba tonka, pachulí"]
     },
     {
@@ -678,7 +678,7 @@ const PRODUCTOS = {
       familia: "Floral frutal gourmand",
       precio: 64211,
       desc: "Pera, grosella negra y peonía sobre un corazón de jazmín, praliné y haba tonka, cerrando en vainilla, sándalo, ámbar y almizcle. Floral, dulce y envolvente.",
-      img: "assets/img/mujer/the-kingdom-fem.jpg",
+      img: "",
       detalles: ["Salida: pera, grosella negra, peonía", "Corazón: jazmín, praliné, haba tonka", "Fondo: vainilla, sándalo, ámbar, almizcle"]
     },
     {
@@ -686,7 +686,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 74781,
       desc: "Frutilla y grosella negra sobre un corazón floral de jazmín y azahar, cerrando en vainilla, caramelo, ámbar y almizcle. Dulce, envolvente y adictivo.",
-      img: "assets/img/mujer/yara-elixir.jpg",
+      img: "",
       detalles: ["Salida: frutilla, grosella negra", "Corazón: jazmín, azahar", "Fondo: vainilla, caramelo, ámbar, almizcle"]
     },
     {
@@ -694,7 +694,7 @@ const PRODUCTOS = {
       familia: "Floral frutal gourmand",
       precio: 54537,
       desc: "Pera, pimienta rosa y grosella negra sobre un corazón cremoso de nardo, jazmín y almendra, cerrando en vainilla, cashmerán y pachulí. La más intensa de la línea Yara.",
-      img: "assets/img/mujer/yara-moi.jpg",
+      img: "",
       detalles: ["Salida: pera, pimienta rosa, grosella negra", "Corazón: nardo, jazmín, almendra", "Fondo: vainilla, cashmerán, pachulí"]
     },
     {
@@ -702,7 +702,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 54344,
       desc: "Mango, coco y maracuyá sobre un corazón floral de jazmín, azahar y heliotropo, cerrando en vainilla, almizcle y cashmerán. Tropical y veraniego.",
-      img: "assets/img/mujer/yara-tous.jpg",
+      img: "",
       detalles: ["Salida: mango, coco, maracuyá", "Corazón: jazmín, azahar, heliotropo", "Fondo: vainilla, almizcle, cashmerán"]
     },
     {
@@ -710,7 +710,7 @@ const PRODUCTOS = {
       familia: "Floral oriental",
       precio: 47540,
       desc: "Pera y bergamota sobre un corazón floral de azahar y jazmín, cerrando en pachulí y vetiver. Sofisticado y sensual.",
-      img: "assets/img/mujer/intrude.jpg",
+      img: "",
       detalles: ["Salida: pera, bergamota", "Corazón: azahar, jazmín", "Fondo: pachulí, vetiver"]
     },
     {
@@ -718,7 +718,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 54495,
       desc: "Grosella negra y pera sobre un corazón floral de iris, azahar y jazmín, cerrando en pachulí, haba tonka, praliné y vainilla. Fresco al inicio, cremoso y dulce al final.",
-      img: "assets/img/mujer/la-vivacite.jpg",
+      img: "",
       detalles: ["Salida: grosella negra, pera", "Corazón: iris, azahar, jazmín", "Fondo: pachulí, haba tonka, praliné, vainilla"]
     },
     {
@@ -726,7 +726,7 @@ const PRODUCTOS = {
       familia: "Floral blanco",
       precio: 67827,
       desc: "Azahar y bergamota sobre un corazón blanco de nardo y jazmín indio, cerrando en vainilla de Madagascar, almizcle blanco y cedro. Floral blanco clásico y de gran presencia.",
-      img: "assets/img/mujer/la-voie.jpg",
+      img: "",
       detalles: ["Salida: azahar, bergamota", "Corazón: nardo, jazmín indio", "Fondo: vainilla de Madagascar, almizcle blanco, cedro"]
     },
     {
@@ -734,7 +734,7 @@ const PRODUCTOS = {
       familia: "Floral frutal gourmand",
       precio: 79683,
       desc: "Frutas exóticas y mandarina sobre un corazón de azahar, peonía y vainilla, cerrando en haba tonka, ambroxán y vainilla. Dulce y frutal, gourmand suave.",
-      img: "assets/img/mujer/papillon-dor.jpg",
+      img: "",
       detalles: ["Salida: frutas exóticas, mandarina", "Corazón: azahar, peonía, vainilla", "Fondo: haba tonka, ambroxán, vainilla"]
     },
     {
@@ -742,7 +742,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 62433,
       desc: "Pimienta rosa y champagne rosé sobre un corazón de rosa y flor de durazno, cerrando en madera y almizcle blanco. Chispeante y romántico.",
-      img: "assets/img/mujer/rose-seduction-vip.jpg",
+      img: "",
       detalles: ["Salida: pimienta rosa, champagne rosé", "Corazón: rosa, flor de durazno", "Fondo: notas amaderadas, almizcle blanco"]
     }
   ],
@@ -756,7 +756,7 @@ const PRODUCTOS = {
       familia: "Oriental floral",
       precio: 52697,
       desc: "Pimienta rosa y bergamota sobre rosa turca y búlgara, cerrando en oud, ámbar y vainilla.",
-      img: "assets/img/mixto/badee-al-oud-amethyst.jpg",
+      img: "",
       detalles: ["Salida: pimienta rosa, bergamota", "Corazón: rosa turca, rosa búlgara, jazmín", "Fondo: oud, ámbar, vainilla"]
     },
     {
@@ -764,7 +764,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 124195,
       desc: "Bergamota y notas verdes sobre melón, ananá y ámbar, cerrando en vainilla y madera. Amber Oud Gold Edition, de Al Haramain.",
-      img: "assets/img/mixto/gold-edition-120ml.jpg",
+      img: "",
       detalles: ["Salida: bergamota, notas verdes", "Corazón: melón, ananá, ámbar, acorde gourmand", "Fondo: vainilla, almizcle, madera"]
     },
     {
@@ -772,7 +772,7 @@ const PRODUCTOS = {
       familia: "Aromático",
       precio: 90960,
       desc: "Ananá, naranja y pomelo sobre iris, ámbar y lavanda, cerrando en haba tonka y almizcle.",
-      img: "assets/img/mixto/hawas-malibu.jpg",
+      img: "",
       detalles: ["Salida: ananá, naranja, pomelo", "Corazón: iris, ámbar, lavanda", "Fondo: haba tonka, almizcle, pachulí, cashmerán"]
     },
     {
@@ -780,7 +780,7 @@ const PRODUCTOS = {
       familia: "Aromático marino",
       precio: 90596,
       desc: "Apertura de salvia esclarea, corazón floral marino de jazmín egipcio con notas acuáticas, y fondo salino de ámbar gris y minerales.",
-      img: "assets/img/mixto/hawas-fire.jpg",
+      img: "",
       detalles: ["Salida: salvia esclarea", "Corazón: jazmín egipcio, notas marinas", "Fondo: ámbar gris, ámbar, notas minerales"]
     },
     {
@@ -788,7 +788,7 @@ const PRODUCTOS = {
       familia: "Aromático acuático",
       precio: 75017,
       desc: "Limón, menta y grosella negra con un toque de pimienta rosa, sobre un corazón de manzana, cedro e incienso que cierra en jengibre, sándalo, pachulí y jazmín.",
-      img: "assets/img/mixto/9-am-dive.jpg",
+      img: "",
       detalles: ["Salida: limón, menta, grosella negra, pimienta rosa", "Corazón: manzana, cedro, incienso", "Fondo: jengibre, sándalo, pachulí, jazmín"]
     },
     {
@@ -796,7 +796,7 @@ const PRODUCTOS = {
       familia: "Oriental especiado",
       precio: 103757,
       desc: "Nuez moscada, elemí y cardamomo sobre un corazón especiado de pimienta de Jamaica, lavanda y cuero, que cierra en ládano, pachulí y vainilla.",
-      img: "assets/img/mixto/9-pm-elixir.jpg",
+      img: "",
       detalles: ["Salida: nuez moscada, elemí, cardamomo", "Corazón: pimienta de Jamaica, lavanda, cuero", "Fondo: ládano, pachulí, vainilla"]
     },
     {
@@ -804,7 +804,7 @@ const PRODUCTOS = {
       familia: "Oriental especiado",
       precio: 138255,
       desc: "Pitahaya, coñac y manzana sobre bergamota, con un corazón goloso de toffee, gamuza y cardamomo que cierra en haba tonka, pachulí y ámbar.",
-      img: "assets/img/mixto/9-pm-night-out.jpg",
+      img: "",
       detalles: ["Salida: pitahaya, coñac, manzana, bergamota", "Corazón: toffee, gamuza, cardamomo, cedro", "Fondo: haba tonka, pachulí, ámbar"]
     },
     {
@@ -812,7 +812,7 @@ const PRODUCTOS = {
       familia: "Amaderado frutal",
       precio: 103051,
       desc: "Manzana verde, ananá y mandarina abren con frescura frutal, sobre un corazón amaderado de cedro y vainilla que cierra en ámbar gris, caramelo y musgo de roble.",
-      img: "assets/img/mixto/9-pm-rebel.jpg",
+      img: "",
       detalles: ["Salida: manzana verde, ananá, mandarina", "Corazón: cedro, vainilla, musgo de roble", "Fondo: ámbar gris, caramelo, almizcle"]
     },
     {
@@ -820,7 +820,7 @@ const PRODUCTOS = {
       familia: "Aromático frutal",
       precio: 115527,
       desc: "Notas verdes, bergamota y mandarina dan una apertura fresca, sobre un corazón jugoso de melón, ananá y grosella negra que cierra en almizcle y vainilla.",
-      img: "assets/img/mixto/aqua-dubai.jpg",
+      img: "",
       detalles: ["Salida: notas verdes, bergamota, mandarina", "Corazón: melón, ananá, grosella negra, ámbar", "Fondo: almizcle, galbano, vainilla"]
     },
     {
@@ -828,7 +828,7 @@ const PRODUCTOS = {
       familia: "Amaderado aromático",
       precio: 95368,
       desc: "Cítricos frescos se mezclan con frutas maduras como mango, guayaba y pitaya, sobre un corazón floral que se funde en maderas suaves y vainilla.",
-      img: "assets/img/mixto/club-de-nuit-bling.jpg",
+      img: "",
       detalles: ["Salida: cítricos, mango, guayaba", "Corazón: flores blancas, pitaya", "Fondo: maderas aterciopeladas, vainilla"]
     },
     {
@@ -836,7 +836,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 132925,
       desc: "Ananá, limón y caramelo abren con frescura frutal, sobre un corazón de musgo de roble y jazmín que cierra en cuero, ámbar, almizcle blanco y vainilla.",
-      img: "assets/img/mixto/club-de-nuit-precieux.jpg",
+      img: "",
       detalles: ["Salida: ananá, limón, bergamota, caramelo", "Corazón: musgo de roble, jazmín, lirio de los valles", "Fondo: ambroxan, cuero, ámbar, vainilla"]
     },
     {
@@ -844,7 +844,7 @@ const PRODUCTOS = {
       familia: "Floral amaderado",
       precio: 83941,
       desc: "Bergamota, limón y lima dan una apertura cítrica, sobre un corazón floral de rosa e iris que cierra en sándalo, cedro y almizcle.",
-      img: "assets/img/mixto/club-de-nuit-sillage.jpg",
+      img: "",
       detalles: ["Salida: bergamota, limón, lima, grosella negra", "Corazón: rosa, iris, jazmín", "Fondo: ambroxan, almizcle, sándalo, cedro"]
     },
     {
@@ -852,7 +852,7 @@ const PRODUCTOS = {
       familia: "Ambarino amaderado",
       precio: 93720,
       desc: "Azafrán y jazmín se funden en un corazón de madera ambarina y ámbar gris, cerrando en una base resinosa de abeto y cedro.",
-      img: "assets/img/mixto/club-de-nuit-untold.jpg",
+      img: "",
       detalles: ["Salida: azafrán, jazmín", "Corazón: madera ambarina, ámbar gris", "Fondo: resina de abeto, cedro"]
     },
     {
@@ -860,7 +860,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 94299,
       desc: "Mandarina y naranja se especian con cardamomo y lavanda, sobre un corazón goloso de caramelo y haba tonka que cierra en vainilla, vetiver y pachulí.",
-      img: "assets/img/mixto/mandarin-sky-elixir.jpg",
+      img: "",
       detalles: ["Salida: mandarina, naranja, lavanda, cardamomo", "Corazón: caramelo, haba tonka, pachulí, incienso", "Fondo: vainilla, vetiver"]
     },
     {
@@ -875,7 +875,7 @@ const PRODUCTOS = {
       familia: "Amaderado oriental",
       precio: 61279,
       desc: "Cardamomo y violeta abren paso a un corazón de ámbar e iris, sobre una base amaderada de sándalo, cuero y cedro de Virginia. Envolvente, muy cercano a Santal 33.",
-      img: "assets/img/mixto/stallion-53.jpg",
+      img: "",
       detalles: ["Salida: cardamomo, violeta", "Corazón: ámbar, iris", "Fondo: sándalo, cuero, cedro de Virginia, papiro"]
     },
     {
@@ -907,7 +907,7 @@ const PRODUCTOS = {
       familia: "Floral frutal",
       precio: 44095,
       desc: "Bergamota y lichi dan una apertura frutal y fresca, con jazmín, rosas y canela en el corazón. Cierra amaderado, con cedro, sándalo, ámbar y almizcle de fondo.",
-      img: "assets/img/mixto/ajwad.jpg",
+      img: "",
       detalles: ["Salida: bergamota, lichi", "Corazón: jazmín, rosas, canela", "Fondo: cedro, sándalo, ámbar, almizcle"]
     },
     {
@@ -915,7 +915,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 65216,
       desc: "Jengibre, mandarina y pimienta rosa abren con energía, seguidos de lavanda, praliné, cacao y jazmín en el corazón. Cierra en un fondo cálido de vainilla, ámbar y almizcle.",
-      img: "assets/img/mixto/angham.jpg",
+      img: "",
       detalles: ["Salida: jengibre, mandarina, pimienta rosa", "Corazón: lavanda, praliné, cacao, jazmín", "Fondo: vainilla, ámbar, almizcle"]
     },
     {
@@ -923,7 +923,7 @@ const PRODUCTOS = {
       familia: "Cítrico aromático",
       precio: 84625,
       desc: "Mandarina, bergamota y jengibre se combinan con un toque fresco de menta, mientras pera y azahar aparecen en el corazón. El fondo de almizcle, ámbar y cedro le da calidez amaderada.",
-      img: "assets/img/mixto/art-of-universe.jpg",
+      img: "",
       detalles: ["Salida: mandarina, jengibre, bergamota, menta", "Corazón: pera, azahar", "Fondo: almizcle, ámbar, cedro"]
     },
     {
@@ -931,7 +931,7 @@ const PRODUCTOS = {
       familia: "Acuático fresco",
       precio: 77007,
       desc: "Notas marinas, sal y limón abren con frescura acuática, sobre un corazón de davana e iris. Cierra amaderado, con ámbar gris, musgo de roble y sándalo de fondo.",
-      img: "assets/img/mixto/atlas.jpg",
+      img: "",
       detalles: ["Salida: notas marinas, sal, limón", "Corazón: davana, iris", "Fondo: ámbar gris, musgo de roble, sándalo"]
     },
     {
@@ -939,7 +939,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 54237,
       desc: "Azafrán, nuez moscada y lavanda dan una apertura especiada, seguida de un corazón denso de oud y pachulí. El fondo repite oud y pachulí sobre almizcle, para una estela intensa y duradera.",
-      img: "assets/img/mixto/badee-al-oud-for-glory.jpg",
+      img: "",
       detalles: ["Salida: azafrán, nuez moscada, lavanda", "Corazón: oud, pachulí", "Fondo: oud, pachulí, almizcle"]
     },
     {
@@ -947,7 +947,7 @@ const PRODUCTOS = {
       familia: "Frutal tropical",
       precio: 57041,
       desc: "Manzana, lichi y rosa abren jugosos y frescos, con ciruela y jazmín en el corazón. Cierra en musgo, vainilla y pachulí, en un perfil frutal alejado del oud clásico pese al nombre.",
-      img: "assets/img/mixto/badee-al-oud-sublime.jpg",
+      img: "",
       detalles: ["Salida: manzana, lichi, rosa", "Corazón: ciruela, jazmín", "Fondo: musgo, vainilla, pachulí"]
     },
     {
@@ -955,7 +955,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 63953,
       desc: "Nardo y un toque salino abren de forma inusual, dando paso a ámbar, haba tonka y cashmerán en el corazón. Cierra amaderado y resinoso, con cedro, vetiver y ládano de fondo.",
-      img: "assets/img/mixto/fakhar-gold.jpg",
+      img: "",
       detalles: ["Salida: nardo, sal", "Corazón: ámbar, haba tonka, cashmerán", "Fondo: cedro, vetiver, ládano"]
     },
     {
@@ -963,7 +963,7 @@ const PRODUCTOS = {
       familia: "Oriental especiado",
       precio: 50985,
       desc: "Pimienta rosa, bergamota y jengibre sobre cedro, incienso y labdano, cerrando en almizcle, ámbar gris y ámbar.",
-      img: "assets/img/mixto/hayaati-al-maleki.jpg",
+      img: "",
       detalles: ["Salida: pimienta rosa, bergamota, jengibre, nuez moscada", "Corazón: cedro, incienso, labdano", "Fondo: almizcle, ámbar gris, ámbar"]
     },
     {
@@ -971,7 +971,7 @@ const PRODUCTOS = {
       familia: "Ámbar gourmand",
       precio: 56013,
       desc: "Ananá y crème brûlée sobre canela, cúrcuma y pimienta negra, cerrando en vainilla, sándalo y musgo.",
-      img: "assets/img/mixto/honor-and-glory.jpg",
+      img: "",
       detalles: ["Salida: ananá, crème brûlée", "Corazón: canela, cúrcuma, pimienta negra, benjuí", "Fondo: vainilla, sándalo, cashmerán, musgo"]
     },
     {
@@ -979,7 +979,7 @@ const PRODUCTOS = {
       familia: "Gourmand oriental",
       precio: 65623,
       desc: "Canela, nuez moscada y bergamota sobre dátiles, praliné y tuberosa, cerrando en vainilla, haba tonka y ámbar.",
-      img: "assets/img/mixto/khamrah.jpg",
+      img: "",
       detalles: ["Salida: canela, nuez moscada, bergamota", "Corazón: dátiles, praliné, tuberosa", "Fondo: vainilla, haba tonka, madera de ámbar, mirra"]
     },
     {
@@ -987,7 +987,7 @@ const PRODUCTOS = {
       familia: "Gourmand fresco",
       precio: 137376,
       desc: "Bergamota, yuzu y jengibre sobre pepino, sal marina e iris, cerrando en vainilla, haba tonka y almizcle.",
-      img: "assets/img/mixto/khamrah-waha.jpg",
+      img: "",
       detalles: ["Salida: bergamota, yuzu, enebro, jengibre", "Corazón: pepino, sal marina, iris, salvia", "Fondo: vainilla, haba tonka, almizcle"]
     },
     {
@@ -995,7 +995,7 @@ const PRODUCTOS = {
       familia: "Especiado amaderado",
       precio: 109343,
       desc: "Nuez moscada, pimienta de Jamaica y jengibre sobre violeta, pachulí y cashmerán, cerrando en cuero, incienso y vetiver.",
-      img: "assets/img/mixto/khanjar.jpg",
+      img: "",
       detalles: ["Salida: nuez moscada, pimienta de Jamaica, jengibre", "Corazón: violeta, pachulí, cashmerán", "Fondo: cuero, incienso, almizcle, vetiver"]
     },
     {
@@ -1003,7 +1003,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 52889,
       desc: "Frutilla y bergamota sobre mermelada de cereza y cacao, cerrando en vainilla, ámbar y pachulí.",
-      img: "assets/img/mixto/mayar-cherry-intense.jpg",
+      img: "",
       detalles: ["Salida: frutilla, bergamota", "Corazón: mermelada de cereza, cacao", "Fondo: vainilla, ámbar, pachulí"]
     },
     {
@@ -1011,7 +1011,7 @@ const PRODUCTOS = {
       familia: "Aromático amaderado",
       precio: 91773,
       desc: "Lavanda, nuez moscada y salvia sobre cedro y geranio, cerrando en haba tonka, ámbar y pachulí.",
-      img: "assets/img/mixto/musaman-black.jpg",
+      img: "",
       detalles: ["Salida: lavanda, nuez moscada, salvia, bergamota", "Corazón: cedro, geranio", "Fondo: haba tonka, ámbar, pachulí"]
     },
     {
@@ -1019,7 +1019,7 @@ const PRODUCTOS = {
       familia: "Floral oriental",
       precio: 107203,
       desc: "Especias, bergamota y naranja sobre coco, ylang-ylang y ambroxan, cerrando en sándalo, almizcle y benjuí.",
-      img: "assets/img/mixto/musaman-white.jpg",
+      img: "",
       detalles: ["Salida: especias, bergamota, naranja", "Corazón: coco, ylang-ylang, ambroxan", "Fondo: sándalo, almizcle, benjuí"]
     },
     {
@@ -1027,7 +1027,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       precio: 80089,
       desc: "Frutos rojos y mandarina sobre vainilla, cacao y rosa, cerrando en azúcar, haba tonka y ámbar.",
-      img: "assets/img/mixto/nebras-pride.jpg",
+      img: "",
       detalles: ["Salida: frutos rojos, mandarina", "Corazón: vainilla, cacao, rosa", "Fondo: azúcar, haba tonka, ámbar, almizcle"]
     },
     {
@@ -1035,7 +1035,7 @@ const PRODUCTOS = {
       familia: "Floral oriental",
       precio: 50428,
       desc: "Mango, pomelo y jengibre sobre jazmín, cedro y violeta, cerrando en ámbar gris, musgo de roble y benjuí.",
-      img: "assets/img/mixto/opulent-dubai.jpg",
+      img: "",
       detalles: ["Salida: mango, pomelo, limón, jengibre", "Corazón: jazmín, cedro, violeta", "Fondo: ámbar gris, musgo de roble, benjuí"]
     },
     {
@@ -1043,7 +1043,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 48309,
       desc: "Ananá y azafrán sobre abeto balsámico y jazmín, cerrando en cedro, ámbar y oud.",
-      img: "assets/img/mixto/qaed-al-fursan.jpg",
+      img: "",
       detalles: ["Salida: ananá, azafrán", "Corazón: abeto balsámico, jazmín", "Fondo: cedro, ámbar, oud"]
     },
     {
@@ -1051,7 +1051,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 60380,
       desc: "Apertura cítrica y afrutada de mandarina verde, bergamota y grosella negra, con un corazón floral y especiado de lavanda, jazmín y pimienta rosa, sobre un fondo amaderado de almizcle, ámbar y vetiver.",
-      img: "assets/img/mixto/spectre-malachite.jpg",
+      img: "",
       detalles: ["Salida: mandarina verde, bergamota, grosella negra", "Corazón: lavanda, jazmín, pimienta rosa", "Fondo: almizcle, ámbar, madera, vetiver"]
     },
     {
@@ -1075,7 +1075,7 @@ const PRODUCTOS = {
       familia: "Frutal tropical",
       precio: 91731,
       desc: "Salida jugosa de mango, ananá, bergamota y ron, corazón cremoso de coco y flores blancas con un toque marino, y fondo amaderado de almizcle, ámbar, sándalo y vetiver.",
-      img: "assets/img/mixto/tropical-vibes.jpg",
+      img: "",
       detalles: ["Salida: mango, ananá, bergamota, ron", "Corazón: coco, flores blancas, notas marinas", "Fondo: almizcle, ámbar, sándalo, vetiver"]
     },
     {
@@ -1083,7 +1083,7 @@ const PRODUCTOS = {
       familia: "Oriental floral",
       precio: 150837,
       desc: "Apertura de bergamota, jazmín y heliotropo, corazón floral y dulce de lirio, haba tonka y geranio, sobre un fondo de vetiver, vainilla y almizcle.",
-      img: "assets/img/mixto/copa-del-mundo.jpg",
+      img: "",
       detalles: ["Salida: bergamota, jazmín, heliotropo", "Corazón: lirio (orris), haba tonka, geranio", "Fondo: vetiver de Haití, vainilla, almizcle"]
     },
     {
@@ -1091,7 +1091,7 @@ const PRODUCTOS = {
       familia: "Cítrico frutal",
       precio: 367020,
       desc: "Apertura chispeante de naranja, bergamota y limón sicilianos, corazón de una canasta de frutas mediterráneas (durazno, manzana, melón y ananá), y fondo cremoso de almizcle blanco, vainilla y ámbar.",
-      img: "assets/img/mixto/erba-pura-100ml.jpg",
+      img: "",
       detalles: ["Salida: naranja siciliana, bergamota, limón siciliano", "Corazón: durazno, manzana, melón, ananá", "Fondo: almizcle blanco, vainilla, ámbar"]
     },
     {
@@ -1099,7 +1099,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 83256,
       desc: "Apertura fresca de menta y bergamota, corazón cálido de lavanda y benjuí, y fondo dulce de vainilla y haba tonka.",
-      img: "assets/img/mixto/rayhaan-elixir.jpg",
+      img: "",
       detalles: ["Salida: menta, bergamota", "Corazón: lavanda, benjuí", "Fondo: vainilla, haba tonka"]
     },
     {
@@ -1107,7 +1107,7 @@ const PRODUCTOS = {
       familia: "Floral frutal gourmand",
       precio: 39557,
       desc: "Coco, ananá y cítricos sobre un corazón floral de ylang-ylang, frangipani y jazmín, cerrando en vainilla, sándalo y almizcle. Tropical y cremoso, pensado para el día.",
-      img: "assets/img/mixto/qaed-al-fursan-unlimited.jpg",
+      img: "",
       detalles: ["Salida: coco, ananá, cítricos", "Corazón: ylang-ylang, frangipani, jazmín", "Fondo: vainilla, almizcle, sándalo"]
     },
     {
@@ -1115,7 +1115,7 @@ const PRODUCTOS = {
       familia: "Amaderado especiado",
       precio: 41976,
       desc: "Cardamomo, canela y mandarina sobre un corazón especiado de lavanda, salvia y ciprés con un toque de caramelo, cerrando en ámbar, cedro y vetiver. Cálido e intenso, ideal para la noche.",
-      img: "assets/img/mixto/qaed-al-fursan-untamed.jpg",
+      img: "",
       detalles: ["Salida: cardamomo, canela, mandarina, nuez moscada", "Corazón: caramelo, lavanda, ciprés", "Fondo: ámbar, cedro, vetiver, ládano"]
     },
     {
@@ -1123,7 +1123,7 @@ const PRODUCTOS = {
       familia: "Oriental especiado",
       precio: 80688,
       desc: "Azafrán y bergamota sobre un corazón de licor de ciruela y canela, cerrando en ámbar, haba tonka y benjuí. Denso y dulce, con gran proyección para el frío.",
-      img: "assets/img/mixto/teriaq-intense.jpg",
+      img: "",
       detalles: ["Salida: azafrán, bergamota", "Corazón: licor de ciruela, canela", "Fondo: ámbar, haba tonka, benjuí"]
     },
     {
@@ -1131,7 +1131,7 @@ const PRODUCTOS = {
       familia: "Gourmand cítrico",
       precio: 66971,
       desc: "Tarta de limón merengada sobre un corazón floral de neroli, rosa y jazmín, cerrando en vainilla, almizcle y ámbar. Jugoso y luminoso, para el uso diario.",
-      img: "assets/img/mixto/victoria.jpg",
+      img: "",
       detalles: ["Salida: tarta de limón merengada, cítricos", "Corazón: neroli, rosa, jazmín", "Fondo: vainilla, almizcle, ámbar"]
     },
     {
@@ -1139,7 +1139,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 69347,
       desc: "Lavanda, salvia y bergamota sobre un corazón de ciruela, palo santo y pimienta negra, cerrando en sándalo y oud. Limpio y amaderado, con un toque metálico particular.",
-      img: "assets/img/mixto/vintage-radio.jpg",
+      img: "",
       detalles: ["Salida: lavanda, salvia, bergamota", "Corazón: ciruela, palo santo, pimienta negra", "Fondo: sándalo, oud"]
     },
     {
@@ -1147,7 +1147,7 @@ const PRODUCTOS = {
       familia: "Aromático especiado",
       precio: 48439,
       desc: "Azafrán y almendra sobre un corazón amaderado de cedro y jazmín egipcio, cerrando en ámbar gris, madera y almizcle. Cremoso y dulce, en la línea de los ambarados franceses de culto.",
-      img: "assets/img/mixto/baroque-extreme.jpg",
+      img: "",
       detalles: ["Salida: azafrán, almendra", "Corazón: notas amaderadas, cedro, jazmín egipcio", "Fondo: ámbar gris, madera, almizcle"]
     },
     {
@@ -1155,7 +1155,7 @@ const PRODUCTOS = {
       familia: "Floral oriental",
       precio: 38316,
       desc: "Mandarina y pimienta rosa sobre un corazón floral de azahar, jazmín y rosa, cerrando en ámbar y vainilla. Sensual y audaz, cítrico al inicio y amaderado cálido al final.",
-      img: "assets/img/mixto/extravagant-lover.jpg",
+      img: "",
       detalles: ["Salida: mandarina, pimienta rosa", "Corazón: azahar, jazmín, rosa", "Fondo: ámbar, vainilla"]
     },
     {
@@ -1163,7 +1163,7 @@ const PRODUCTOS = {
       familia: "Oriental afrutado",
       precio: 48716,
       desc: "Bergamota y pera verde sobre un corazón floral con un toque de cuero, cerrando en vainilla, vetiver, ámbar y almizcle. Fresco y sensual, con dulzura frutal.",
-      img: "assets/img/mixto/glacier-bella.jpg",
+      img: "",
       detalles: ["Salida: bergamota, pera verde", "Corazón: notas florales, cuero", "Fondo: vainilla, vetiver, ámbar, almizcle"]
     },
     {
@@ -1171,7 +1171,7 @@ const PRODUCTOS = {
       familia: "Amaderado especiado",
       precio: 44928,
       desc: "Bergamota y coco sobre un corazón especiado de cúrcuma, canela y pimienta negra, cerrando en haba tonka, vainilla y sándalo. Fresco al inicio, cada vez más envolvente.",
-      img: "assets/img/mixto/glacier-bold.jpg",
+      img: "",
       detalles: ["Salida: bergamota, coco", "Corazón: cúrcuma, canela, pimienta negra", "Fondo: haba tonka, vainilla, sándalo"]
     },
     {
@@ -1179,7 +1179,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       precio: 59952,
       desc: "Oud e incienso sobre un corazón de rosa, frambuesa y azafrán, cerrando en ámbar, benjuí y geranio. Intenso y de gran duración; conviene usarlo con moderación.",
-      img: "assets/img/mixto/jean-lowe-noir.jpg",
+      img: "",
       detalles: ["Salida: oud, incienso", "Corazón: rosa, frambuesa, azafrán, abedul", "Fondo: ámbar, benjuí, geranio"]
     },
     {
@@ -1187,7 +1187,7 @@ const PRODUCTOS = {
       familia: "Oriental floral",
       precio: 42104,
       desc: "Azafrán, pera y mandarina sobre un corazón floral de jazmín, ylang-ylang y lirio, cerrando en ámbar, madera de cachemira y almizcle. Dulce y envolvente.",
-      img: "assets/img/mixto/la-baroque-rouge.jpg",
+      img: "",
       detalles: ["Salida: azafrán, pera, mandarina", "Corazón: jazmín, ylang-ylang, lirio", "Fondo: ámbar, madera de cachemira, almizcle"]
     },
     {
@@ -1195,7 +1195,7 @@ const PRODUCTOS = {
       familia: "Aromático frutal",
       precio: 51413,
       desc: "Naranja, bergamota y limón sobre un corazón frutal jugoso, cerrando en vainilla de Madagascar, almizcle blanco y ámbar. Fresco y cítrico, ideal para el día.",
-      img: "assets/img/mixto/philos-pura.jpg",
+      img: "",
       detalles: ["Salida: naranja, bergamota, limón", "Corazón: frutas", "Fondo: vainilla de Madagascar, almizcle blanco, ámbar"]
     }
   ],
