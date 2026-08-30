@@ -963,7 +963,7 @@ const PRODUCTOS = {
       aroma: ["fresco"],
       precio: 75017,
       desc: "Limón, menta y grosella negra con un toque de pimienta rosa, sobre un corazón de manzana, cedro e incienso que cierra en jengibre, sándalo, pachulí y jazmín.",
-      img: "",
+      img: "assets/img/mixto/9-am-dive.jpg",
       detalles: ["Salida: limón, menta, grosella negra, pimienta rosa", "Corazón: manzana, cedro, incienso", "Fondo: jengibre, sándalo, pachulí, jazmín"]
     },
     {
@@ -973,7 +973,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 103757,
       desc: "Nuez moscada, elemí y cardamomo sobre un corazón especiado de pimienta de Jamaica, lavanda y cuero, que cierra en ládano, pachulí y vainilla.",
-      img: "",
+      img: "assets/img/mixto/9-pm-elixir.jpg",
       detalles: ["Salida: nuez moscada, elemí, cardamomo", "Corazón: pimienta de Jamaica, lavanda, cuero", "Fondo: ládano, pachulí, vainilla"]
     },
     {
@@ -983,7 +983,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 138255,
       desc: "Pitahaya, coñac y manzana sobre bergamota, con un corazón goloso de toffee, gamuza y cardamomo que cierra en haba tonka, pachulí y ámbar.",
-      img: "",
+      img: "assets/img/mixto/9-pm-night-out.jpg",
       detalles: ["Salida: pitahaya, coñac, manzana, bergamota", "Corazón: toffee, gamuza, cardamomo, cedro", "Fondo: haba tonka, pachulí, ámbar"]
     },
     {
@@ -993,7 +993,7 @@ const PRODUCTOS = {
       aroma: ["amaderado", "floral"],
       precio: 103051,
       desc: "Manzana verde, ananá y mandarina abren con frescura frutal, sobre un corazón amaderado de cedro y vainilla que cierra en ámbar gris, caramelo y musgo de roble.",
-      img: "",
+      img: "assets/img/mixto/9-pm-rebel.jpg",
       detalles: ["Salida: manzana verde, ananá, mandarina", "Corazón: cedro, vainilla, musgo de roble", "Fondo: ámbar gris, caramelo, almizcle"]
     },
     {
@@ -1013,7 +1013,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 95368,
       desc: "Cítricos frescos se mezclan con frutas maduras como mango, guayaba y pitaya, sobre un corazón floral que se funde en maderas suaves y vainilla.",
-      img: "",
+      img: "assets/img/mixto/club-de-nuit-bling.jpg",
       detalles: ["Salida: cítricos, mango, guayaba", "Corazón: flores blancas, pitaya", "Fondo: maderas aterciopeladas, vainilla"]
     },
     {
