@@ -1192,7 +1192,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 56013,
       desc: "Ananá y crème brûlée sobre canela, cúrcuma y pimienta negra, cerrando en vainilla, sándalo y musgo.",
-      img: "",
+      img: "assets/img/mixto/honor-and-glory.jpg",
       detalles: ["Salida: ananá, crème brûlée", "Corazón: canela, cúrcuma, pimienta negra, benjuí", "Fondo: vainilla, sándalo, cashmerán, musgo"]
     },
     {
