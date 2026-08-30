@@ -1057,15 +1057,6 @@ const PRODUCTOS = {
       detalles: ["Salida: mandarina, naranja, lavanda, cardamomo", "Corazón: caramelo, haba tonka, pachulí, incienso", "Fondo: vainilla, vetiver"]
     },
     {
-      nombre: "Desodorante 200ml",
-      familia: "Desodorante",
-      temporada: [],
-      aroma: [],
-      precio: 22116,
-      desc: "Desodorante en aerosol, 200 ml.",
-      img: ""
-    },
-    {
       nombre: "Stallion 53",
       familia: "Amaderado oriental",
       temporada: ["otono", "invierno"],
