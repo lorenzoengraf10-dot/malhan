@@ -1202,7 +1202,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 65623,
       desc: "Canela, nuez moscada y bergamota sobre dátiles, praliné y tuberosa, cerrando en vainilla, haba tonka y ámbar.",
-      img: "",
+      img: "assets/img/mixto/khamrah.jpg",
       detalles: ["Salida: canela, nuez moscada, bergamota", "Corazón: dátiles, praliné, tuberosa", "Fondo: vainilla, haba tonka, madera de ámbar, mirra"]
     },
     {
