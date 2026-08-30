@@ -1152,7 +1152,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 54237,
       desc: "Azafrán, nuez moscada y lavanda dan una apertura especiada, seguida de un corazón denso de oud y pachulí. El fondo repite oud y pachulí sobre almizcle, para una estela intensa y duradera.",
-      img: "",
+      img: "assets/img/mixto/badee-al-oud-for-glory.jpg",
       detalles: ["Salida: azafrán, nuez moscada, lavanda", "Corazón: oud, pachulí", "Fondo: oud, pachulí, almizcle"]
     },
     {
@@ -1162,7 +1162,7 @@ const PRODUCTOS = {
       aroma: ["floral", "fresco"],
       precio: 57041,
       desc: "Manzana, lichi y rosa abren jugosos y frescos, con ciruela y jazmín en el corazón. Cierra en musgo, vainilla y pachulí, en un perfil frutal alejado del oud clásico pese al nombre.",
-      img: "",
+      img: "assets/img/mixto/badee-al-oud-sublime.jpg",
       detalles: ["Salida: manzana, lichi, rosa", "Corazón: ciruela, jazmín", "Fondo: musgo, vainilla, pachulí"]
     },
     {
@@ -1172,7 +1172,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 63953,
       desc: "Nardo y un toque salino abren de forma inusual, dando paso a ámbar, haba tonka y cashmerán en el corazón. Cierra amaderado y resinoso, con cedro, vetiver y ládano de fondo.",
-      img: "",
+      img: "assets/img/mixto/fakhar-gold.jpg",
       detalles: ["Salida: nardo, sal", "Corazón: ámbar, haba tonka, cashmerán", "Fondo: cedro, vetiver, ládano"]
     },
     {
@@ -1182,7 +1182,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 50985,
       desc: "Pimienta rosa, bergamota y jengibre sobre cedro, incienso y labdano, cerrando en almizcle, ámbar gris y ámbar.",
-      img: "",
+      img: "assets/img/mixto/hayaati-al-maleki.jpg",
       detalles: ["Salida: pimienta rosa, bergamota, jengibre, nuez moscada", "Corazón: cedro, incienso, labdano", "Fondo: almizcle, ámbar gris, ámbar"]
     },
     {
@@ -1212,7 +1212,7 @@ const PRODUCTOS = {
       aroma: ["dulce", "fresco"],
       precio: 137376,
       desc: "Bergamota, yuzu y jengibre sobre pepino, sal marina e iris, cerrando en vainilla, haba tonka y almizcle.",
-      img: "",
+      img: "assets/img/mixto/khamrah-waha.jpg",
       detalles: ["Salida: bergamota, yuzu, enebro, jengibre", "Corazón: pepino, sal marina, iris, salvia", "Fondo: vainilla, haba tonka, almizcle"]
     },
     {
