@@ -781,16 +781,6 @@ const PRODUCTOS = {
       detalles: ["Salida: mandarina, naranja, lavanda, cardamomo", "Corazón: caramelo, haba tonka, pachulí, incienso", "Fondo: vainilla, vetiver"]
     },
     {
-      nombre: "Stallion 53",
-      familia: "Amaderado oriental",
-      temporada: ["otono", "invierno"],
-      aroma: ["amaderado"],
-      precio: 61279,
-      desc: "Cardamomo y violeta abren paso a un corazón de ámbar e iris, sobre una base amaderada de sándalo, cuero y cedro de Virginia. Envolvente, muy cercano a Santal 33.",
-      img: "assets/img/mixto/Stallion-53.jpg",
-      detalles: ["Salida: cardamomo, violeta", "Corazón: ámbar, iris", "Fondo: sándalo, cuero, cedro de Virginia, papiro"]
-    },
-    {
       nombre: "Liquid Brun Limited Edition",
       familia: "Oriental fougère",
       temporada: ["invierno", "otono"],
@@ -1201,6 +1191,17 @@ const PRODUCTOS = {
       desc: "Azafrán, pera y mandarina sobre un corazón floral de jazmín, ylang-ylang y lirio, cerrando en ámbar, madera de cachemira y almizcle. Dulce y envolvente.",
       img: "assets/img/mixto/la-baroque-rouge.jpg",
       detalles: ["Salida: azafrán, pera, mandarina", "Corazón: jazmín, ylang-ylang, lirio", "Fondo: ámbar, madera de cachemira, almizcle"]
+    },
+    {
+      nombre: "Stallion 53",
+      unisex: true,
+      familia: "Amaderado oriental",
+      temporada: ["otono", "invierno"],
+      aroma: ["amaderado"],
+      precio: 61279,
+      desc: "Cardamomo y violeta abren paso a un corazón de ámbar e iris, sobre una base amaderada de sándalo, cuero y cedro de Virginia. Envolvente, muy cercano a Santal 33.",
+      img: "assets/img/mixto/Stallion-53.jpg",
+      detalles: ["Salida: cardamomo, violeta", "Corazón: ámbar, iris", "Fondo: sándalo, cuero, cedro de Virginia, papiro"]
     }
   ],
 
@@ -1654,6 +1655,17 @@ const PRODUCTOS = {
       desc: "Azafrán, pera y mandarina sobre un corazón floral de jazmín, ylang-ylang y lirio, cerrando en ámbar, madera de cachemira y almizcle. Dulce y envolvente.",
       img: "assets/img/mixto/la-baroque-rouge.jpg",
       detalles: ["Salida: azafrán, pera, mandarina", "Corazón: jazmín, ylang-ylang, lirio", "Fondo: ámbar, madera de cachemira, almizcle"]
+    },
+    {
+      nombre: "Stallion 53",
+      unisex: true,
+      familia: "Amaderado oriental",
+      temporada: ["otono", "invierno"],
+      aroma: ["amaderado"],
+      precio: 61279,
+      desc: "Cardamomo y violeta abren paso a un corazón de ámbar e iris, sobre una base amaderada de sándalo, cuero y cedro de Virginia. Envolvente, muy cercano a Santal 33.",
+      img: "assets/img/mixto/Stallion-53.jpg",
+      detalles: ["Salida: cardamomo, violeta", "Corazón: ámbar, iris", "Fondo: sándalo, cuero, cedro de Virginia, papiro"]
     }
   ],
 
