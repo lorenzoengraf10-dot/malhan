@@ -111,10 +111,13 @@
     '<img class="brand__logo" src="assets/img/logo.png" alt="" width="40" height="40" loading="lazy">' +
     '<span class="brand__mark"><span class="brand__word">Malhan</span><span class="brand__sub">Fragrance</span></span>';
 
-  /* Los únicos ids de CATEGORIAS que son un género (para el filtro de
-     Género dentro de "Nuestra Recomendación" — deja afuera recomendacion
-     y stock, que no son un género). */
+  /* Géneros del filtro dentro de "Nuestra Recomendación". Hombre y Mujer
+     son secciones reales del catálogo (CATEGORIAS); Mixto no tiene sección
+     propia — esas fragancias viven adentro de Hombre y de Mujer, marcadas
+     con producto.unisex — pero se puede filtrar igual: elegir Mixto acá
+     muestra únicamente esas tarjetas dentro de Hombre/Mujer. */
   const GENEROS = ["hombre", "mujer", "mixto"];
+  const GENERO_NOMBRES = { hombre: "Hombre", mujer: "Mujer", mixto: "Mixto" };
 
   /* ---------------------------------------------------------------------
      Encabezado
@@ -194,7 +197,7 @@
               <span class="catnav__label">Género</span>
               <div class="catnav__row">
                 <button class="pill pill--sm is-active" data-genero="todos" type="button">Todos</button>
-                ${GENEROS.map((id) => `<button class="pill pill--sm" data-genero="${id}" type="button">${escapar(CATEGORIAS[id].nombre)}</button>`).join("")}
+                ${GENEROS.map((id) => `<button class="pill pill--sm" data-genero="${id}" type="button">${escapar(GENERO_NOMBRES[id])}</button>`).join("")}
               </div>
             </div>
             <div class="catnav__group">
@@ -356,6 +359,7 @@
     const etiqueta = producto.etiqueta
       ? `<span class="card__tag card__tag--${producto.color || "dorado"}">${escapar(producto.etiqueta)}</span>`
       : "";
+    const unisexBadge = producto.unisex ? `<span class="card__unisex">Fragancia unisex</span>` : "";
 
     const variante = varianteDefault(producto);
     const img = variante ? variante.img : producto.img;
@@ -388,9 +392,11 @@
     art.dataset.temporadas = (producto.temporada || []).join(" ");
     art.dataset.aromas = (producto.aroma || []).join(" ");
     art.dataset.precio = String(precioOrden(producto));
+    art.dataset.unisex = producto.unisex ? "1" : "0";
 
     art.innerHTML = `
       <div class="card__media" data-abrir>
+        ${unisexBadge}
         ${etiqueta}
         ${img ? `<img src="${escapar(img)}" alt="${escapar(producto.nombre)}" loading="lazy" decoding="async">` : ""}
         <div class="card__ph">${ICONO_FRASCO}<span>Foto próximamente</span></div>
@@ -576,11 +582,14 @@
 
     let totalVisible = 0;
     secciones.forEach((sec) => {
-      /* "Nuestra Recomendación" no es una lista fija: junta Hombre/Mujer/
-         Mixto (recortado por Género si se eligió uno) y deja afuera Stock
-         y la sección "recomendacion" en sí, que siempre está vacía. */
+      /* "Nuestra Recomendación" no es una lista fija: junta Hombre/Mujer
+         (recortado por Género si se eligió uno) y deja afuera Stock y la
+         sección "recomendacion" en sí, que siempre está vacía. Elegir
+         Género "Mixto" muestra las dos secciones pero, más abajo,
+         matchGenero recorta las tarjetas a solo las unisex. */
+      const esSeccionDeGenero = sec.dataset.cat === "hombre" || sec.dataset.cat === "mujer";
       const mostrarSeccion = Filtros.categoria === "recomendacion"
-        ? GENEROS.includes(sec.dataset.cat) && (Filtros.genero === "todos" || sec.dataset.cat === Filtros.genero)
+        ? esSeccionDeGenero && (Filtros.genero === "todos" || Filtros.genero === "mixto" || sec.dataset.cat === Filtros.genero)
         : Filtros.categoria === "todos" || sec.dataset.cat === Filtros.categoria;
       sec.hidden = !mostrarSeccion;
       if (!mostrarSeccion) return;
@@ -595,7 +604,9 @@
           (card.dataset.temporadas || "").split(" ").includes(Filtros.temporada);
         const matchAroma = Filtros.aroma === "todos" ||
           (card.dataset.aromas || "").split(" ").includes(Filtros.aroma);
-        const visible = matchTexto && matchTemporada && matchAroma;
+        const matchGenero = Filtros.categoria !== "recomendacion" || Filtros.genero !== "mixto" ||
+          card.dataset.unisex === "1";
+        const visible = matchTexto && matchTemporada && matchAroma && matchGenero;
         card.hidden = !visible;
         if (visible) { visiblesEnSeccion++; totalVisible++; }
       });

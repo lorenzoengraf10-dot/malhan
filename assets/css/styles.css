@@ -614,6 +614,20 @@ h1,h2,h3,h4{
 .card__tag--marron{ background:var(--brown); }
 .card__tag--verde{ background:var(--green); }
 
+/* Cartel "Fragancia unisex": franja arriba de la foto, para fragancias
+   unisex que se muestran adentro de Hombre y de Mujer (ver producto.unisex
+   en products.js). */
+.card__unisex{
+  position:absolute; top:0; left:0; right:0; z-index:2;
+  padding:7px 12px;
+  background:var(--brown-deep);
+  font-family:var(--font-body);
+  font-size:.66rem; font-weight:700;
+  letter-spacing:.08em; text-transform:uppercase;
+  text-align:center;
+  color:var(--cream);
+}
+
 .card__body{
   display:flex; flex-direction:column;
   gap:6px;
