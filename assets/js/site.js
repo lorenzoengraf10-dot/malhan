@@ -291,7 +291,7 @@
         <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
           <button class="modal__close" data-close aria-label="Cerrar">×</button>
           <div class="modal__media">
-            <img id="modal-img" src="" alt="">
+            <img id="modal-img" alt="">
             <div class="modal__ph">${ICONO_FRASCO}<span>Foto próximamente</span></div>
             <div class="modal__thumbs" id="modal-thumbs" hidden></div>
           </div>
@@ -614,13 +614,15 @@
     });
 
     $("[data-buscador-vacio]")?.remove();
-    if (q && totalVisible === 0) {
+    if (totalVisible === 0) {
       const cont = $("[data-catalogo]");
       if (cont) {
         const vacio = document.createElement("div");
         vacio.dataset.buscadorVacio = "";
         vacio.className = "wrap";
-        vacio.innerHTML = `<div class="empty"><strong>No encontramos "${escapar(Filtros.busqueda.trim())}"</strong>Probá con otro nombre, o escribinos por WhatsApp y te ayudamos a encontrarlo.</div>`;
+        vacio.innerHTML = q
+          ? `<div class="empty"><strong>No encontramos "${escapar(Filtros.busqueda.trim())}"</strong>Probá con otro nombre, o escribinos por WhatsApp y te ayudamos a encontrarlo.</div>`
+          : `<div class="empty"><strong>No hay fragancias con esos filtros</strong>Probá sacar alguno (Aroma, Temporada), o escribinos por WhatsApp y te ayudamos a encontrar algo así.</div>`;
         cont.prepend(vacio);
       }
     }
@@ -1354,7 +1356,11 @@
       activarLinksWa(modal);
     }
 
-    function abrir(categoria, indice, varianteLabel) {
+    /* desdeHash=true cuando la apertura viene de sincronizar con el hash
+       de la URL (carga directa de un link compartido, o volver con el
+       botón atrás) — en ese caso no hay que empujar una entrada nueva al
+       historial, ya estamos reaccionando a un cambio que ya ocurrió. */
+    function abrir(categoria, indice, varianteLabel, desdeHash = false) {
       const p = PRODUCTOS[categoria] && PRODUCTOS[categoria][indice];
       if (!p) return;
 
@@ -1366,6 +1372,14 @@
 
       pintarFicha(p);
 
+      /* Así el link de la barra de direcciones queda apuntando al
+         producto abierto (se puede compartir tal cual, sobrevive un
+         refresh) y el botón atrás del celular cierra la ficha en vez de
+         sacar de la página. */
+      if (!desdeHash) {
+        history.pushState({ malhanModal: true }, "", linkProducto(categoria, p, varianteActual));
+      }
+
       ultimoFoco = document.activeElement;
       modal.hidden = false;
       bloquearScroll();
@@ -1373,6 +1387,23 @@
     }
 
     function cerrar() {
+      /* Si la ficha se abrió empujando una entrada al historial, volver
+         atrás la cierra (y dispara abrirDesdeHash, que hace el cierre
+         real más abajo). Si se llegó por un link compartido, no hay nada
+         que "deshacer": cerrar de una en vez de mandar al visitante
+         fuera del sitio. */
+      if (history.state && history.state.malhanModal) {
+        history.back();
+        return;
+      }
+      /* Se llegó directo a este link (compartido, o recargando la
+         página con la ficha abierta): no hay nada empujado al
+         historial para "deshacer" con back(), pero igual limpiamos el
+         hash de la barra de direcciones para que no quede apuntando a
+         un producto que ya no está abierto. */
+      if (location.hash.startsWith("#producto=")) {
+        history.replaceState(null, "", location.pathname + location.search);
+      }
       modal.hidden = true;
       desbloquearScroll();
       if (ultimoFoco) ultimoFoco.focus();
@@ -1450,7 +1481,7 @@
       const variante = varianteSlug && p.variantes
         ? p.variantes.find((v) => slugify(v.label) === varianteSlug)
         : null;
-      abrir(categoria, indice, variante ? variante.label : undefined);
+      abrir(categoria, indice, variante ? variante.label : undefined, true);
     }
     abrirDesdeHash();
     window.addEventListener("hashchange", abrirDesdeHash);
