@@ -39,7 +39,7 @@
 
 *,*::before,*::after{ box-sizing:border-box; }
 
-html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html{ scroll-behavior:smooth; scroll-padding-top:calc(var(--header-h) + var(--catnav-h)); -webkit-text-size-adjust:100%; }
 @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
 
 body{
@@ -1236,12 +1236,19 @@ h1,h2,h3,h4{
   .hero{ padding:52px 0 40px; }
   .hero__facts{ margin-top:26px; padding-top:20px; }
 
+  /* Alto explícito en vez de bottom:0: .header tiene backdrop-filter, y
+     eso lo convierte en el "containing block" de este fixed (en vez del
+     viewport), así que un bottom:0 quedaría pegado a la propia altura
+     del header en vez de al final de la pantalla. */
   .nav{
-    position:fixed; inset:var(--header-h) 0 auto;
+    position:fixed; top:var(--header-h); right:0; left:0;
+    height:calc(100vh - var(--header-h));
+    height:calc(100dvh - var(--header-h));
     background:var(--cream);
     border-bottom:1px solid var(--line);
     box-shadow:var(--shadow-md);
     padding:8px var(--gutter) 22px;
+    overflow-y:auto;
     display:none;
   }
   .nav.is-open{ display:block; }

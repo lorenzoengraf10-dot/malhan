@@ -119,6 +119,17 @@
   const GENEROS = ["hombre", "mujer", "mixto"];
   const GENERO_NOMBRES = { hombre: "Hombre", mujer: "Mujer", mixto: "Mixto" };
 
+  /* "Nuestra Recomendación" no tiene una sección propia visible (ver
+     renderCatalogoCompleto): elegirla abre el panel de Filtros > Género
+     sobre Hombre/Mujer. Por eso su link de menú no apunta a un ancla
+     fija como el resto — dispara ese mismo comportamiento (ver el
+     listener de [data-ir-recomendacion] en initFiltroCatalogo). */
+  function linkCategoriaAttrs(id) {
+    return id === "recomendacion"
+      ? `href="#catalogo" data-ir-recomendacion`
+      : `href="#cat-${id}"`;
+  }
+
   /* ---------------------------------------------------------------------
      Encabezado
      --------------------------------------------------------------------- */
@@ -128,7 +139,7 @@
     if (!cont) return;
 
     const items = Object.entries(CATEGORIAS)
-      .map(([id, cat]) => `<li class="nav__item"><a href="#cat-${id}">${escapar(cat.nombre)}</a></li>`)
+      .map(([id, cat]) => `<li class="nav__item"><a ${linkCategoriaAttrs(id)}>${escapar(cat.nombre)}</a></li>`)
       .join("");
 
     cont.outerHTML = `
@@ -240,7 +251,7 @@
     if (!cont) return;
 
     const links = Object.entries(CATEGORIAS)
-      .map(([id, cat]) => `<li><a href="#cat-${id}">${escapar(cat.nombre)}</a></li>`)
+      .map(([id, cat]) => `<li><a ${linkCategoriaAttrs(id)}>${escapar(cat.nombre)}</a></li>`)
       .join("");
 
     cont.outerHTML = `
@@ -511,11 +522,18 @@
      Catálogo completo
      --------------------------------------------------------------------- */
 
+  /* Una categoría sin productos todavía (como "Nuestra Recomendación"
+     antes de cargarle algo a mano) no dibuja su sección: mostrarla vacía
+     bajo "Todos" se ve a una parte del sitio rota/sin terminar. En
+     cuanto tenga productos, vuelve a aparecer sola. */
   function renderCatalogoCompleto() {
     const cont = $("[data-catalogo]");
     if (!cont) return;
 
-    cont.innerHTML = Object.entries(CATEGORIAS)
+    const categoriasConProductos = Object.entries(CATEGORIAS)
+      .filter(([id]) => ((PRODUCTOS && PRODUCTOS[id]) || []).length > 0);
+
+    cont.innerHTML = categoriasConProductos
       .map(([id, cat]) => `
           <div class="catsec" id="cat-${id}" data-cat="${id}">
             <div class="wrap">
@@ -527,8 +545,8 @@
           </div>`)
       .join("");
 
-    Object.keys(CATEGORIAS).forEach((id) => {
-      const lista = ((PRODUCTOS && PRODUCTOS[id]) || []).map((producto, indice) => ({ producto, indice }));
+    categoriasConProductos.forEach(([id]) => {
+      const lista = PRODUCTOS[id].map((producto, indice) => ({ producto, indice }));
       $(`[data-grilla="${id}"]`, cont).replaceWith(grilla(lista, id, CATEGORIAS[id].nombre));
     });
 
@@ -744,6 +762,15 @@
         irACategoria(btn.dataset.filtroTile);
       });
     }
+
+    /* Link "Nuestra Recomendación" del menú (header y footer): mismo
+       comportamiento que su tarjeta grande, ver linkCategoriaAttrs. */
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("[data-ir-recomendacion]");
+      if (!link) return;
+      e.preventDefault();
+      irACategoria("recomendacion");
+    });
   }
 
   /* ---------------------------------------------------------------------
