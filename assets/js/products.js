@@ -156,7 +156,7 @@ const AROMAS = {
    ========================================================================= */
 const TESTIMONIOS = [
   {
-    texto: "Los mejores, siempre 🔥😪",
+    texto: "Los mejores, siempre 🔥😮‍💨",
     autor: "@bengocheaa_"
   },
   {
