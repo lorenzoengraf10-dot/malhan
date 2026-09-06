@@ -42,6 +42,28 @@
     `${location.origin}${location.pathname}#producto=${categoria}:${slugify(producto.nombre)}` +
     (variante ? `:${slugify(variante.label)}` : "");
 
+  /* ---------------------------------------------------------------------
+     Analytics (Google Analytics / gtag.js)
+     -------------------------------------------------------------------
+     track() nunca rompe el sitio si gtag no está disponible (bloqueador
+     de anuncios, sin conexión a Google, etc.). itemGA() arma un ítem con
+     la forma que espera GA4 y omite el precio cuando el producto es "a
+     consultar" (no es un número), para no mandar valores inválidos. */
+  function track(nombre, params) {
+    if (typeof window.gtag === "function") window.gtag("event", nombre, params || {});
+  }
+
+  function itemGA(producto, categoria, cantidad) {
+    const item = {
+      item_id: slugify(producto.nombre),
+      item_name: producto.nombre,
+      item_category: categoria
+    };
+    if (typeof producto.precio === "number" && producto.precio > 0) item.price = producto.precio;
+    if (cantidad) item.quantity = cantidad;
+    return item;
+  }
+
   /* Para productos con variantes (tamaños): la de "portada" es la primera
      sin agotado, o la primera de todas si no queda ninguna. */
   function varianteDefault(producto) {
@@ -991,6 +1013,17 @@
     }
   };
 
+  /* "Pedido finalizado" = el cliente mandó el carrito por WhatsApp (en
+     efectivo o ya transferido). Es el evento de conversión: se arma con
+     todo el carrito, no con un solo producto. */
+  function trackPedido(metodoPago) {
+    const items = Carrito.items
+      .filter((it) => it.cantidad > 0)
+      .map((it) => itemGA(Carrito.producto(it), it.categoria, it.cantidad));
+    const { suma } = Carrito.total();
+    track("generate_lead", { currency: "ARS", value: suma, payment_method: metodoPago, items });
+  }
+
   function renderCarrito() {
     const cont = $("[data-carrito]");
     if (!cont) return;
@@ -1116,7 +1149,7 @@
     if (Pago.metodo === "efectivo") {
       cont.innerHTML = `
         <p class="cart__pago-nota">Pagás en efectivo al recibir o retirar tu pedido.</p>
-        <a class="btn btn--wa cart__cta" id="cart-wa" href="${escapar(waLink(Carrito.mensaje(Pago)))}" target="_blank" rel="noopener">${ICONO_WA} <span>Hacer el pedido</span></a>
+        <a class="btn btn--wa cart__cta" id="cart-wa" data-pedido-efectivo href="${escapar(waLink(Carrito.mensaje(Pago)))}" target="_blank" rel="noopener">${ICONO_WA} <span>Hacer el pedido</span></a>
         <p class="cart__nota">Se abre WhatsApp con el pedido ya escrito. Ahí te confirmamos stock y coordinamos la entrega.</p>`;
       return;
     }
@@ -1200,6 +1233,7 @@
       return;
     }
 
+    trackPedido("transferencia");
     window.open(waLink(Carrito.mensaje({ metodo: "transferencia", nombre })), "_blank", "noopener");
 
     Carrito.vaciar();
@@ -1223,7 +1257,18 @@
         e.preventDefault();
         const card = btnAdd.closest(".card");
         if (!card) return;
-        Carrito.agregar(card.dataset.categoria, card.dataset.slug, card.dataset.variante || null);
+        const categoria = card.dataset.categoria;
+        const slug = card.dataset.slug;
+        const variante = card.dataset.variante || null;
+        Carrito.agregar(categoria, slug, variante);
+        const pAgregado = Carrito.producto({ categoria, slug, variante });
+        if (pAgregado) {
+          track("add_to_cart", {
+            currency: "ARS",
+            value: itemGA(pAgregado, categoria, 1).price,
+            items: [itemGA(pAgregado, categoria, 1)]
+          });
+        }
         btnAdd.classList.add("is-ok");
         const original = btnAdd.dataset.original || btnAdd.innerHTML;
         btnAdd.dataset.original = original;
@@ -1238,6 +1283,7 @@
       if (e.target.closest("[data-cart-open]")) { e.preventDefault(); abrir(); return; }
       if (e.target.closest("[data-cart-close]")) { cerrar(); return; }
       if (e.target.closest("[data-cart-vaciar]")) { Carrito.vaciar(); return; }
+      if (e.target.closest("[data-pedido-efectivo]")) { trackPedido("efectivo"); return; }
 
       const fila = e.target.closest(".citem");
       if (fila) {
@@ -1369,6 +1415,15 @@
       varianteActual = p.variantes
         ? p.variantes.find((v) => v.label === varianteLabel) || varianteDefault(p)
         : null;
+
+      const productoGA = varianteActual
+        ? { nombre: `${p.nombre} — ${varianteActual.label}`, precio: varianteActual.precio }
+        : p;
+      track("view_item", {
+        currency: "ARS",
+        value: itemGA(productoGA, categoria).price,
+        items: [itemGA(productoGA, categoria)]
+      });
 
       pintarFicha(p);
 
@@ -1545,6 +1600,62 @@
   }
 
   /* ---------------------------------------------------------------------
+     Cartel de cookies
+     -------------------------------------------------------------------
+     Aviso simple (no bloquea el sitio) para cumplir con el consentimiento
+     que pide Google antes de medir con Analytics. Mientras no haya
+     elección guardada, Analytics queda en "denied" (ver el <head> de
+     index.html) y no se manda nada identificable. Al aceptar, se habilita
+     con gtag('consent','update', ...) y se recuerda en localStorage para
+     no volver a preguntar. */
+
+  const COOKIES_KEY = "malhan-cookies";
+
+  function renderCookiebar() {
+    const barra = document.createElement("div");
+    barra.className = "cookiebar";
+    barra.setAttribute("data-cookiebar", "");
+    barra.setAttribute("role", "dialog");
+    barra.setAttribute("aria-label", "Aviso de cookies");
+    barra.innerHTML = `
+      <p class="cookiebar__texto">Usamos cookies para entender cómo se navega el sitio y mejorarlo. Podés aceptarlas o rechazarlas.</p>
+      <div class="cookiebar__botones">
+        <button type="button" class="btn btn--ghost-dark cookiebar__btn" data-cookies-rechazar>Rechazar</button>
+        <button type="button" class="btn btn--gold cookiebar__btn" data-cookies-aceptar>Aceptar</button>
+      </div>`;
+    document.body.appendChild(barra);
+    return barra;
+  }
+
+  function initCookies() {
+    let elegido;
+    try { elegido = localStorage.getItem(COOKIES_KEY); } catch { elegido = null; }
+
+    if (elegido === "aceptado") {
+      if (typeof window.gtag === "function") {
+        window.gtag("consent", "update", { analytics_storage: "granted" });
+      }
+      return;
+    }
+    if (elegido === "rechazado") return;
+
+    const barra = renderCookiebar();
+    document.body.classList.add("tiene-cookiebar");
+
+    function elegir(valor) {
+      try { localStorage.setItem(COOKIES_KEY, valor); } catch { /* sin storage: se vuelve a preguntar la próxima visita */ }
+      if (valor === "aceptado" && typeof window.gtag === "function") {
+        window.gtag("consent", "update", { analytics_storage: "granted" });
+      }
+      barra.remove();
+      document.body.classList.remove("tiene-cookiebar");
+    }
+
+    $("[data-cookies-aceptar]", barra).addEventListener("click", () => elegir("aceptado"));
+    $("[data-cookies-rechazar]", barra).addEventListener("click", () => elegir("rechazado"));
+  }
+
+  /* ---------------------------------------------------------------------
      Arranque
      --------------------------------------------------------------------- */
 
@@ -1563,6 +1674,7 @@
     initBusqueda();
     initVariantesTarjeta();
     initReveal();
+    initCookies();
 
     Carrito.cargar();
     initCarrito();

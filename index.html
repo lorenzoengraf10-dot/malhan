@@ -10,8 +10,30 @@
 
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
+<!-- Consentimiento de cookies: arranca denegado hasta que el visitante
+     elige en el cartel de abajo (ver initCookies en site.js). Tiene que
+     declararse ANTES de cargar gtag.js para que Google Analytics lo
+     respete desde el primer instante. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7WQX3NZQ0W"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-7WQX3NZQ0W');
+</script>
+
 <!-- Nuestra hoja de estilos va primero y con ?v= para forzar recarga cuando cambia -->
-<link rel="stylesheet" href="assets/css/styles.css?v=25">
+<link rel="stylesheet" href="assets/css/styles.css?v=26">
 
 <!-- Las tipografías se cargan aparte: si tardan o fallan, el sitio igual se ve bien -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -132,6 +154,6 @@
 <!-- Si el hosting cachea /assets/, subir este número cada vez que cambie
      products.js o site.js para que no quede una copia vieja en caché. -->
 <script src="assets/js/products.js?v=57"></script>
-<script src="assets/js/site.js?v=13"></script>
+<script src="assets/js/site.js?v=14"></script>
 </body>
 </html>
