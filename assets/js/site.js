@@ -808,12 +808,25 @@
     const input = $("[data-buscador-input]", wrap);
     const limpiar = $("[data-buscador-limpiar]", wrap);
 
+    let timerSinResultados = null;
     function aplicar() {
       const q = input.value.trim();
       limpiar.hidden = !q;
       if (q) { Filtros.categoria = "todos"; Filtros.genero = "todos"; }
       Filtros.busqueda = q;
       aplicarFiltros();
+
+      /* Se espera a que la persona deje de tipear antes de mandar el
+         evento: si no, cada letra de una búsqueda sin resultados
+         mandaría un evento distinto. */
+      clearTimeout(timerSinResultados);
+      if (q) {
+        timerSinResultados = setTimeout(() => {
+          if (input.value.trim() === q && $("[data-buscador-vacio]")) {
+            track("search_no_results", { search_term: q });
+          }
+        }, 700);
+      }
     }
 
     function abrir() {
@@ -1279,6 +1292,21 @@
     const cerrar = () => { modal.hidden = true; desbloquearScroll(); };
 
     document.addEventListener("click", (e) => {
+      const btnConsulta = e.target.closest(".card__consulta");
+      if (btnConsulta) {
+        const card = btnConsulta.closest(".card");
+        const pConsulta = card && Carrito.producto({ categoria: card.dataset.categoria, slug: card.dataset.slug, variante: card.dataset.variante || null });
+        if (pConsulta) {
+          track("contact_whatsapp", {
+            currency: "ARS",
+            value: itemGA(pConsulta, card.dataset.categoria).price,
+            items: [itemGA(pConsulta, card.dataset.categoria)],
+            source: "card"
+          });
+        }
+        return;
+      }
+
       const btnAdd = e.target.closest("[data-agregar]");
       if (btnAdd) {
         e.preventDefault();
@@ -1496,6 +1524,20 @@
       if (disparador) {
         const card = disparador.closest(".card");
         if (card) abrir(card.dataset.categoria, Number(card.dataset.index), card.dataset.variante || undefined);
+        return;
+      }
+
+      if (e.target.closest("#modal-wa")) {
+        const p = PRODUCTOS[categoriaAbierta] && PRODUCTOS[categoriaAbierta][indiceAbierto];
+        if (p) {
+          const productoGA = varianteActual ? { nombre: `${p.nombre} — ${varianteActual.label}`, precio: varianteActual.precio } : p;
+          track("contact_whatsapp", {
+            currency: "ARS",
+            value: itemGA(productoGA, categoriaAbierta).price,
+            items: [itemGA(productoGA, categoriaAbierta)],
+            source: "ficha"
+          });
+        }
         return;
       }
 
