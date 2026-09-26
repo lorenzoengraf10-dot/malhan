@@ -352,6 +352,9 @@
      --------------------------------------------------------------------- */
 
   function precioHTML(producto) {
+    if (producto.proximamente) {
+      return '<span class="card__price">Próximamente</span>';
+    }
     if (producto.variantes) {
       const precios = producto.variantes
         .filter((v) => !v.agotado && typeof v.precio === "number" && v.precio > 0)
@@ -441,7 +444,7 @@
         ${variantesHTML}
         <div class="card__foot">
           ${precioHTML(producto)}
-          <button class="btn card__add" data-agregar type="button">Agregar</button>
+          ${producto.proximamente ? "" : '<button class="btn card__add" data-agregar type="button">Agregar</button>'}
           <a class="card__consulta" data-wa="${escapar(mensaje)}">Consultar por WhatsApp</a>
         </div>
       </div>`;
@@ -1406,7 +1409,9 @@
       elTit.textContent = v ? `${p.nombre} — ${v.label}` : p.nombre;
       elDesc.textContent = efectivo.desc || "";
 
-      elPre.innerHTML = efectivo.agotado
+      elPre.innerHTML = p.proximamente
+        ? "Próximamente"
+        : efectivo.agotado
         ? "Sin stock por el momento"
         : typeof efectivo.precio === "number" && efectivo.precio > 0
         ? `${CONFIG.moneda} ${formatoPrecio.format(efectivo.precio)}`
@@ -1451,7 +1456,7 @@
         elVariantes.hidden = true;
       }
 
-      if (elAdd) elAdd.hidden = !!efectivo.agotado;
+      if (elAdd) elAdd.hidden = !!efectivo.agotado || !!p.proximamente;
 
       elWa.dataset.wa = `Hola Malhan! Quería consultar por ${elTit.textContent}. ¿Tenés disponible?`;
       activarLinksWa(modal);

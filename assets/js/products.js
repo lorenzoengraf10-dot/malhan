@@ -45,6 +45,11 @@
                          Filtros > Género > Mixto. Para que una fragancia
                          unisex se vea tanto en Hombre como en Mujer, pegá
                          el mismo bloque (con unisex:true) en las dos listas.
+   proximamente (true)   OPCIONAL. Para lo que todavía no llegó (sección
+                         "Los Próximos Ingresos"): muestra "Próximamente"
+                         en lugar del precio y saca el botón "Agregar" —
+                         solo se puede consultar por WhatsApp. No lleva
+                         precio.
 
    variantes (lista)     OPCIONAL. Para el mismo perfume en varios tamaños
                          (ej. 30 ml / 50 ml / 100 ml). Si lo usás, NO
@@ -112,7 +117,11 @@ const CATEGORIAS = {
   recomendacion: { nombre: "Nuestra Recomendación", foto: "assets/img/categorias/recomendacion.jpg" },
 
   /* Lo que ya tenemos confirmado y listo para pedir (foto + precio real). */
-  stock: { nombre: "Stock", foto: "assets/img/categorias/stock.jpg" }
+  stock: { nombre: "Stock", foto: "assets/img/categorias/stock.jpg" },
+
+  /* Lo que está por llegar: se ve con "Próximamente" en lugar del precio
+     (ver el campo proximamente más arriba). */
+  proximos: { nombre: "Los Próximos Ingresos", foto: "" }
 };
 
 /* Portada de la tarjeta "Todos" (la que muestra el catálogo completo).
@@ -1675,6 +1684,147 @@ const PRODUCTOS = {
      Se carga a mano: pegá acá el producto que quieras destacar (puede
      repetir uno que ya esté en Hombre/Mujer/Stock) o sumá uno nuevo.
      ====================================================================== */
-  recomendacion: []
+  recomendacion: [],
+
+  /* ======================================================================
+     LOS PRÓXIMOS INGRESOS  ·  todavía no llegaron
+     -----------------------------------------------------------------------
+     Van sin precio y con proximamente:true. Notas de Fragrantica; falta
+     la foto real de cada uno (img: "" hasta que la mandes).
+     Cuando llegue uno: pasalo a Hombre y/o Mujer con su precio real y
+     sacale proximamente:true. Género según Fragrantica:
+     Vulcan Black Friday, Hawas Verde y los tres Rayhaan → Hombre
+     Rave Now Rosa → Mujer
+     Dunescape Dubai, Odyssey Bahamas, Odyssey Go Mango, Hawas Chrome,
+     Riiffs Momento y Teriaq → unisex (van en Hombre Y en Mujer)
+     ====================================================================== */
+  proximos: [
+    {
+      nombre: "Dunescape Dubai",
+      unisex: true,
+      proximamente: true,
+      familia: "Aromático fougère",
+      temporada: ["primavera", "verano"],
+      aroma: ["citrico", "fresco"],
+      desc: "Cítricos, jengibre, enebro y salvia abren frescos, sobre un corazón ozónico de cashmerán, geranio y rosa que cierra en ámbar seco, almizcle y sándalo. Un fougère aromático de Armaf.",
+      img: "",
+      detalles: ["Salida: limón, mandarina, bergamota, naranja sanguina, jengibre, enebro, salvia", "Corazón: cashmerán, acorde ozónico, geranio, rosa, manzana", "Fondo: ámbar seco, almizcle, sándalo"]
+    },
+    {
+      nombre: "Odyssey Bahamas",
+      unisex: true,
+      proximamente: true,
+      familia: "Frutal acuático",
+      temporada: ["verano"],
+      aroma: ["fresco", "dulce"],
+      desc: "Melón, pera, manzana verde y ciruela con un toque salino abren jugosos, sobre un corazón acuático de nenúfar, incienso y musgo de roble que cierra en almizcle, cedro, ámbar y azúcar. De la línea tropical de Armaf.",
+      img: "",
+      detalles: ["Salida: melón cantalupo, algas, melón, pera, manzana verde, ciruela, sal", "Corazón: notas acuáticas, incienso, nenúfar, musgo de roble", "Fondo: almizcle, cedro, ámbar, azúcar"]
+    },
+    {
+      nombre: "Odyssey Go Mango",
+      unisex: true,
+      proximamente: true,
+      familia: "Frutal gourmand",
+      temporada: ["primavera", "verano"],
+      aroma: ["dulce"],
+      desc: "Limón, jengibre y pimienta rosa abren luminosos, con mango y haba tonka en el corazón. Cierra cálido y dulce, con ámbar, vainilla, guayaco y un toque de frutos secos. También de la línea tropical de Armaf.",
+      img: "",
+      detalles: ["Salida: limón, jengibre, pimienta rosa, flores blancas", "Corazón: mango, madera seca, haba tonka", "Fondo: ámbar, vainilla, madera de guayaco, almizcle, frutos secos"]
+    },
+    {
+      nombre: "Vulcan Black Friday",
+      proximamente: true,
+      familia: "Cuero especiado",
+      temporada: ["otono", "invierno"],
+      aroma: ["amaderado"],
+      desc: "Fragancia masculina de French Avenue: azafrán, manzana y canela abren especiados, sobre un corazón de cuero y rosa que cierra seco y terroso, con pachulí, musgo, almizcle y papiro.",
+      img: "",
+      detalles: ["Salida: azafrán, manzana, canela", "Corazón: cuero, rosa", "Fondo: pachulí, musgo, almizcle, papiro"]
+    },
+    {
+      nombre: "Hawas Chrome",
+      unisex: true,
+      proximamente: true,
+      familia: "Frutal fresco",
+      temporada: ["primavera", "verano"],
+      aroma: ["fresco", "dulce"],
+      desc: "Durazno, naranja dulce y frutas amarillas abren jugosos, con maracuyá, mango y un toque acuático en el corazón, sobre un fondo cremoso de almizcle, ámbar y vainilla. Lanzamiento 2026 de Rasasi.",
+      img: "",
+      detalles: ["Salida: durazno, naranja dulce, frutas amarillas", "Corazón: maracuyá, mango, frutas, notas acuáticas", "Fondo: almizcle, ámbar, vainilla"]
+    },
+    {
+      nombre: "Hawas Verde",
+      proximamente: true,
+      familia: "Cítrico aromático",
+      temporada: ["primavera", "verano"],
+      aroma: ["citrico", "fresco"],
+      desc: "Fragancia masculina de Rasasi: lima y manzana verde realzadas con romero, sobre un fondo de pachulí y ámbar. Verde, cítrico y fresco, ideal para el día.",
+      img: "",
+      detalles: ["Notas: lima, romero, manzana verde, pachulí, ámbar"]
+    },
+    {
+      nombre: "Rayhaan Aquatica",
+      proximamente: true,
+      familia: "Cítrico gourmand",
+      temporada: ["verano"],
+      aroma: ["citrico", "dulce"],
+      desc: "Fragancia masculina de Rayhaan con aire tropical: lima, bergamota y mandarina con leche de coco, sobre caña de azúcar, jazmín, hibisco y gardenia, cerrando en ron, haba tonka, almizcle y pachulí.",
+      img: "",
+      detalles: ["Salida: lima, leche de coco, bergamota, mandarina", "Corazón: caña de azúcar, jazmín, hibisco, gardenia", "Fondo: almizcle, ron, haba tonka, pachulí"]
+    },
+    {
+      nombre: "Rayhaan Obsidian",
+      proximamente: true,
+      familia: "Amaderado",
+      temporada: ["otono", "invierno"],
+      aroma: ["amaderado"],
+      desc: "Fragancia masculina de Rayhaan: iris y cítricos abren frescos, con un corazón de cuero gamuzado y acordes florales. Cierra amaderado y profundo, con cedro, sándalo, ambreta y oud.",
+      img: "",
+      detalles: ["Salida: iris, cítricos", "Corazón: gamuza, acordes florales", "Fondo: cedro, sándalo, ambreta, oud"]
+    },
+    {
+      nombre: "Rayhaan Pacific Aura",
+      proximamente: true,
+      familia: "Aromático acuático",
+      temporada: ["primavera", "verano"],
+      aroma: ["fresco", "citrico"],
+      desc: "Fragancia masculina de Rayhaan en la línea de Pacific Chill de Louis Vuitton: mandarina, menta, cidra y grosella negra abren frescos, sobre albahaca, zanahoria y rosa, cerrando en higo, ambroxan y ámbar.",
+      img: "",
+      detalles: ["Salida: mandarina, menta, cidra, bergamota, grosella negra, cilantro", "Corazón: albahaca, zanahoria, rosa", "Fondo: higo, ambroxan, ámbar"]
+    },
+    {
+      nombre: "Rave Now Rosa",
+      proximamente: true,
+      familia: "Floral frutal",
+      temporada: ["primavera", "verano"],
+      aroma: ["dulce", "floral"],
+      desc: "Fragancia femenina de Rave (Lattafa): frutos rojos y naranja sobre un corazón de malvavisco, jazmín y lirio de los valles, cerrando en vainilla, almizcle y musgo. Dulce, frutal y fácil de llevar.",
+      img: "",
+      detalles: ["Salida: frutos rojos, naranja", "Corazón: malvavisco, jazmín, lirio de los valles", "Fondo: vainilla, almizcle, musgo"]
+    },
+    {
+      nombre: "Riiffs Momento",
+      unisex: true,
+      proximamente: true,
+      familia: "Amaderado especiado",
+      temporada: ["otono", "invierno"],
+      aroma: ["amaderado", "dulce"],
+      desc: "Azúcar, azafrán y mandarina abren dulces y especiados, con haba tonka, rosa damascena y oud en el corazón. Cierra con caramelo, amberwood y cedro. De Riiffs, en concentración extrait.",
+      img: "",
+      detalles: ["Salida: azúcar, azafrán, mandarina", "Corazón: haba tonka, rosa damascena, oud", "Fondo: caramelo, amberwood, cedro"]
+    },
+    {
+      nombre: "Teriaq",
+      unisex: true,
+      proximamente: true,
+      familia: "Oriental gourmand",
+      temporada: ["otono", "invierno"],
+      aroma: ["dulce"],
+      desc: "El Teriaq original de Lattafa, creado por Quentin Bisch: caramelo, almendra amarga, damasco y pimienta rosa sobre miel, ruibarbo y rosa, cerrando en cuero, vainilla, ládano y vetiver. Dulce, con un fondo de cuero bien marcado.",
+      img: "",
+      detalles: ["Salida: caramelo, almendra amarga, damasco, pimienta rosa", "Corazón: miel, ruibarbo, flores blancas, rosa", "Fondo: cuero, vainilla, almizcle, ládano, vetiver"]
+    }
+  ]
 
 };
