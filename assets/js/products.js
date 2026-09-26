@@ -1931,6 +1931,16 @@ const PRODUCTOS = {
       desc: "Fragancia masculina de Yves Saint Laurent, creada por Dominique Ropion: bergamota, jengibre y manzana abren frescos, sobre un corazón aromático de salvia, geranio y enebro que cierra en amberwood, haba tonka, cedro, vetiver e incienso.",
       img: "assets/img/proximos/ysl-y-edp.jpg",
       detalles: ["Salida: bergamota, jengibre, manzana", "Corazón: salvia, geranio, bayas de enebro", "Fondo: vetiver, cedro, haba tonka, amberwood, incienso"]
+    },
+    {
+      nombre: "Emporio Armani Stronger With You Intensely",
+      proximamente: true,
+      familia: "Oriental fougère",
+      temporada: ["invierno", "otono"],
+      aroma: ["dulce"],
+      desc: "Fragancia masculina de Emporio Armani: pimienta rosa, enebro y violeta abren especiados, sobre un corazón de toffee, canela, lavanda y salvia que cierra en vainilla, ámbar, haba tonka y gamuza. Dulce, cálida y muy envolvente.",
+      img: "assets/img/proximos/stronger-with-you-intensely.jpg",
+      detalles: ["Salida: pimienta rosa, enebro, violeta", "Corazón: toffee, canela, lavanda, salvia", "Fondo: vainilla, ámbar, haba tonka, gamuza"]
     }
   ]
 
