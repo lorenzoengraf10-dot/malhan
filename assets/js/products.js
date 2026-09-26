@@ -1891,6 +1891,16 @@ const PRODUCTOS = {
       desc: "Fragancia femenina de Rave (Lattafa), el Now Women de frasco rosa: frutos rojos y naranja sobre un corazón de malvavisco, jazmín y lirio de los valles, cerrando en vainilla, almizcle y musgo. Dulce, frutal y fácil de llevar.",
       img: "assets/img/proximos/rave-now-rosa.jpg",
       detalles: ["Salida: frutos rojos, naranja", "Corazón: malvavisco, jazmín, lirio de los valles", "Fondo: vainilla, almizcle, musgo"]
+    },
+    {
+      nombre: "Azzaro The Most Wanted EDP Intense",
+      proximamente: true,
+      familia: "Oriental amaderado",
+      temporada: ["invierno", "otono"],
+      aroma: ["dulce", "amaderado"],
+      desc: "Fragancia masculina de Azzaro, en su versión Eau de Parfum Intense: cardamomo especiado sobre un corazón goloso de toffee, con fondo de amberwood. Cálida, dulce y con mucha presencia, ideal para la noche.",
+      img: "assets/img/proximos/azzaro-the-most-wanted.jpg",
+      detalles: ["Salida: cardamomo", "Corazón: toffee", "Fondo: amberwood"]
     }
   ]
 
