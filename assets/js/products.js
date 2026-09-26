@@ -1941,6 +1941,16 @@ const PRODUCTOS = {
       desc: "Fragancia masculina de Emporio Armani: pimienta rosa, enebro y violeta abren especiados, sobre un corazón de toffee, canela, lavanda y salvia que cierra en vainilla, ámbar, haba tonka y gamuza. Dulce, cálida y muy envolvente.",
       img: "assets/img/proximos/stronger-with-you-intensely.jpg",
       detalles: ["Salida: pimienta rosa, enebro, violeta", "Corazón: toffee, canela, lavanda, salvia", "Fondo: vainilla, ámbar, haba tonka, gamuza"]
+    },
+    {
+      nombre: "Jean Paul Gaultier Scandal Pour Homme Le Parfum",
+      proximamente: true,
+      familia: "Oriental amaderado",
+      temporada: ["invierno", "otono"],
+      aroma: ["dulce", "amaderado"],
+      desc: "Fragancia masculina de Jean Paul Gaultier, en versión Eau de Parfum Intense: geranio de salida, un corazón cremoso de haba tonka y fondo de sándalo. Simple, cálida y muy envolvente.",
+      img: "assets/img/proximos/scandal-pour-homme-le-parfum.jpg",
+      detalles: ["Salida: geranio", "Corazón: haba tonka", "Fondo: sándalo"]
     }
   ]
 
