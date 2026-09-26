@@ -121,7 +121,7 @@ const CATEGORIAS = {
 
   /* Lo que está por llegar: se ve con "Próximamente" en lugar del precio
      (ver el campo proximamente más arriba). */
-  proximos: { nombre: "Los Próximos Ingresos", foto: "" }
+  proximos: { nombre: "Los Próximos Ingresos", foto: "assets/img/categorias/proximos.jpg" }
 };
 
 /* Portada de la tarjeta "Todos" (la que muestra el catálogo completo).
