@@ -1640,22 +1640,6 @@ const PRODUCTOS = {
     },
 
     /* ====================================================================
-       NUEVOS · de la lista de precios nueva
-       ------------------------------------------------------------------
-       Todavía sin foto (img: ""). Notas y género según Fragrantica.
-       ==================================================================== */
-    {
-      nombre: "Rave Now Rosa",
-      familia: "Floral frutal",
-      temporada: ["primavera", "verano"],
-      aroma: ["dulce", "floral"],
-      precio: 57269,
-      desc: "Frutos rojos y naranja sobre un corazón de malvavisco, jazmín y lirio de los valles, cerrando en vainilla, almizcle y musgo. Dulce, frutal y fácil de llevar. De Rave (Lattafa).",
-      img: "",
-      detalles: ["Salida: frutos rojos, naranja", "Corazón: malvavisco, jazmín, lirio de los valles", "Fondo: vainilla, almizcle, musgo"]
-    },
-
-    /* ====================================================================
        UNISEX · el mismo perfume vive también en Hombre
        ------------------------------------------------------------------
        Ver la nota en la lista de Hombre: mismo criterio, unisex:true.
@@ -1897,6 +1881,17 @@ const PRODUCTOS = {
      Cuando llegue uno: pasalo a Hombre y/o Mujer con su precio real y
      sacale proximamente:true.
      ====================================================================== */
-  proximos: []
+  proximos: [
+    {
+      nombre: "Rave Now Rosa",
+      proximamente: true,
+      familia: "Floral frutal",
+      temporada: ["primavera", "verano"],
+      aroma: ["dulce", "floral"],
+      desc: "Fragancia femenina de Rave (Lattafa), el Now Women de frasco rosa: frutos rojos y naranja sobre un corazón de malvavisco, jazmín y lirio de los valles, cerrando en vainilla, almizcle y musgo. Dulce, frutal y fácil de llevar.",
+      img: "assets/img/proximos/rave-now-rosa.jpg",
+      detalles: ["Salida: frutos rojos, naranja", "Corazón: malvavisco, jazmín, lirio de los valles", "Fondo: vainilla, almizcle, musgo"]
+    }
+  ]
 
 };
