@@ -1951,6 +1951,16 @@ const PRODUCTOS = {
       desc: "Fragancia masculina de Jean Paul Gaultier, en versión Eau de Parfum Intense: geranio de salida, un corazón cremoso de haba tonka y fondo de sándalo. Simple, cálida y muy envolvente.",
       img: "assets/img/proximos/scandal-pour-homme-le-parfum.jpg",
       detalles: ["Salida: geranio", "Corazón: haba tonka", "Fondo: sándalo"]
+    },
+    {
+      nombre: "Jean Paul Gaultier Scandal Pour Homme EDT",
+      proximamente: true,
+      familia: "Oriental fougère",
+      temporada: ["otono", "invierno"],
+      aroma: ["dulce"],
+      desc: "Fragancia masculina de Jean Paul Gaultier, la Eau de Toilette original de 2021: salvia esclarea y mandarina abren frescas, sobre un corazón de caramelo y haba tonka que cierra en vetiver. Dulce, con un fondo terroso que la equilibra.",
+      img: "assets/img/proximos/scandal-pour-homme-edt.jpg",
+      detalles: ["Salida: salvia esclarea, mandarina", "Corazón: caramelo, haba tonka", "Fondo: vetiver"]
     }
   ]
 
