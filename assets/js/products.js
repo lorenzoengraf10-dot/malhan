@@ -1901,6 +1901,16 @@ const PRODUCTOS = {
       desc: "Fragancia masculina de Azzaro, en su versión Eau de Parfum Intense: cardamomo especiado sobre un corazón goloso de toffee, con fondo de amberwood. Cálida, dulce y con mucha presencia, ideal para la noche.",
       img: "assets/img/proximos/azzaro-the-most-wanted.jpg",
       detalles: ["Salida: cardamomo", "Corazón: toffee", "Fondo: amberwood"]
+    },
+    {
+      nombre: "Jean Paul Gaultier Le Beau Le Parfum",
+      proximamente: true,
+      familia: "Oriental amaderado",
+      temporada: ["otono", "invierno"],
+      aroma: ["dulce", "amaderado"],
+      desc: "Fragancia masculina de Jean Paul Gaultier, en versión Eau de Parfum Intense creada por Quentin Bisch: ananá, iris, jengibre y ciprés abren frescos, sobre un corazón de coco y maderas que cierra en haba tonka, sándalo, ámbar y ámbar gris.",
+      img: "assets/img/proximos/le-beau-le-parfum.jpg",
+      detalles: ["Salida: ananá, iris, jengibre, ciprés", "Corazón: coco, notas amaderadas", "Fondo: haba tonka, sándalo, ámbar, ámbar gris"]
     }
   ]
 
