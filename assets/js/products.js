@@ -1921,6 +1921,16 @@ const PRODUCTOS = {
       desc: "Fragancia masculina de Jean Paul Gaultier, creada por Quentin Bisch: lavanda y menta abren frescas, sobre un corazón de vainilla y benjuí que cierra en miel, haba tonka y tabaco. Intensa, dulce y envolvente.",
       img: "assets/img/proximos/le-male-elixir.jpg",
       detalles: ["Salida: lavanda, menta", "Corazón: vainilla, benjuí", "Fondo: miel, haba tonka, tabaco"]
+    },
+    {
+      nombre: "Yves Saint Laurent Y EDP",
+      proximamente: true,
+      familia: "Aromático fougère",
+      temporada: ["otono", "primavera"],
+      aroma: ["fresco", "amaderado"],
+      desc: "Fragancia masculina de Yves Saint Laurent, creada por Dominique Ropion: bergamota, jengibre y manzana abren frescos, sobre un corazón aromático de salvia, geranio y enebro que cierra en amberwood, haba tonka, cedro, vetiver e incienso.",
+      img: "assets/img/proximos/ysl-y-edp.jpg",
+      detalles: ["Salida: bergamota, jengibre, manzana", "Corazón: salvia, geranio, bayas de enebro", "Fondo: vetiver, cedro, haba tonka, amberwood, incienso"]
     }
   ]
 
