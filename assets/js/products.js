@@ -1961,6 +1961,16 @@ const PRODUCTOS = {
       desc: "Fragancia masculina de Jean Paul Gaultier, la Eau de Toilette original de 2021: salvia esclarea y mandarina abren frescas, sobre un corazón de caramelo y haba tonka que cierra en vetiver. Dulce, con un fondo terroso que la equilibra.",
       img: "assets/img/proximos/scandal-pour-homme-edt.jpg",
       detalles: ["Salida: salvia esclarea, mandarina", "Corazón: caramelo, haba tonka", "Fondo: vetiver"]
+    },
+    {
+      nombre: "Valentino Uomo Born in Roma Intense",
+      proximamente: true,
+      familia: "Oriental vainilla",
+      temporada: ["invierno", "otono"],
+      aroma: ["dulce"],
+      desc: "Fragancia masculina de Valentino, en versión Eau de Parfum Intense: vainilla bourbon, lavanda y vetiver ahumado en una fórmula simple, cálida y envolvente. De Antoine Maisondieu y Guillaume Flavigny.",
+      img: "assets/img/proximos/born-in-roma-intense.jpg",
+      detalles: ["Salida: vainilla bourbon", "Corazón: lavanda", "Fondo: vetiver ahumado"]
     }
   ]
 
