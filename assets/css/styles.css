@@ -544,7 +544,12 @@ h1,h2,h3,h4{
 .catalogo{ padding:clamp(52px, 8vw, 88px) 0 clamp(20px, 4vw, 40px); }
 
 .catsec{ padding:clamp(28px, 4vw, 40px) 0; }
-.catsec__head{ margin-bottom:22px; }
+.catsec__head{
+  margin-bottom:22px;
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:12px 20px;
+}
+.catsec__link{ min-height:40px; padding:9px 18px; font-size:.86rem; }
 
 .grid{
   display:grid;

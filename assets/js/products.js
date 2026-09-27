@@ -106,6 +106,9 @@ const CONFIG = {
    foto (texto) OPCIONAL. Portada para la tarjeta grande de esa categoría.
                 Dejala en "" hasta tener la imagen: la tarjeta se ve igual,
                 con un fondo liso en vez de foto.
+   compartir (true) OPCIONAL. Suma el botón "Copiar link de esta sección"
+                al lado del título. Ese link (termina en #seccion=<id>, ej.
+                #seccion=proximos) abre el sitio directo en esa sección.
    ========================================================================= */
 const CATEGORIAS = {
   hombre: { nombre: "Hombre", foto: "assets/img/categorias/hombre.jpg" },
@@ -121,7 +124,7 @@ const CATEGORIAS = {
 
   /* Lo que está por llegar: se ve con "Próximamente" en lugar del precio
      (ver el campo proximamente más arriba). */
-  proximos: { nombre: "Los Próximos Ingresos", foto: "assets/img/categorias/proximos.jpg" }
+  proximos: { nombre: "Los Próximos Ingresos", foto: "assets/img/categorias/proximos.jpg", compartir: true }
 };
 
 /* Portada de la tarjeta "Todos" (la que muestra el catálogo completo).

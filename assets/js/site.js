@@ -564,6 +564,7 @@
             <div class="wrap">
               <header class="catsec__head">
                 <h2 class="sec-title">${escapar(cat.nombre)}</h2>
+                ${cat.compartir ? `<button type="button" class="btn btn--ghost-dark catsec__link" data-copiar-seccion="${escapar(id)}">Copiar link de esta sección</button>` : ""}
               </header>
               <div class="grid" data-grilla="${id}"></div>
             </div>
@@ -796,6 +797,29 @@
       e.preventDefault();
       irACategoria("recomendacion");
     });
+
+    /* Link directo a una sección (#seccion=proximos): lo copia el botón
+       "Copiar link de esta sección" (categorías con compartir:true) y, al
+       abrirlo, deja el catálogo en esa categoría, como tocar su pastilla. */
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-copiar-seccion]");
+      if (!btn) return;
+      const link = `${location.origin}${location.pathname}#seccion=${btn.dataset.copiarSeccion}`;
+      copiarAlPortapapeles(link).then(() => {
+        const original = btn.dataset.original || btn.textContent;
+        btn.dataset.original = original;
+        btn.textContent = "Link copiado ✓";
+        setTimeout(() => { btn.textContent = original; }, 1500);
+      });
+    });
+
+    function irDesdeHash() {
+      const m = location.hash.match(/^#seccion=([a-z0-9-]+)$/i);
+      const id = m && m[1].toLowerCase();
+      if (id && Object.prototype.hasOwnProperty.call(CATEGORIAS, id)) irACategoria(id);
+    }
+    irDesdeHash();
+    window.addEventListener("hashchange", irDesdeHash);
   }
 
   /* ---------------------------------------------------------------------
