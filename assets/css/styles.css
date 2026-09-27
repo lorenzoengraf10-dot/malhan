@@ -634,6 +634,7 @@ h1,h2,h3,h4{
 }
 
 .card__body{
+  flex:1;
   display:flex; flex-direction:column;
   gap:6px;
   padding:16px 16px 18px;
@@ -654,8 +655,10 @@ h1,h2,h3,h4{
 
 .card__variantes{ display:flex; flex-wrap:wrap; gap:6px; margin-top:2px; }
 
+/* margin-top:auto: el precio y el botón quedan abajo de todo, alineados
+   con los de las tarjetas vecinas aunque el texto de arriba sea más largo. */
 .card__foot{
-  margin-top:8px;
+  margin-top:auto; padding-top:8px;
   display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
   gap:10px;
 }
@@ -913,10 +916,15 @@ body.tiene-cookiebar .fab{ display:none; }
   background:rgba(42,27,17,.55);
   backdrop-filter:blur(2px);
 }
+/* El panel entero es el que scrollea (no solo la lista): con los datos de
+   transferencia abiertos, el pie ocupa casi toda la pantalla del celular y
+   la lista de productos quedaba aplastada a unos pocos píxeles. */
 .cart__panel{
   position:absolute; top:0; right:0; bottom:0;
   width:min(440px, 100%);
   display:flex; flex-direction:column;
+  overflow-y:auto; overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
   background:var(--cream);
   box-shadow:var(--shadow-lg);
 }
@@ -926,6 +934,8 @@ body.tiene-cookiebar .fab{ display:none; }
   padding:18px var(--gutter);
   border-bottom:1px solid var(--line);
   flex:none;
+  position:sticky; top:0; z-index:1;
+  background:var(--cream);
 }
 .cart__title{ font-size:1.32rem; }
 .cart__close{
@@ -939,9 +949,8 @@ body.tiene-cookiebar .fab{ display:none; }
 .cart__close:hover{ background:var(--gold); color:#fff; box-shadow:none; }
 
 .cart__body{
-  flex:1; overflow-y:auto;
+  flex:1 0 auto;
   padding:16px var(--gutter);
-  -webkit-overflow-scrolling:touch;
 }
 
 .cart__vacio{
@@ -1178,7 +1187,9 @@ body.tiene-cookiebar .fab{ display:none; }
   background:linear-gradient(155deg, var(--cream-2), var(--cream-3));
   min-height:280px;
 }
-.modal__media img{ width:100%; height:100%; object-fit:cover; }
+/* contain: en la ficha el perfume se ve entero (tapa y base), no recortado. */
+.modal__media img{ width:100%; height:100%; object-fit:contain; }
+.modal__media:not(.is-empty){ background:#fff; }
 .modal__media.is-empty img{ display:none; }
 .modal__ph{
   display:none;
@@ -1311,7 +1322,7 @@ body.tiene-cookiebar .fab{ display:none; }
   .pill{ padding:8px 15px; font-size:.86rem; }
 
   .modal__box{ grid-template-columns:1fr; max-height:92vh; }
-  .modal__media{ aspect-ratio:16/10; min-height:auto; }
+  .modal__media{ aspect-ratio:1/1; max-height:42vh; min-height:auto; }
   .modal__body{ padding:24px 22px 28px; }
 }
 
@@ -1319,6 +1330,7 @@ body.tiene-cookiebar .fab{ display:none; }
   .eyebrow{ font-size:.7rem; letter-spacing:.13em; }
 
   .clientes{ --gutter: 2px; }
+  .clientes .sec-head{ padding-inline:18px; }
   .testis{ grid-template-columns:1fr 1fr; gap:3px; }
   .testi{ padding:10px 7px 8px; }
   .testi::before{ font-size:1.6rem; left:7px; }
@@ -1352,4 +1364,13 @@ body.tiene-cookiebar .fab{ display:none; }
    fila, ocupa todo el ancho (como "Todos") en vez de quedar a media fila. */
 @media (max-width: 479px){
   .catshowcase__tile:last-child:nth-child(even){ grid-column:1 / -1; aspect-ratio:16/9; }
+}
+
+/* Celulares muy angostos (~320px): logo + lupa + carrito + menú no
+   entraban en la cabecera y la página entera se corría de costado. */
+@media (max-width: 350px){
+  .header__inner{ gap:8px; }
+  .brand{ gap:8px; }
+  .brand__word{ font-size:1.3rem; }
+  .cartbtn, .burger{ width:40px; height:40px; }
 }

@@ -596,9 +596,10 @@
     $$(".grid").forEach((grid) => {
       const cards = $$(".card", grid);
       if (!cards.length) return;
+      /* Sin precio (Infinity) va al final también en "Mayor a menor". */
       const clave =
         Filtros.orden === "precio-asc" ? (c) => Number(c.dataset.precio) :
-        Filtros.orden === "precio-desc" ? (c) => -Number(c.dataset.precio) :
+        Filtros.orden === "precio-desc" ? (c) => { const p = Number(c.dataset.precio); return p === Infinity ? Infinity : -p; } :
         (c) => Number(c.dataset.index);
       cards
         .sort((a, b) => clave(a) - clave(b))
@@ -625,6 +626,7 @@
     if (limpiarBtn) limpiarBtn.hidden = sinFiltrosExtra;
 
     let totalVisible = 0;
+    const perfumesVisibles = new Set(); /* un unisex está en Hombre y en Mujer: se cuenta una vez */
     secciones.forEach((sec) => {
       /* "Nuestra Recomendación" no es una lista fija: junta Hombre/Mujer
          (recortado por Género si se eligió uno) y deja afuera Stock y la
@@ -652,7 +654,7 @@
           card.dataset.unisex === "1";
         const visible = matchTexto && matchTemporada && matchAroma && matchGenero;
         card.hidden = !visible;
-        if (visible) { visiblesEnSeccion++; totalVisible++; }
+        if (visible) { visiblesEnSeccion++; totalVisible++; perfumesVisibles.add(card.dataset.slug); }
       });
       sec.classList.toggle("catsec--sin-resultados", visiblesEnSeccion === 0);
     });
@@ -672,7 +674,20 @@
     }
 
     const contador = $("[data-filtros-count]");
-    if (contador) contador.textContent = `${totalVisible} fragancia${totalVisible === 1 ? "" : "s"}`;
+    const n = perfumesVisibles.size;
+    if (contador) contador.textContent = `${n} fragancia${n === 1 ? "" : "s"}`;
+
+    /* En celular la fila de pastillas se desliza de costado: si la activa
+       quedó fuera de la vista (ej. al entrar por la tarjeta grande o por un
+       link #seccion=...), se la trae al centro. Solo mueve la fila. */
+    const fila = $(".catnav__inner", catnav);
+    const activa = fila && $(".pill[data-filtro].is-active", fila);
+    if (activa && fila.scrollWidth > fila.clientWidth) {
+      const r = activa.getBoundingClientRect(), f = fila.getBoundingClientRect();
+      if (r.left < f.left || r.right > f.right) {
+        fila.scrollBy({ left: r.left - f.left - (f.width - r.width) / 2, behavior: "smooth" });
+      }
+    }
 
     aplicarOrden();
   }
@@ -835,7 +850,7 @@
     const input = $("[data-buscador-input]", wrap);
     const limpiar = $("[data-buscador-limpiar]", wrap);
 
-    let timerSinResultados = null;
+    let timerBusqueda = null;
     function aplicar() {
       const q = input.value.trim();
       limpiar.hidden = !q;
@@ -843,15 +858,16 @@
       Filtros.busqueda = q;
       aplicarFiltros();
 
-      /* Se espera a que la persona deje de tipear antes de mandar el
-         evento: si no, cada letra de una búsqueda sin resultados
-         mandaría un evento distinto. */
-      clearTimeout(timerSinResultados);
+      /* Se espera a que la persona deje de tipear antes de mandar los
+         eventos: si no, cada letra mandaría uno distinto. "search" es el
+         evento estándar de GA4 (qué se busca); "search_no_results" marca
+         además las búsquedas que no encontraron nada. */
+      clearTimeout(timerBusqueda);
       if (q) {
-        timerSinResultados = setTimeout(() => {
-          if (input.value.trim() === q && $("[data-buscador-vacio]")) {
-            track("search_no_results", { search_term: q });
-          }
+        timerBusqueda = setTimeout(() => {
+          if (input.value.trim() !== q) return;
+          track("search", { search_term: q });
+          if ($("[data-buscador-vacio]")) track("search_no_results", { search_term: q });
         }, 700);
       }
     }
@@ -1080,15 +1096,47 @@
     }
   };
 
+  /* Evento de GA4 con todo lo que hay en el carrito (view_cart,
+     begin_checkout, generate_lead...). Con el carrito vacío no manda nada. */
+  function trackCarrito(nombre, extra) {
+    const items = Carrito.items
+      .filter((it) => it.cantidad > 0)
+      .map((it) => { const p = Carrito.producto(it); return p && itemGA(p, it.categoria, it.cantidad); })
+      .filter(Boolean);
+    if (!items.length) return;
+    track(nombre, Object.assign({ currency: "ARS", value: Carrito.total().suma, items }, extra));
+  }
+
+  /* Un producto puntual que entra o sale del carrito (add_to_cart /
+     remove_from_cart), por "cantidad" unidades. */
+  function trackItem(nombre, categoria, slug, variante, cantidad) {
+    const p = Carrito.producto({ categoria, slug, variante: variante || null });
+    if (!p || !(cantidad > 0)) return;
+    const item = itemGA(p, categoria, cantidad);
+    track(nombre, { currency: "ARS", value: item.price ? item.price * cantidad : undefined, items: [item] });
+  }
+
+  /* Misma selección = mismo pedido: si se vuelve a tocar "Hacer el
+     pedido" (o se elige de nuevo el medio de pago) sin cambiar nada, no
+     se cuenta dos veces. */
+  const firmaCarrito = () => JSON.stringify(Carrito.items.filter((it) => it.cantidad > 0));
+  let checkoutContado = null, pedidoContado = null;
+
+  function trackCheckout(metodoPago) {
+    const firma = firmaCarrito();
+    if (firma === checkoutContado) return;
+    checkoutContado = firma;
+    trackCarrito("begin_checkout", { payment_type: metodoPago });
+  }
+
   /* "Pedido finalizado" = el cliente mandó el carrito por WhatsApp (en
      efectivo o ya transferido). Es el evento de conversión: se arma con
      todo el carrito, no con un solo producto. */
   function trackPedido(metodoPago) {
-    const items = Carrito.items
-      .filter((it) => it.cantidad > 0)
-      .map((it) => itemGA(Carrito.producto(it), it.categoria, it.cantidad));
-    const { suma } = Carrito.total();
-    track("generate_lead", { currency: "ARS", value: suma, payment_method: metodoPago, items });
+    const firma = firmaCarrito();
+    if (firma === pedidoContado) return;
+    pedidoContado = firma;
+    trackCarrito("generate_lead", { payment_method: metodoPago });
   }
 
   function renderCarrito() {
@@ -1275,7 +1323,8 @@
 
   function copiarDato(btn) {
     copiarAlPortapapeles(btn.dataset.pagoCopiar).then(() => {
-      const original = btn.textContent;
+      const original = btn.dataset.original || btn.textContent;
+      btn.dataset.original = original;
       btn.textContent = "¡Copiado!";
       btn.classList.add("is-ok");
       setTimeout(() => {
@@ -1315,7 +1364,7 @@
     const modal = $("#cart");
     if (!modal) return;
 
-    const abrir = () => { modal.hidden = false; bloquearScroll(); };
+    const abrir = () => { modal.hidden = false; bloquearScroll(); trackCarrito("view_cart"); };
     const cerrar = () => { modal.hidden = true; desbloquearScroll(); };
 
     document.addEventListener("click", (e) => {
@@ -1343,14 +1392,7 @@
         const slug = card.dataset.slug;
         const variante = card.dataset.variante || null;
         Carrito.agregar(categoria, slug, variante);
-        const pAgregado = Carrito.producto({ categoria, slug, variante });
-        if (pAgregado) {
-          track("add_to_cart", {
-            currency: "ARS",
-            value: itemGA(pAgregado, categoria, 1).price,
-            items: [itemGA(pAgregado, categoria, 1)]
-          });
-        }
+        trackItem("add_to_cart", categoria, slug, variante, 1);
         btnAdd.classList.add("is-ok");
         const original = btnAdd.dataset.original || btnAdd.innerHTML;
         btnAdd.dataset.original = original;
@@ -1364,15 +1406,26 @@
 
       if (e.target.closest("[data-cart-open]")) { e.preventDefault(); abrir(); return; }
       if (e.target.closest("[data-cart-close]")) { cerrar(); return; }
-      if (e.target.closest("[data-cart-vaciar]")) { Carrito.vaciar(); return; }
+      if (e.target.closest("[data-cart-vaciar]")) { trackCarrito("remove_from_cart"); Carrito.vaciar(); return; }
       if (e.target.closest("[data-pedido-efectivo]")) { trackPedido("efectivo"); return; }
 
       const fila = e.target.closest(".citem");
       if (fila) {
         const cat = fila.dataset.cat, slug = fila.dataset.slug, variante = fila.dataset.variante || null;
-        if (e.target.closest("[data-mas]"))    Carrito.cambiar(cat, slug, variante, +1);
-        if (e.target.closest("[data-menos]"))  Carrito.cambiar(cat, slug, variante, -1);
-        if (e.target.closest("[data-quitar]")) Carrito.quitar(cat, slug, variante);
+        const it = Carrito.items.find((i) => i.categoria === cat && i.slug === slug && i.variante === variante);
+        const antes = it ? it.cantidad : 0;
+        if (e.target.closest("[data-mas]")) {
+          Carrito.cambiar(cat, slug, variante, +1);
+          trackItem("add_to_cart", cat, slug, variante, 1);
+        }
+        if (e.target.closest("[data-menos]")) {
+          Carrito.cambiar(cat, slug, variante, -1);
+          trackItem("remove_from_cart", cat, slug, variante, Math.min(antes, 1));
+        }
+        if (e.target.closest("[data-quitar]")) {
+          Carrito.quitar(cat, slug, variante);
+          trackItem("remove_from_cart", cat, slug, variante, antes);
+        }
         return;
       }
 
@@ -1380,6 +1433,7 @@
       if (btnMetodo) {
         Pago.metodo = Pago.metodo === btnMetodo.dataset.pagoMetodo ? null : btnMetodo.dataset.pagoMetodo;
         Pago.error = null;
+        if (Pago.metodo) trackCheckout(Pago.metodo);
         pintarPago();
         return;
       }
@@ -1388,6 +1442,16 @@
       if (btnCopiar) { copiarDato(btnCopiar); return; }
 
       if (e.target.closest("[data-pago-confirmar]")) { confirmarPorTransferencia(); return; }
+    });
+
+    /* WhatsApp general (botón flotante, inicio, pie): también es un
+       contacto. Las consultas desde la tarjeta o la ficha se miden aparte,
+       arriba y en initModal, con el producto. */
+    document.addEventListener("click", (e) => {
+      const wa = e.target.closest("[data-wa]");
+      if (!wa || wa.matches(".card__consulta, #modal-wa")) return;
+      const source = wa.closest(".fab") ? "flotante" : wa.closest(".hero") ? "inicio" : wa.closest(".footer") ? "pie" : "otro";
+      track("contact_whatsapp", { source });
     });
 
     document.addEventListener("input", (e) => {
@@ -1590,8 +1654,11 @@
       if (e.target.closest("#modal-add")) {
         const p = PRODUCTOS[categoriaAbierta] && PRODUCTOS[categoriaAbierta][indiceAbierto];
         if (!p) return;
-        Carrito.agregar(categoriaAbierta, slugify(p.nombre), varianteActual ? varianteActual.label : null);
-        const original = elAdd.textContent;
+        const variante = varianteActual ? varianteActual.label : null;
+        Carrito.agregar(categoriaAbierta, slugify(p.nombre), variante);
+        trackItem("add_to_cart", categoriaAbierta, slugify(p.nombre), variante, 1);
+        const original = elAdd.dataset.original || elAdd.textContent;
+        elAdd.dataset.original = original;
         elAdd.textContent = "Agregado ✓";
         setTimeout(() => { elAdd.textContent = original; }, 1200);
         return;
@@ -1601,13 +1668,12 @@
         const p = PRODUCTOS[categoriaAbierta] && PRODUCTOS[categoriaAbierta][indiceAbierto];
         if (!p) return;
         const link = linkProducto(categoriaAbierta, p, varianteActual);
-        const original = elShare.textContent;
-        const listo = () => {
+        const original = elShare.dataset.original || elShare.textContent;
+        elShare.dataset.original = original;
+        copiarAlPortapapeles(link).then(() => {
           elShare.textContent = "Copiado ✓";
           setTimeout(() => { elShare.textContent = original; }, 1500);
-        };
-        if (navigator.clipboard) navigator.clipboard.writeText(link).then(listo).catch(listo);
-        else listo();
+        });
         return;
       }
 

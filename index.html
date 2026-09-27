@@ -13,12 +13,17 @@
 <!-- Consentimiento de cookies: arranca denegado hasta que el visitante
      elige en el cartel de abajo (ver initCookies en site.js). Tiene que
      declararse ANTES de cargar gtag.js para que Google Analytics lo
-     respete desde el primer instante. -->
+     respete desde el primer instante. Si ya aceptó en una visita anterior,
+     arranca directamente en "granted": si no, la primera página vista de
+     cada visita se mandaba sin cookies y GA4 no la unía a sus visitas
+     anteriores. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var cookiesAceptadas = false;
+  try { cookiesAceptadas = localStorage.getItem('malhan-cookies') === 'aceptado'; } catch (e) {}
   gtag('consent', 'default', {
-    'analytics_storage': 'denied',
+    'analytics_storage': cookiesAceptadas ? 'granted' : 'denied',
     'ad_storage': 'denied',
     'ad_user_data': 'denied',
     'ad_personalization': 'denied'
@@ -33,7 +38,7 @@
 </script>
 
 <!-- Nuestra hoja de estilos va primero y con ?v= para forzar recarga cuando cambia -->
-<link rel="stylesheet" href="assets/css/styles.css?v=28">
+<link rel="stylesheet" href="assets/css/styles.css?v=29">
 
 <!-- Las tipografías se cargan aparte: si tardan o fallan, el sitio igual se ve bien -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -154,6 +159,6 @@
 <!-- Si el hosting cachea /assets/, subir este número cada vez que cambie
      products.js o site.js para que no quede una copia vieja en caché. -->
 <script src="assets/js/products.js?v=75"></script>
-<script src="assets/js/site.js?v=17"></script>
+<script src="assets/js/site.js?v=18"></script>
 </body>
 </html>
