@@ -1276,7 +1276,7 @@ const PRODUCTOS = {
       aroma: ["citrico", "fresco"],
       precio: 106109,
       desc: "Cítricos, jengibre, enebro y salvia abren frescos, sobre un corazón ozónico de cashmerán, geranio y rosa que cierra en ámbar seco, almizcle y sándalo. Un fougère aromático de Armaf.",
-      img: "",
+      img: "assets/img/mixto/dunescape-dubai.jpg",
       detalles: ["Salida: limón, mandarina, bergamota, naranja sanguina, jengibre, enebro, salvia", "Corazón: cashmerán, acorde ozónico, geranio, rosa, manzana", "Fondo: ámbar seco, almizcle, sándalo"]
     },
     {
@@ -1287,7 +1287,7 @@ const PRODUCTOS = {
       aroma: ["fresco", "dulce"],
       precio: 96333,
       desc: "Melón, pera, manzana verde y ciruela con un toque salino abren jugosos, sobre un corazón acuático de nenúfar, incienso y musgo de roble que cierra en almizcle, cedro, ámbar y azúcar. De la línea tropical de Armaf.",
-      img: "",
+      img: "assets/img/mixto/odyssey-bahamas.jpg",
       detalles: ["Salida: melón cantalupo, algas, melón, pera, manzana verde, ciruela, sal", "Corazón: notas acuáticas, incienso, nenúfar, musgo de roble", "Fondo: almizcle, cedro, ámbar, azúcar"]
     },
     {
@@ -1298,7 +1298,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 92773,
       desc: "Limón, jengibre y pimienta rosa abren luminosos, con mango y haba tonka en el corazón. Cierra cálido y dulce, con ámbar, vainilla, guayaco y un toque de frutos secos. También de la línea tropical de Armaf.",
-      img: "",
+      img: "assets/img/mixto/odyssey-go-mango.jpg",
       detalles: ["Salida: limón, jengibre, pimienta rosa, flores blancas", "Corazón: mango, madera seca, haba tonka", "Fondo: ámbar, vainilla, madera de guayaco, almizcle, frutos secos"]
     },
     {
@@ -1309,7 +1309,7 @@ const PRODUCTOS = {
       aroma: ["fresco", "dulce"],
       precio: 114471,
       desc: "Durazno, naranja dulce y frutas amarillas abren jugosos, con maracuyá, mango y un toque acuático en el corazón, sobre un fondo cremoso de almizcle, ámbar y vainilla. Lanzamiento 2026 de Rasasi.",
-      img: "",
+      img: "assets/img/mixto/hawas-chrome.jpg",
       detalles: ["Salida: durazno, naranja dulce, frutas amarillas", "Corazón: maracuyá, mango, frutas, notas acuáticas", "Fondo: almizcle, ámbar, vainilla"]
     },
     {
@@ -1806,7 +1806,7 @@ const PRODUCTOS = {
       aroma: ["citrico", "fresco"],
       precio: 106109,
       desc: "Cítricos, jengibre, enebro y salvia abren frescos, sobre un corazón ozónico de cashmerán, geranio y rosa que cierra en ámbar seco, almizcle y sándalo. Un fougère aromático de Armaf.",
-      img: "",
+      img: "assets/img/mixto/dunescape-dubai.jpg",
       detalles: ["Salida: limón, mandarina, bergamota, naranja sanguina, jengibre, enebro, salvia", "Corazón: cashmerán, acorde ozónico, geranio, rosa, manzana", "Fondo: ámbar seco, almizcle, sándalo"]
     },
     {
@@ -1817,7 +1817,7 @@ const PRODUCTOS = {
       aroma: ["fresco", "dulce"],
       precio: 96333,
       desc: "Melón, pera, manzana verde y ciruela con un toque salino abren jugosos, sobre un corazón acuático de nenúfar, incienso y musgo de roble que cierra en almizcle, cedro, ámbar y azúcar. De la línea tropical de Armaf.",
-      img: "",
+      img: "assets/img/mixto/odyssey-bahamas.jpg",
       detalles: ["Salida: melón cantalupo, algas, melón, pera, manzana verde, ciruela, sal", "Corazón: notas acuáticas, incienso, nenúfar, musgo de roble", "Fondo: almizcle, cedro, ámbar, azúcar"]
     },
     {
@@ -1828,7 +1828,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 92773,
       desc: "Limón, jengibre y pimienta rosa abren luminosos, con mango y haba tonka en el corazón. Cierra cálido y dulce, con ámbar, vainilla, guayaco y un toque de frutos secos. También de la línea tropical de Armaf.",
-      img: "",
+      img: "assets/img/mixto/odyssey-go-mango.jpg",
       detalles: ["Salida: limón, jengibre, pimienta rosa, flores blancas", "Corazón: mango, madera seca, haba tonka", "Fondo: ámbar, vainilla, madera de guayaco, almizcle, frutos secos"]
     },
     {
@@ -1839,7 +1839,7 @@ const PRODUCTOS = {
       aroma: ["fresco", "dulce"],
       precio: 114471,
       desc: "Durazno, naranja dulce y frutas amarillas abren jugosos, con maracuyá, mango y un toque acuático en el corazón, sobre un fondo cremoso de almizcle, ámbar y vainilla. Lanzamiento 2026 de Rasasi.",
-      img: "",
+      img: "assets/img/mixto/hawas-chrome.jpg",
       detalles: ["Salida: durazno, naranja dulce, frutas amarillas", "Corazón: maracuyá, mango, frutas, notas acuáticas", "Fondo: almizcle, ámbar, vainilla"]
     },
     {
