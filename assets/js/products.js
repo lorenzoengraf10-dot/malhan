@@ -1053,7 +1053,7 @@ const PRODUCTOS = {
     /* ====================================================================
        NUEVOS · de la lista de precios nueva
        ------------------------------------------------------------------
-       Todavía sin foto (img: ""). Notas y género según Fragrantica.
+       Notas y género según Fragrantica.
        ==================================================================== */
     {
       nombre: "Vulcan Black Friday",
@@ -1062,7 +1062,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 94296,
       desc: "Azafrán, manzana y canela abren especiados, sobre un corazón de cuero y rosa que cierra seco y terroso, con pachulí, musgo, almizcle y papiro. De French Avenue.",
-      img: "",
+      img: "assets/img/hombre/vulcan-black-friday.jpg",
       detalles: ["Salida: azafrán, manzana, canela", "Corazón: cuero, rosa", "Fondo: pachulí, musgo, almizcle, papiro"]
     },
     {
@@ -1082,7 +1082,7 @@ const PRODUCTOS = {
       aroma: ["citrico", "dulce"],
       precio: 85077,
       desc: "Lima, bergamota y mandarina con leche de coco abren tropicales, sobre caña de azúcar, jazmín, hibisco y gardenia, cerrando en ron, haba tonka, almizcle y pachulí.",
-      img: "",
+      img: "assets/img/hombre/rayhaan-aquatica.jpg",
       detalles: ["Salida: lima, leche de coco, bergamota, mandarina", "Corazón: caña de azúcar, jazmín, hibisco, gardenia", "Fondo: almizcle, ron, haba tonka, pachulí"]
     },
     {
@@ -1092,7 +1092,7 @@ const PRODUCTOS = {
       aroma: ["amaderado"],
       precio: 88357,
       desc: "Iris y cítricos abren frescos, con un corazón de cuero gamuzado y acordes florales. Cierra amaderado y profundo, con cedro, sándalo, ambreta y oud.",
-      img: "",
+      img: "assets/img/hombre/rayhaan-obsidian.jpg",
       detalles: ["Salida: iris, cítricos", "Corazón: gamuza, acordes florales", "Fondo: cedro, sándalo, ambreta, oud"]
     },
     {
@@ -1102,7 +1102,7 @@ const PRODUCTOS = {
       aroma: ["fresco", "citrico"],
       precio: 80939,
       desc: "Mandarina, menta, cidra y grosella negra abren frescos, sobre albahaca, zanahoria y rosa, cerrando en higo, ambroxan y ámbar. En la línea de Pacific Chill de Louis Vuitton.",
-      img: "",
+      img: "assets/img/hombre/rayhaan-pacific-aura.jpg",
       detalles: ["Salida: mandarina, menta, cidra, bergamota, grosella negra, cilantro", "Corazón: albahaca, zanahoria, rosa", "Fondo: higo, ambroxan, ámbar"]
     },
 
