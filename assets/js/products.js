@@ -1886,16 +1886,6 @@ const PRODUCTOS = {
      ====================================================================== */
   proximos: [
     {
-      nombre: "Rave Now Rosa",
-      proximamente: true,
-      familia: "Floral frutal",
-      temporada: ["primavera", "verano"],
-      aroma: ["dulce", "floral"],
-      desc: "Fragancia femenina de Rave (Lattafa), el Now Women de frasco rosa: frutos rojos y naranja sobre un corazón de malvavisco, jazmín y lirio de los valles, cerrando en vainilla, almizcle y musgo. Dulce, frutal y fácil de llevar.",
-      img: "assets/img/proximos/rave-now-rosa.jpg",
-      detalles: ["Salida: frutos rojos, naranja", "Corazón: malvavisco, jazmín, lirio de los valles", "Fondo: vainilla, almizcle, musgo"]
-    },
-    {
       nombre: "Azzaro The Most Wanted EDP Intense",
       proximamente: true,
       familia: "Oriental amaderado",
