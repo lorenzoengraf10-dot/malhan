@@ -1331,7 +1331,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 64216,
       desc: "El Teriaq original de Lattafa, creado por Quentin Bisch: caramelo, almendra amarga, damasco y pimienta rosa sobre miel, ruibarbo y rosa, cerrando en cuero, vainilla, ládano y vetiver. Dulce, con un fondo de cuero bien marcado.",
-      img: "",
+      img: "assets/img/mixto/teriaq.jpg",
       detalles: ["Salida: caramelo, almendra amarga, damasco, pimienta rosa", "Corazón: miel, ruibarbo, flores blancas, rosa", "Fondo: cuero, vainilla, almizcle, ládano, vetiver"]
     }
   ],
@@ -1861,7 +1861,7 @@ const PRODUCTOS = {
       aroma: ["dulce"],
       precio: 64216,
       desc: "El Teriaq original de Lattafa, creado por Quentin Bisch: caramelo, almendra amarga, damasco y pimienta rosa sobre miel, ruibarbo y rosa, cerrando en cuero, vainilla, ládano y vetiver. Dulce, con un fondo de cuero bien marcado.",
-      img: "",
+      img: "assets/img/mixto/teriaq.jpg",
       detalles: ["Salida: caramelo, almendra amarga, damasco, pimienta rosa", "Corazón: miel, ruibarbo, flores blancas, rosa", "Fondo: cuero, vainilla, almizcle, ládano, vetiver"]
     }
   ],
