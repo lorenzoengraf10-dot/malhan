@@ -1983,7 +1983,7 @@ const PRODUCTOS = {
       aroma: ["amaderado", "dulce"],
       precio: 380000,
       desc: "Fragancia masculina de Dior, la concentración más alta de Sauvage, creada por François Demachy: canela, nuez moscada y cardamomo abren especiados, con un toque de pomelo, sobre un corazón de lavanda que cierra en regaliz, sándalo, ámbar, pachulí y vetiver de Haití. Intensa, especiada y muy envolvente.",
-      img: "",
+      img: "assets/img/proximos/sauvage-elixir.jpg",
       detalles: ["Salida: canela, nuez moscada, cardamomo, pomelo", "Corazón: lavanda", "Fondo: regaliz, sándalo, ámbar, pachulí, vetiver de Haití"]
     }
   ]
