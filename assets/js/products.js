@@ -194,8 +194,8 @@ const TESTIMONIOS = [
    PRODUCTOS
    -------------------------------------------------------------------------
    precio: el real, de la captura que mandaste. familia/desc/detalles:
-   notas oficiales del perfume (buscadas en Fragrantica). Falta la foto
-   real de cada uno (queda img: "" y se ve un placeholder prolijo).
+   notas oficiales del perfume (buscadas en Fragrantica). Si todavía no hay
+   foto real de un producto, dejá img: "" y se ve un placeholder prolijo.
    ========================================================================= */
 const PRODUCTOS = {
 
@@ -1324,7 +1324,7 @@ const PRODUCTOS = {
       aroma: ["amaderado", "dulce"],
       precio: 99227,
       desc: "Azúcar, azafrán y mandarina abren dulces y especiados, con haba tonka, rosa damascena y oud en el corazón. Cierra con caramelo, amberwood y cedro. De Riiffs, en concentración extrait.",
-      img: "",
+      img: "assets/img/mixto/riiffs-momento.jpg",
       detalles: ["Salida: azúcar, azafrán, mandarina", "Corazón: haba tonka, rosa damascena, oud", "Fondo: caramelo, amberwood, cedro"]
     },
     {
@@ -1854,7 +1854,7 @@ const PRODUCTOS = {
       aroma: ["amaderado", "dulce"],
       precio: 99227,
       desc: "Azúcar, azafrán y mandarina abren dulces y especiados, con haba tonka, rosa damascena y oud en el corazón. Cierra con caramelo, amberwood y cedro. De Riiffs, en concentración extrait.",
-      img: "",
+      img: "assets/img/mixto/riiffs-momento.jpg",
       detalles: ["Salida: azúcar, azafrán, mandarina", "Corazón: haba tonka, rosa damascena, oud", "Fondo: caramelo, amberwood, cedro"]
     },
     {
