@@ -1904,7 +1904,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       temporada: ["otono", "invierno"],
       aroma: ["dulce", "amaderado"],
-      precio: 230000,
+      precio: 208999,
       desc: "Fragancia masculina de Jean Paul Gaultier, en versión Eau de Parfum Intense creada por Quentin Bisch: ananá, iris, jengibre y ciprés abren frescos, sobre un corazón de coco y maderas que cierra en haba tonka, sándalo, ámbar y ámbar gris.",
       img: "assets/img/proximos/le-beau-le-parfum.jpg",
       detalles: ["Salida: ananá, iris, jengibre, ciprés", "Corazón: coco, notas amaderadas", "Fondo: haba tonka, sándalo, ámbar, ámbar gris"]
@@ -1915,7 +1915,7 @@ const PRODUCTOS = {
       familia: "Oriental fougère",
       temporada: ["invierno", "otono"],
       aroma: ["dulce"],
-      precio: 226999,
+      precio: 200000,
       desc: "Fragancia masculina de Jean Paul Gaultier, creada por Quentin Bisch: lavanda y menta abren frescas, sobre un corazón de vainilla y benjuí que cierra en miel, haba tonka y tabaco. Intensa, dulce y envolvente.",
       img: "assets/img/proximos/le-male-elixir.jpg",
       detalles: ["Salida: lavanda, menta", "Corazón: vainilla, benjuí", "Fondo: miel, haba tonka, tabaco"]
