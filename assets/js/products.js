@@ -1076,7 +1076,7 @@ const PRODUCTOS = {
       aroma: ["citrico", "fresco"],
       precio: 107653,
       desc: "Lima y manzana verde realzadas con romero, sobre un fondo de pachulí y ámbar. Verde, cítrico y fresco, ideal para el día. De Rasasi.",
-      img: "",
+      img: "assets/img/hombre/hawas-verde.jpg",
       detalles: ["Notas: lima, romero, manzana verde, pachulí, ámbar"]
     },
     {
