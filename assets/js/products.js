@@ -46,10 +46,10 @@
                          unisex se vea tanto en Hombre como en Mujer, pegá
                          el mismo bloque (con unisex:true) en las dos listas.
    proximamente (true)   OPCIONAL. Para lo que todavía no llegó (sección
-                         "Los Próximos Ingresos"): muestra "Próximamente"
-                         en lugar del precio y saca el botón "Agregar" —
-                         solo se puede consultar por WhatsApp. No lleva
-                         precio.
+                         "Perfumes de Diseñador"): saca el botón "Agregar" —
+                         solo se puede consultar por WhatsApp. Si tiene
+                         precio, se ve el precio con "Próximamente" abajo;
+                         si no, se ve solo "Próximamente".
 
    variantes (lista)     OPCIONAL. Para el mismo perfume en varios tamaños
                          (ej. 30 ml / 50 ml / 100 ml). Si lo usás, NO
@@ -122,9 +122,11 @@ const CATEGORIAS = {
   /* Lo que ya tenemos confirmado y listo para pedir (foto + precio real). */
   stock: { nombre: "Stock", foto: "assets/img/categorias/stock.jpg" },
 
-  /* Lo que está por llegar: se ve con "Próximamente" en lugar del precio
-     (ver el campo proximamente más arriba). */
-  proximos: { nombre: "Los Próximos Ingresos", foto: "assets/img/categorias/proximos.jpg", compartir: true }
+  /* Perfumes de diseñador: por ahora solo se consultan por WhatsApp (sin
+     botón "Agregar"). Se ven con "Próximamente" (ver el campo proximamente
+     más arriba). El id interno sigue siendo "proximos" a propósito: así
+     no se rompen los links ya compartidos (#seccion=proximos). */
+  proximos: { nombre: "Perfumes de Diseñador", foto: "assets/img/categorias/proximos.jpg", compartir: true }
 };
 
 /* Portada de la tarjeta "Todos" (la que muestra el catálogo completo).
@@ -1878,11 +1880,11 @@ const PRODUCTOS = {
   recomendacion: [],
 
   /* ======================================================================
-     LOS PRÓXIMOS INGRESOS  ·  todavía no llegaron
+     PERFUMES DE DISEÑADOR  ·  todavía no llegaron
      -----------------------------------------------------------------------
-     Van sin precio y con proximamente:true (ver ese campo más arriba).
-     Cuando llegue uno: pasalo a Hombre y/o Mujer con su precio real y
-     sacale proximamente:true.
+     Van con proximamente:true (ver ese campo más arriba) y su precio.
+     Cuando llegue uno: pasalo a Hombre y/o Mujer y sacale
+     proximamente:true para que se pueda agregar al carrito.
      ====================================================================== */
   proximos: [
     {
