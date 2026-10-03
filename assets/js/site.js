@@ -353,7 +353,9 @@
 
   function precioHTML(producto) {
     if (producto.proximamente) {
-      return '<span class="card__price">Próximamente</span>';
+      return typeof producto.precio === "number" && producto.precio > 0
+        ? `<span class="card__price">${CONFIG.moneda} ${formatoPrecio.format(producto.precio)}<small>Próximamente</small></span>`
+        : '<span class="card__price">Próximamente</span>';
     }
     if (producto.variantes) {
       const precios = producto.variantes
@@ -1498,7 +1500,9 @@
       elDesc.textContent = efectivo.desc || "";
 
       elPre.innerHTML = p.proximamente
-        ? "Próximamente"
+        ? (typeof efectivo.precio === "number" && efectivo.precio > 0
+            ? `${CONFIG.moneda} ${formatoPrecio.format(efectivo.precio)} — Próximamente`
+            : "Próximamente")
         : efectivo.agotado
         ? "Sin stock por el momento"
         : typeof efectivo.precio === "number" && efectivo.precio > 0
