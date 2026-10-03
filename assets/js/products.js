@@ -1974,6 +1974,17 @@ const PRODUCTOS = {
       desc: "Fragancia masculina de Valentino, en versión Eau de Parfum Intense: vainilla bourbon, lavanda y vetiver ahumado en una fórmula simple, cálida y envolvente. De Antoine Maisondieu y Guillaume Flavigny.",
       img: "assets/img/proximos/born-in-roma-intense.jpg",
       detalles: ["Salida: vainilla bourbon", "Corazón: lavanda", "Fondo: vetiver ahumado"]
+    },
+    {
+      nombre: "Dior Sauvage Elixir",
+      proximamente: true,
+      familia: "Aromático especiado",
+      temporada: ["otono", "invierno"],
+      aroma: ["amaderado", "dulce"],
+      precio: 380000,
+      desc: "Fragancia masculina de Dior, la concentración más alta de Sauvage, creada por François Demachy: canela, nuez moscada y cardamomo abren especiados, con un toque de pomelo, sobre un corazón de lavanda que cierra en regaliz, sándalo, ámbar, pachulí y vetiver de Haití. Intensa, especiada y muy envolvente.",
+      img: "",
+      detalles: ["Salida: canela, nuez moscada, cardamomo, pomelo", "Corazón: lavanda", "Fondo: regaliz, sándalo, ámbar, pachulí, vetiver de Haití"]
     }
   ]
 
