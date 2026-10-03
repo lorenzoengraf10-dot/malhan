@@ -45,11 +45,11 @@
                          Filtros > Género > Mixto. Para que una fragancia
                          unisex se vea tanto en Hombre como en Mujer, pegá
                          el mismo bloque (con unisex:true) en las dos listas.
-   proximamente (true)   OPCIONAL. Para lo que todavía no llegó (sección
-                         "Perfumes de Diseñador"): saca el botón "Agregar" —
-                         solo se puede consultar por WhatsApp. Si tiene
-                         precio, se ve el precio con "Próximamente" abajo;
-                         si no, se ve solo "Próximamente".
+   proximamente (true)   OPCIONAL. Para lo que todavía no llegó: saca el
+                         botón "Agregar" — solo se puede consultar por
+                         WhatsApp. Si tiene precio, se ve el precio con
+                         "Próximamente" abajo; si no, se ve solo
+                         "Próximamente". Para habilitarlo, sacale la marca.
 
    variantes (lista)     OPCIONAL. Para el mismo perfume en varios tamaños
                          (ej. 30 ml / 50 ml / 100 ml). Si lo usás, NO
@@ -122,10 +122,9 @@ const CATEGORIAS = {
   /* Lo que ya tenemos confirmado y listo para pedir (foto + precio real). */
   stock: { nombre: "Stock", foto: "assets/img/categorias/stock.jpg" },
 
-  /* Perfumes de diseñador: por ahora solo se consultan por WhatsApp (sin
-     botón "Agregar"). Se ven con "Próximamente" (ver el campo proximamente
-     más arriba). El id interno sigue siendo "proximos" a propósito: así
-     no se rompen los links ya compartidos (#seccion=proximos). */
+  /* Perfumes de diseñador. El id interno sigue siendo "proximos" a
+     propósito: así no se rompen los links ya compartidos
+     (#seccion=proximos). */
   proximos: { nombre: "Perfumes de Diseñador", foto: "assets/img/categorias/proximos.jpg", compartir: true }
 };
 
@@ -1880,16 +1879,15 @@ const PRODUCTOS = {
   recomendacion: [],
 
   /* ======================================================================
-     PERFUMES DE DISEÑADOR  ·  todavía no llegaron
+     PERFUMES DE DISEÑADOR
      -----------------------------------------------------------------------
-     Van con proximamente:true (ver ese campo más arriba) y su precio.
-     Cuando llegue uno: pasalo a Hombre y/o Mujer y sacale
-     proximamente:true para que se pueda agregar al carrito.
+     Se pueden agregar al carrito como cualquier otro. Si alguno todavía no
+     llegó, ponele proximamente:true (ver ese campo más arriba) y se
+     muestra con "Próximamente" y solo consulta por WhatsApp.
      ====================================================================== */
   proximos: [
     {
       nombre: "Azzaro The Most Wanted EDP Intense",
-      proximamente: true,
       familia: "Oriental amaderado",
       temporada: ["invierno", "otono"],
       aroma: ["dulce", "amaderado"],
@@ -1900,7 +1898,6 @@ const PRODUCTOS = {
     },
     {
       nombre: "Jean Paul Gaultier Le Beau Le Parfum",
-      proximamente: true,
       familia: "Oriental amaderado",
       temporada: ["otono", "invierno"],
       aroma: ["dulce", "amaderado"],
@@ -1911,7 +1908,6 @@ const PRODUCTOS = {
     },
     {
       nombre: "Jean Paul Gaultier Le Male Elixir",
-      proximamente: true,
       familia: "Oriental fougère",
       temporada: ["invierno", "otono"],
       aroma: ["dulce"],
@@ -1922,7 +1918,6 @@ const PRODUCTOS = {
     },
     {
       nombre: "Yves Saint Laurent Y EDP",
-      proximamente: true,
       familia: "Aromático fougère",
       temporada: ["otono", "primavera"],
       aroma: ["fresco", "amaderado"],
@@ -1933,7 +1928,6 @@ const PRODUCTOS = {
     },
     {
       nombre: "Emporio Armani Stronger With You Intensely",
-      proximamente: true,
       familia: "Oriental fougère",
       temporada: ["invierno", "otono"],
       aroma: ["dulce"],
@@ -1944,7 +1938,6 @@ const PRODUCTOS = {
     },
     {
       nombre: "Jean Paul Gaultier Scandal Pour Homme Le Parfum",
-      proximamente: true,
       familia: "Oriental amaderado",
       temporada: ["invierno", "otono"],
       aroma: ["dulce", "amaderado"],
@@ -1955,7 +1948,6 @@ const PRODUCTOS = {
     },
     {
       nombre: "Jean Paul Gaultier Scandal Pour Homme EDT",
-      proximamente: true,
       familia: "Oriental fougère",
       temporada: ["otono", "invierno"],
       aroma: ["dulce"],
@@ -1966,7 +1958,6 @@ const PRODUCTOS = {
     },
     {
       nombre: "Valentino Uomo Born in Roma Intense",
-      proximamente: true,
       familia: "Oriental vainilla",
       temporada: ["invierno", "otono"],
       aroma: ["dulce"],
@@ -1977,7 +1968,6 @@ const PRODUCTOS = {
     },
     {
       nombre: "Dior Sauvage Elixir",
-      proximamente: true,
       familia: "Aromático especiado",
       temporada: ["otono", "invierno"],
       aroma: ["amaderado", "dulce"],
