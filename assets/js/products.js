@@ -1891,7 +1891,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       temporada: ["invierno", "otono"],
       aroma: ["dulce", "amaderado"],
-      precio: 189999,
+      precio: 160000,
       desc: "Fragancia masculina de Azzaro, en su versión Eau de Parfum Intense: cardamomo especiado sobre un corazón goloso de toffee, con fondo de amberwood. Cálida, dulce y con mucha presencia, ideal para la noche.",
       img: "assets/img/proximos/azzaro-the-most-wanted.jpg",
       detalles: ["Salida: cardamomo", "Corazón: toffee", "Fondo: amberwood"]
@@ -1901,7 +1901,7 @@ const PRODUCTOS = {
       familia: "Oriental amaderado",
       temporada: ["otono", "invierno"],
       aroma: ["dulce", "amaderado"],
-      precio: 208999,
+      precio: 200000,
       desc: "Fragancia masculina de Jean Paul Gaultier, en versión Eau de Parfum Intense creada por Quentin Bisch: ananá, iris, jengibre y ciprés abren frescos, sobre un corazón de coco y maderas que cierra en haba tonka, sándalo, ámbar y ámbar gris.",
       img: "assets/img/proximos/le-beau-le-parfum.jpg",
       detalles: ["Salida: ananá, iris, jengibre, ciprés", "Corazón: coco, notas amaderadas", "Fondo: haba tonka, sándalo, ámbar, ámbar gris"]
@@ -1931,7 +1931,7 @@ const PRODUCTOS = {
       familia: "Oriental fougère",
       temporada: ["invierno", "otono"],
       aroma: ["dulce"],
-      precio: 260000,
+      precio: 230000,
       desc: "Fragancia masculina de Emporio Armani: pimienta rosa, enebro y violeta abren especiados, sobre un corazón de toffee, canela, lavanda y salvia que cierra en vainilla, ámbar, haba tonka y gamuza. Dulce, cálida y muy envolvente.",
       img: "assets/img/proximos/stronger-with-you-intensely.jpg",
       detalles: ["Salida: pimienta rosa, enebro, violeta", "Corazón: toffee, canela, lavanda, salvia", "Fondo: vainilla, ámbar, haba tonka, gamuza"]
@@ -1961,7 +1961,7 @@ const PRODUCTOS = {
       familia: "Oriental vainilla",
       temporada: ["invierno", "otono"],
       aroma: ["dulce"],
-      precio: 299999,
+      precio: 280000,
       desc: "Fragancia masculina de Valentino, en versión Eau de Parfum Intense: vainilla bourbon, lavanda y vetiver ahumado en una fórmula simple, cálida y envolvente. De Antoine Maisondieu y Guillaume Flavigny.",
       img: "assets/img/proximos/born-in-roma-intense.jpg",
       detalles: ["Salida: vainilla bourbon", "Corazón: lavanda", "Fondo: vetiver ahumado"]
