@@ -878,6 +878,30 @@ h1,h2,h3,h4{
 .fab.is-visible{ opacity:1; transform:none; pointer-events:auto; }
 .fab .ico{ width:22px; height:22px; }
 
+/* Barra de compra: aparece abajo cuando hay perfumes en la selección. */
+.cartbar{
+  position:fixed; left:50%; bottom:16px; transform:translateX(-50%);
+  z-index:72; width:min(520px, calc(100% - 32px));
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  min-height:56px; padding:10px 10px 10px 20px;
+  border:0; border-radius:999px; cursor:pointer;
+  background:var(--brown); color:var(--cream);
+  box-shadow:var(--shadow-lg);
+  font-family:inherit; font-size:.95rem;
+}
+.cartbar[hidden]{ display:none; }
+.cartbar__info{ display:flex; flex-direction:column; align-items:flex-start; line-height:1.2; text-align:left; }
+.cartbar__info strong{ font-weight:600; font-size:.85rem; opacity:.85; }
+.cartbar__info span{ font-weight:700; font-size:1.05rem; }
+.cartbar__cta{ background:var(--gold); color:#fff; font-weight:600; padding:12px 18px; border-radius:999px; white-space:nowrap; }
+.cartbar:hover .cartbar__cta{ background:var(--gold-soft); color:var(--brown-deep); }
+/* Con la barra visible, el botón de WhatsApp sube para no taparse, y la
+   barra se esconde mientras el carrito está abierto. */
+body.tiene-cartbar .fab{ bottom:88px; }
+body.tiene-cartbar{ padding-bottom:84px; }
+.cart:not([hidden]) ~ .cartbar{ display:none; }
+body.tiene-cookiebar .cartbar{ display:none; }
+
 /* Mientras el cartel de cookies está visible, se oculta el botón
    flotante de WhatsApp para que no se superpongan en celular. */
 body.tiene-cookiebar .fab{ display:none; }

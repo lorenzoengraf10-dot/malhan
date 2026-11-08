@@ -1432,6 +1432,13 @@ const PRODUCTOS = {
       desc: "Frambuesa, menta y manzana roja sobre lavanda, té y salvia, cerrando en almizcle, cedro y ámbar. Extrait frutal y verde con un borde dulce y fresco.",
       img: "assets/img/mixto/freeze-in-flames.jpg",
       detalles: ["Salida: frambuesa, menta verde, manzana roja, bergamota de Calabria", "Corazón: lavanda, té, salvia", "Fondo: almizcle, cedro, ámbar"]
+    },
+    {
+      nombre: "Miniaturas",
+      unisex: true,
+      familia: "Para probar",
+      precio: 32913,
+      desc: "Versiones chicas para probar distintas fragancias antes de elegir un frasco grande. Consultá por WhatsApp cuáles hay disponibles."
     }
   ],
 
@@ -2072,6 +2079,13 @@ const PRODUCTOS = {
       desc: "Lichi, ruibarbo y bergamota sobre rosa, peonía y vainilla, cerrando en cachemirán, cedro y vetiver. Extrait floral, dulce y elegante.",
       img: "assets/img/mujer/fatima-rosa.jpg",
       detalles: ["Salida: lichi, ruibarbo, bergamota, nuez moscada", "Corazón: rosa, peonía, almizcle, vainilla", "Fondo: cachemirán, cedro, vetiver, incienso"]
+    },
+    {
+      nombre: "Miniaturas",
+      unisex: true,
+      familia: "Para probar",
+      precio: 32913,
+      desc: "Versiones chicas para probar distintas fragancias antes de elegir un frasco grande. Consultá por WhatsApp cuáles hay disponibles."
     }
   ],
 

@@ -59,6 +59,7 @@
       item_name: producto.nombre,
       item_category: categoria
     };
+    if (producto.unisex) item.item_category2 = "unisex";
     if (typeof producto.precio === "number" && producto.precio > 0) item.price = producto.precio;
     if (cantidad) item.quantity = cantidad;
     return item;
@@ -200,7 +201,7 @@
         <div class="wrap buscador__inner">
           ${ICONO_LUPA}
           <input type="search" class="buscador__input" data-buscador-input
-                 placeholder="Buscá tu perfume por nombre…" aria-label="Buscar un perfume">
+                 placeholder="Buscá por nombre, aroma o nota (vainilla, cítrico…)" aria-label="Buscar un perfume">
           <button class="buscador__limpiar" data-buscador-limpiar type="button" aria-label="Borrar búsqueda" hidden>×</button>
         </div>
       </div>
@@ -393,6 +394,27 @@
     return typeof producto.precio === "number" && producto.precio > 0 ? producto.precio : Infinity;
   }
 
+  /* Todo lo que se puede buscar de un perfume, ya normalizado (sin tildes,
+     en minúsculas): nombre, familia, aromas y temporadas (con su nombre
+     visible, ej. "Cítrico", "Invierno"), notas de la ficha, descripción y
+     "unisex/mixto". Lo usa el buscador para que "vainilla", "cítrico",
+     "invierno" o "unisex" también encuentren perfumes, no solo el nombre. */
+  function textoBusqueda(producto, categoria) {
+    const variantes = producto.variantes || [];
+    const partes = [
+      producto.nombre,
+      producto.familia,
+      (producto.aroma || []).map((id) => AROMAS[id] || id).join(" "),
+      (producto.temporada || []).map((id) => TEMPORADAS[id] || id).join(" "),
+      producto.unisex ? "unisex mixto" : "",
+      (CATEGORIAS[categoria] && CATEGORIAS[categoria].nombre) || "",
+      producto.desc,
+      (producto.detalles || []).join(" ")
+    ];
+    variantes.forEach((v) => partes.push(v.label, v.desc, (v.detalles || []).join(" ")));
+    return normalizarBusqueda(partes.filter(Boolean).join(" "));
+  }
+
   function tarjeta(producto, categoria, indice) {
     const etiqueta = producto.etiqueta
       ? `<span class="card__tag card__tag--${producto.color || "dorado"}">${escapar(producto.etiqueta)}</span>`
@@ -431,6 +453,7 @@
     art.dataset.aromas = (producto.aroma || []).join(" ");
     art.dataset.precio = String(precioOrden(producto));
     art.dataset.unisex = producto.unisex ? "1" : "0";
+    art.dataset.busqueda = textoBusqueda(producto, categoria);
 
     art.innerHTML = `
       <div class="card__media" data-abrir>
@@ -612,7 +635,8 @@
   function aplicarFiltros() {
     const catnav = $("#catnav");
     const secciones = $$(".catsec");
-    const q = normalizarBusqueda(Filtros.busqueda);
+    const q = normalizarBusqueda(Filtros.busqueda).trim();
+    const tokensBusqueda = q ? q.split(/\s+/) : [];
 
     $$(".pill[data-filtro]", catnav).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === Filtros.categoria));
     $$(".catshowcase__tile[data-filtro-tile]").forEach((t) => t.classList.toggle("catshowcase__tile--active", t.dataset.filtroTile === Filtros.categoria));
@@ -644,10 +668,10 @@
 
       let visiblesEnSeccion = 0;
       $$(".card", sec).forEach((card) => {
-        const matchTexto = !q || (card.dataset.nombre && (
-          normalizarBusqueda(card.dataset.nombre).includes(q) ||
-          normalizarBusqueda(card.dataset.familia).includes(q)
-        ));
+        /* Cada palabra tiene que aparecer en algún lado del perfume
+           (nombre, aroma, notas...): "dulce invierno" o "vainilla ámbar"
+           funcionan sin importar el orden. */
+        const matchTexto = tokensBusqueda.every((t) => (card.dataset.busqueda || "").includes(t));
         const matchTemporada = Filtros.temporada === "todas" ||
           (card.dataset.temporadas || "").split(" ").includes(Filtros.temporada);
         const matchAroma = Filtros.aroma === "todos" ||
@@ -669,7 +693,7 @@
         vacio.dataset.buscadorVacio = "";
         vacio.className = "wrap";
         vacio.innerHTML = q
-          ? `<div class="empty"><strong>No encontramos "${escapar(Filtros.busqueda.trim())}"</strong>Probá con otro nombre, o escribinos por WhatsApp y te ayudamos a encontrarlo.</div>`
+          ? `<div class="empty"><strong>No encontramos "${escapar(Filtros.busqueda.trim())}"</strong>Probá con otro nombre, un aroma (dulce, cítrico, fresco) o una nota (vainilla, rosa, cedro), o escribinos por WhatsApp y te ayudamos a encontrarlo.</div>`
           : `<div class="empty"><strong>No hay fragancias con esos filtros</strong>Probá sacar alguno (Aroma, Temporada), o escribinos por WhatsApp y te ayudamos a encontrar algo así.</div>`;
         cont.prepend(vacio);
       }
@@ -1173,7 +1197,11 @@
             <button class="cart__vaciar" data-cart-vaciar type="button">Vaciar la selección</button>
           </footer>
         </aside>
-      </div>`;
+      </div>
+      <button class="cartbar" data-cart-open data-cartbar type="button" hidden aria-label="Ver mi selección y hacer el pedido">
+        <span class="cartbar__info"><strong data-cartbar-n></strong><span data-cartbar-total></span></span>
+        <span class="cartbar__cta">Hacer el pedido →</span>
+      </button>`;
   }
 
   function pintarCarrito() {
@@ -1182,6 +1210,18 @@
     if (burbuja) {
       burbuja.textContent = unidades;
       burbuja.hidden = unidades === 0;
+    }
+
+    /* Barra fija abajo: con algo en la selección muestra cuántos perfumes
+       hay y el total, y abre el carrito de un toque (sin tener que subir
+       hasta el ícono de la bolsa). */
+    const barra = $("[data-cartbar]");
+    if (barra) {
+      const { suma } = Carrito.total();
+      barra.hidden = unidades === 0;
+      document.body.classList.toggle("tiene-cartbar", unidades > 0);
+      $("[data-cartbar-n]", barra).textContent = `${unidades} ${unidades === 1 ? "perfume" : "perfumes"}`;
+      $("[data-cartbar-total]", barra).textContent = suma > 0 ? `${CONFIG.moneda} ${formatoPrecio.format(suma)}` : "A consultar";
     }
 
     const body = $("[data-cart-body]");
