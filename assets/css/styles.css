@@ -1348,7 +1348,8 @@ body.tiene-cookiebar .fab{ display:none; }
   .pill{ padding:8px 15px; font-size:.86rem; }
 
   .modal__box{ grid-template-columns:1fr; max-height:92vh; }
-  .modal__media{ aspect-ratio:1/1; max-height:42vh; min-height:auto; }
+  /* Ancho completo y alto acotado: antes, con aspect-ratio 1/1 + max-height, la foto quedaba como un cuadrado pegado a la izquierda en tablets. */
+  .modal__media{ width:100%; height:min(42vh, 100vw); min-height:auto; }
   .modal__body{ padding:24px 22px 28px; }
 }
 
