@@ -1054,11 +1054,6 @@ const PRODUCTOS = {
       detalles: ["Salida: naranja, bergamota, limón", "Corazón: frutas", "Fondo: vainilla de Madagascar, almizcle blanco, ámbar"]
     },
 
-    /* ====================================================================
-       NUEVOS · de la lista de precios nueva
-       ------------------------------------------------------------------
-       Notas y género según Fragrantica.
-       ==================================================================== */
     {
       nombre: "Vulcan Black Friday",
       familia: "Cuero especiado",
@@ -1337,6 +1332,84 @@ const PRODUCTOS = {
       desc: "El Teriaq original de Lattafa, creado por Quentin Bisch: caramelo, almendra amarga, damasco y pimienta rosa sobre miel, ruibarbo y rosa, cerrando en cuero, vainilla, ládano y vetiver. Dulce, con un fondo de cuero bien marcado.",
       img: "assets/img/mixto/teriaq.jpg",
       detalles: ["Salida: caramelo, almendra amarga, damasco, pimienta rosa", "Corazón: miel, ruibarbo, flores blancas, rosa", "Fondo: cuero, vainilla, almizcle, ládano, vetiver"]
+    },
+    /* ====================================================================
+       NUEVOS · lista de precios de noviembre
+       Notas y género según listados de tiendas (no se encontró Fragrantica).
+       ==================================================================== */
+    {
+      nombre: "Aether",
+      unisex: true,
+      familia: "Fougère amaderado",
+      temporada: ["primavera", "otono"],
+      aroma: ["fresco", "amaderado"],
+      precio: 95296,
+      desc: "Manzana verde, bergamota y mandarina sobre cedro, petitgrain y violeta, cerrando en almizcle, musgo de roble y amberwood. Fresco y verde.",
+      img: "assets/img/mixto/aether.jpg",
+      detalles: ["Salida: manzana verde, bergamota, mandarina", "Corazón: cedro, petitgrain, cashmeran, violeta", "Fondo: almizcle, musgo de roble, amberwood"]
+    },
+    {
+      nombre: "Atlantis Extrait",
+      unisex: true,
+      familia: "Cítrico frutal",
+      temporada: ["verano", "primavera"],
+      aroma: ["citrico", "fresco"],
+      precio: 92163,
+      desc: "Naranja, mandarina y limón sobre sandía y coco, cerrando en cacao, amberwood y ámbar gris. Fresco, frutal y luminoso.",
+      img: "assets/img/mixto/atlantis-extrait.jpg",
+      detalles: ["Salida: naranja, mandarina, limón", "Corazón: sandía, coco", "Fondo: cacao, amberwood, ámbar gris"]
+    },
+    {
+      nombre: "Jean Lowe Vibe",
+      unisex: true,
+      familia: "Cítrico aromático",
+      temporada: ["primavera", "verano"],
+      aroma: ["citrico", "fresco"],
+      precio: 63564,
+      desc: "Grosella negra, limón y menta sobre damasco, albahaca y rosa, cerrando en higo, dátil y ámbrette. Fresco, verde y fácil de usar.",
+      img: "assets/img/mixto/jean-lowe-vibe.jpg",
+      detalles: ["Salida: grosella negra, cidra, cilantro, limón, menta, naranja", "Corazón: damasco, albahaca, semillas de zanahoria, rosa", "Fondo: ámbrette, dátil, higo"]
+    },
+    {
+      nombre: "Mykonos Reflection 100ml",
+      unisex: true,
+      familia: "Cítrico amaderado",
+      temporada: ["primavera", "verano"],
+      aroma: ["citrico", "fresco"],
+      precio: 87396,
+      desc: "Pomelo y bergamota sobre un corazón floral limpio, cerrando en almizcle, ámbar, ambroxan y pachulí. Extrait de parfum fresco y luminoso.",
+      img: "assets/img/mixto/mykonos-reflection-100ml.jpg",
+      detalles: ["Salida: pomelo, bergamota, mandarina", "Corazón: jazmín, lirio de los valles, geranio", "Fondo: almizcle, ámbar, ambroxan, pachulí"]
+    },
+    {
+      nombre: "Nitro Red EDP",
+      familia: "Aromático frutal",
+      temporada: ["primavera", "otono"],
+      aroma: ["fresco"],
+      precio: 88940,
+      desc: "Manzana, lavanda y bergamota sobre sandía y cedro, cerrando en ámbar, sándalo y pachulí. Fresco y aromático.",
+      img: "assets/img/hombre/nitro-red-edp.jpg",
+      detalles: ["Salida: manzana, lavanda, bergamota", "Corazón: sandía, cedro, cálamo", "Fondo: ámbar, sándalo, pachulí"]
+    },
+    {
+      nombre: "Rome Extradose",
+      familia: "Fougère frutal",
+      temporada: ["primavera", "verano"],
+      aroma: ["fresco", "amaderado"],
+      precio: 82608,
+      desc: "Bergamota y limón sobre hoja de higuera, jazmín y manzana verde, cerrando en guayacán, sándalo y ámbar gris. Fresco y amaderado.",
+      img: "assets/img/hombre/rome-extradose.jpg",
+      detalles: ["Salida: bergamota, limón", "Corazón: hoja de higuera, musgo blanco, jazmín, manzana verde", "Fondo: guayacán, sándalo, ámbar gris"]
+    },
+    {
+      nombre: "Supremacy Collector's Edition",
+      familia: "Frutal amaderado",
+      temporada: ["otono", "primavera"],
+      aroma: ["fresco", "amaderado"],
+      precio: 162356,
+      desc: "Ananá, bergamota y manzana sobre azahar y abedul, cerrando en musgo de roble, almizcle y ámbar gris. Frutal con fondo terroso.",
+      img: "assets/img/hombre/supremacy-collectors-edition.jpg",
+      detalles: ["Salida: ananá, bergamota, manzana, flores blancas", "Corazón: azahar, abedul, ámbar", "Fondo: musgo de roble, almizcle, ámbar gris"]
     }
   ],
 
@@ -1867,6 +1940,84 @@ const PRODUCTOS = {
       desc: "El Teriaq original de Lattafa, creado por Quentin Bisch: caramelo, almendra amarga, damasco y pimienta rosa sobre miel, ruibarbo y rosa, cerrando en cuero, vainilla, ládano y vetiver. Dulce, con un fondo de cuero bien marcado.",
       img: "assets/img/mixto/teriaq.jpg",
       detalles: ["Salida: caramelo, almendra amarga, damasco, pimienta rosa", "Corazón: miel, ruibarbo, flores blancas, rosa", "Fondo: cuero, vainilla, almizcle, ládano, vetiver"]
+    },
+    /* ====================================================================
+       NUEVOS · lista de precios de noviembre
+       Notas y género según listados de tiendas (no se encontró Fragrantica).
+       ==================================================================== */
+    {
+      nombre: "Aether",
+      unisex: true,
+      familia: "Fougère amaderado",
+      temporada: ["primavera", "otono"],
+      aroma: ["fresco", "amaderado"],
+      precio: 95296,
+      desc: "Manzana verde, bergamota y mandarina sobre cedro, petitgrain y violeta, cerrando en almizcle, musgo de roble y amberwood. Fresco y verde.",
+      img: "assets/img/mixto/aether.jpg",
+      detalles: ["Salida: manzana verde, bergamota, mandarina", "Corazón: cedro, petitgrain, cashmeran, violeta", "Fondo: almizcle, musgo de roble, amberwood"]
+    },
+    {
+      nombre: "Atlantis Extrait",
+      unisex: true,
+      familia: "Cítrico frutal",
+      temporada: ["verano", "primavera"],
+      aroma: ["citrico", "fresco"],
+      precio: 92163,
+      desc: "Naranja, mandarina y limón sobre sandía y coco, cerrando en cacao, amberwood y ámbar gris. Fresco, frutal y luminoso.",
+      img: "assets/img/mixto/atlantis-extrait.jpg",
+      detalles: ["Salida: naranja, mandarina, limón", "Corazón: sandía, coco", "Fondo: cacao, amberwood, ámbar gris"]
+    },
+    {
+      nombre: "Jean Lowe Vibe",
+      unisex: true,
+      familia: "Cítrico aromático",
+      temporada: ["primavera", "verano"],
+      aroma: ["citrico", "fresco"],
+      precio: 63564,
+      desc: "Grosella negra, limón y menta sobre damasco, albahaca y rosa, cerrando en higo, dátil y ámbrette. Fresco, verde y fácil de usar.",
+      img: "assets/img/mixto/jean-lowe-vibe.jpg",
+      detalles: ["Salida: grosella negra, cidra, cilantro, limón, menta, naranja", "Corazón: damasco, albahaca, semillas de zanahoria, rosa", "Fondo: ámbrette, dátil, higo"]
+    },
+    {
+      nombre: "Mykonos Reflection 100ml",
+      unisex: true,
+      familia: "Cítrico amaderado",
+      temporada: ["primavera", "verano"],
+      aroma: ["citrico", "fresco"],
+      precio: 87396,
+      desc: "Pomelo y bergamota sobre un corazón floral limpio, cerrando en almizcle, ámbar, ambroxan y pachulí. Extrait de parfum fresco y luminoso.",
+      img: "assets/img/mixto/mykonos-reflection-100ml.jpg",
+      detalles: ["Salida: pomelo, bergamota, mandarina", "Corazón: jazmín, lirio de los valles, geranio", "Fondo: almizcle, ámbar, ambroxan, pachulí"]
+    },
+    {
+      nombre: "Rayhaan Kiss",
+      familia: "Floral gourmand",
+      temporada: ["invierno", "otono"],
+      aroma: ["dulce", "floral"],
+      precio: 77841,
+      desc: "Frutilla, frambuesa y coco sobre azahar, leche condensada y caramelo, cerrando en vainilla, haba tonka y sándalo. Dulce, cremoso y goloso.",
+      img: "assets/img/mujer/rayhaan-kiss.jpg",
+      detalles: ["Salida: frutilla, frambuesa, coco, praliné", "Corazón: azahar, leche condensada, caramelo, flores blancas", "Fondo: vainilla, haba tonka, sándalo, almizcle"]
+    },
+    {
+      nombre: "Rome Extradose Fem",
+      familia: "Floral frutal",
+      temporada: ["primavera", "invierno"],
+      aroma: ["dulce", "floral"],
+      precio: 79717,
+      desc: "Grosella negra, bergamota y pimienta rosa sobre jazmín, violeta y frambuesa, cerrando en vainilla, ámbar y almizcle. Frutal y envolvente.",
+      img: "assets/img/mujer/rome-extradose-fem.jpg",
+      detalles: ["Salida: grosella negra, bergamota, pimienta rosa", "Corazón: jazmín, violeta, rosa, frambuesa, lirio de los valles", "Fondo: vainilla, ámbar, almizcle, haba tonka, sándalo"]
+    },
+    {
+      nombre: "Yum Yum",
+      familia: "Frutal floral",
+      temporada: ["primavera", "verano"],
+      aroma: ["dulce", "floral"],
+      precio: 89427,
+      desc: "Cereza, frutos del bosque y bergamota sobre vainilla, flores blancas y rosa, cerrando en notas polvadas, ámbar y almizcle. Dulce y juvenil.",
+      img: "assets/img/mujer/yum-yum.jpg",
+      detalles: ["Salida: cereza, frutos del bosque, bergamota, naranja", "Corazón: vainilla, flores blancas, rosa", "Fondo: notas polvadas, ámbar, almizcle"]
     }
   ],
 
