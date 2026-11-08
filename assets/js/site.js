@@ -406,6 +406,7 @@
       producto.familia,
       (producto.aroma || []).map((id) => AROMAS[id] || id).join(" "),
       (producto.temporada || []).map((id) => TEMPORADAS[id] || id).join(" "),
+      producto.etiqueta,
       producto.unisex ? "unisex mixto" : "",
       (CATEGORIAS[categoria] && CATEGORIAS[categoria].nombre) || "",
       producto.desc,

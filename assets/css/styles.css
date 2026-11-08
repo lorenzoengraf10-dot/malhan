@@ -615,6 +615,8 @@ h1,h2,h3,h4{
   letter-spacing:.06em; text-transform:uppercase;
   color:#fff;
 }
+/* Si la tarjeta tiene también la franja "unisex", la etiqueta baja para no taparla. */
+.card__unisex + .card__tag{ top:38px; }
 .card__tag--dorado{ background:var(--gold); }
 .card__tag--marron{ background:var(--brown); }
 .card__tag--verde{ background:var(--green); }

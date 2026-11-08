@@ -1339,6 +1339,7 @@ const PRODUCTOS = {
        ==================================================================== */
     {
       nombre: "Aether",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Fougère amaderado",
       temporada: ["primavera", "otono"],
@@ -1350,6 +1351,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Atlantis Extrait",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Cítrico frutal",
       temporada: ["verano", "primavera"],
@@ -1361,6 +1363,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Jean Lowe Vibe",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Cítrico aromático",
       temporada: ["primavera", "verano"],
@@ -1372,6 +1375,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Mykonos Reflection 100ml",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Cítrico amaderado",
       temporada: ["primavera", "verano"],
@@ -1383,6 +1387,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Nitro Red EDP",
+      etiqueta: "Nuevo",
       familia: "Aromático frutal",
       temporada: ["primavera", "otono"],
       aroma: ["fresco"],
@@ -1393,6 +1398,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Rome Extradose",
+      etiqueta: "Nuevo",
       familia: "Fougère frutal",
       temporada: ["primavera", "verano"],
       aroma: ["fresco", "amaderado"],
@@ -1403,6 +1409,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Supremacy Collector's Edition",
+      etiqueta: "Nuevo",
       familia: "Frutal amaderado",
       temporada: ["otono", "primavera"],
       aroma: ["fresco", "amaderado"],
@@ -1413,6 +1420,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Hayaati Gold Elixir",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Oriental frutal",
       temporada: ["otono", "invierno"],
@@ -1424,6 +1432,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Freeze in Flames",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Aromático frutal",
       temporada: ["primavera", "verano"],
@@ -1969,6 +1978,7 @@ const PRODUCTOS = {
        ==================================================================== */
     {
       nombre: "Aether",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Fougère amaderado",
       temporada: ["primavera", "otono"],
@@ -1980,6 +1990,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Atlantis Extrait",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Cítrico frutal",
       temporada: ["verano", "primavera"],
@@ -1991,6 +2002,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Jean Lowe Vibe",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Cítrico aromático",
       temporada: ["primavera", "verano"],
@@ -2002,6 +2014,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Mykonos Reflection 100ml",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Cítrico amaderado",
       temporada: ["primavera", "verano"],
@@ -2013,6 +2026,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Rayhaan Kiss",
+      etiqueta: "Nuevo",
       familia: "Floral gourmand",
       temporada: ["invierno", "otono"],
       aroma: ["dulce", "floral"],
@@ -2023,6 +2037,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Rome Extradose Fem",
+      etiqueta: "Nuevo",
       familia: "Floral frutal",
       temporada: ["primavera", "invierno"],
       aroma: ["dulce", "floral"],
@@ -2033,6 +2048,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Yum Yum",
+      etiqueta: "Nuevo",
       familia: "Frutal floral",
       temporada: ["primavera", "verano"],
       aroma: ["dulce", "floral"],
@@ -2043,6 +2059,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Hayaati Gold Elixir",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Oriental frutal",
       temporada: ["otono", "invierno"],
@@ -2054,6 +2071,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Freeze in Flames",
+      etiqueta: "Nuevo",
       unisex: true,
       familia: "Aromático frutal",
       temporada: ["primavera", "verano"],
@@ -2065,6 +2083,7 @@ const PRODUCTOS = {
     },
     {
       nombre: "Fatima Rosa",
+      etiqueta: "Nuevo",
       familia: "Floral oriental",
       temporada: ["primavera", "invierno"],
       aroma: ["floral", "dulce"],
