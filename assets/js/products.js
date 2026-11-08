@@ -1410,6 +1410,28 @@ const PRODUCTOS = {
       desc: "Ananá, bergamota y manzana sobre azahar y abedul, cerrando en musgo de roble, almizcle y ámbar gris. Frutal con fondo terroso.",
       img: "assets/img/hombre/supremacy-collectors-edition.jpg",
       detalles: ["Salida: ananá, bergamota, manzana, flores blancas", "Corazón: azahar, abedul, ámbar", "Fondo: musgo de roble, almizcle, ámbar gris"]
+    },
+    {
+      nombre: "Hayaati Gold Elixir",
+      unisex: true,
+      familia: "Oriental frutal",
+      temporada: ["otono", "invierno"],
+      aroma: ["dulce", "amaderado"],
+      precio: 39556,
+      desc: "Bergamota, pomelo y grosella negra sobre cuero, azafrán y durazno, cerrando en vainilla, ámbar, almizcle y vetiver. Cálido y con un toque de cuero.",
+      img: "assets/img/mixto/hayaati-gold-elixir.jpg",
+      detalles: ["Salida: bergamota, pomelo, grosella negra", "Corazón: cuero, azafrán, durazno", "Fondo: vainilla, ámbar, almizcle, vetiver"]
+    },
+    {
+      nombre: "Freeze in Flames",
+      unisex: true,
+      familia: "Aromático frutal",
+      temporada: ["primavera", "verano"],
+      aroma: ["fresco", "dulce"],
+      precio: 121996,
+      desc: "Frambuesa, menta y manzana roja sobre lavanda, té y salvia, cerrando en almizcle, cedro y ámbar. Extrait frutal y verde con un borde dulce y fresco.",
+      img: "assets/img/mixto/freeze-in-flames.jpg",
+      detalles: ["Salida: frambuesa, menta verde, manzana roja, bergamota de Calabria", "Corazón: lavanda, té, salvia", "Fondo: almizcle, cedro, ámbar"]
     }
   ],
 
@@ -2018,6 +2040,38 @@ const PRODUCTOS = {
       desc: "Cereza, frutos del bosque y bergamota sobre vainilla, flores blancas y rosa, cerrando en notas polvadas, ámbar y almizcle. Dulce y juvenil.",
       img: "assets/img/mujer/yum-yum.jpg",
       detalles: ["Salida: cereza, frutos del bosque, bergamota, naranja", "Corazón: vainilla, flores blancas, rosa", "Fondo: notas polvadas, ámbar, almizcle"]
+    },
+    {
+      nombre: "Hayaati Gold Elixir",
+      unisex: true,
+      familia: "Oriental frutal",
+      temporada: ["otono", "invierno"],
+      aroma: ["dulce", "amaderado"],
+      precio: 39556,
+      desc: "Bergamota, pomelo y grosella negra sobre cuero, azafrán y durazno, cerrando en vainilla, ámbar, almizcle y vetiver. Cálido y con un toque de cuero.",
+      img: "assets/img/mixto/hayaati-gold-elixir.jpg",
+      detalles: ["Salida: bergamota, pomelo, grosella negra", "Corazón: cuero, azafrán, durazno", "Fondo: vainilla, ámbar, almizcle, vetiver"]
+    },
+    {
+      nombre: "Freeze in Flames",
+      unisex: true,
+      familia: "Aromático frutal",
+      temporada: ["primavera", "verano"],
+      aroma: ["fresco", "dulce"],
+      precio: 121996,
+      desc: "Frambuesa, menta y manzana roja sobre lavanda, té y salvia, cerrando en almizcle, cedro y ámbar. Extrait frutal y verde con un borde dulce y fresco.",
+      img: "assets/img/mixto/freeze-in-flames.jpg",
+      detalles: ["Salida: frambuesa, menta verde, manzana roja, bergamota de Calabria", "Corazón: lavanda, té, salvia", "Fondo: almizcle, cedro, ámbar"]
+    },
+    {
+      nombre: "Fatima Rosa",
+      familia: "Floral oriental",
+      temporada: ["primavera", "invierno"],
+      aroma: ["floral", "dulce"],
+      precio: 54031,
+      desc: "Lichi, ruibarbo y bergamota sobre rosa, peonía y vainilla, cerrando en cachemirán, cedro y vetiver. Extrait floral, dulce y elegante.",
+      img: "assets/img/mujer/fatima-rosa.jpg",
+      detalles: ["Salida: lichi, ruibarbo, bergamota, nuez moscada", "Corazón: rosa, peonía, almizcle, vainilla", "Fondo: cachemirán, cedro, vetiver, incienso"]
     }
   ],
 
