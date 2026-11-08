@@ -470,7 +470,7 @@
         ${variantesHTML}
         <div class="card__foot">
           ${precioHTML(producto)}
-          ${producto.proximamente ? "" : '<button class="btn card__add" data-agregar type="button">Agregar</button>'}
+          ${producto.proximamente || (producto.agotado && !producto.variantes) ? "" : '<button class="btn card__add" data-agregar type="button">Agregar</button>'}
           <a class="card__consulta" data-wa="${escapar(mensaje)}">Consultar por WhatsApp</a>
         </div>
       </div>`;
@@ -831,6 +831,19 @@
       });
     }
 
+    /* Links de categoría del menú y del pie (#cat-hombre, #cat-mujer...):
+       antes saltaban al ancla, pero si esa sección estaba filtrada/oculta
+       (ej. se había tocado "Mujer") no pasaba nada. Ahora aplican el
+       filtro igual que su pastilla. */
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href^="#cat-"]');
+      if (!a) return;
+      const id = a.getAttribute("href").slice(5);
+      if (!Object.prototype.hasOwnProperty.call(CATEGORIAS, id)) return;
+      e.preventDefault();
+      irACategoria(id);
+    });
+
     /* Link "Nuestra Recomendación" del menú (header y footer): mismo
        comportamiento que su tarjeta grande, ver linkCategoriaAttrs. */
     document.addEventListener("click", (e) => {
@@ -1036,6 +1049,13 @@
 
     agregar(categoria, slug, variante) {
       variante = variante || null;
+      /* Un unisex vive en Hombre y en Mujer: se guarda siempre bajo Hombre
+         para que sumarlo desde las dos secciones no cree dos líneas. */
+      if (categoria === "mujer" && PRODUCTOS.hombre &&
+          PRODUCTOS.hombre.some((p) => p.unisex && slugify(p.nombre) === slug) &&
+          PRODUCTOS.mujer.some((p) => p.unisex && slugify(p.nombre) === slug)) {
+        categoria = "hombre";
+      }
       const ya = this.items.find(
         (it) => it.categoria === categoria && it.slug === slug && it.variante === variante
       );
@@ -1629,8 +1649,8 @@
       }
 
       ultimoFoco = document.activeElement;
+      if (modal.hidden) bloquearScroll();
       modal.hidden = false;
-      bloquearScroll();
       $(".modal__close", modal).focus();
     }
 
