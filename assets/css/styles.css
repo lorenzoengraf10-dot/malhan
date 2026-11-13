@@ -322,6 +322,42 @@ h1,h2,h3,h4{
 .buscador.is-open .buscador__backdrop{ opacity:1; pointer-events:auto; }
 .buscador.is-open .buscador__inner{ transform:none; opacity:1; pointer-events:auto; }
 
+/* Resultados en vivo, debajo del campo de búsqueda */
+.buscador__panel{
+  position:relative;
+  max-height:calc(100vh - var(--header-h) - 96px);
+  max-height:calc(100dvh - var(--header-h) - 96px);
+  overflow-y:auto; overscroll-behavior:contain;
+  padding:4px var(--gutter) 16px;
+  background:var(--cream);
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow-md);
+  opacity:0; pointer-events:none;
+  transition:opacity .22s ease;
+}
+.buscador__panel[hidden]{ display:none; }
+.buscador.is-open .buscador__panel{ opacity:1; pointer-events:auto; }
+.buscador__msg{ margin:4px 0 6px; font-size:.95rem; color:var(--muted); line-height:1.45; }
+.buscador__msg strong{ display:block; color:var(--brown); font-size:1rem; }
+.buscador__lista{ display:flex; flex-direction:column; }
+.buscador__item{
+  display:flex; align-items:center; gap:12px;
+  width:100%; min-height:68px; padding:8px 0;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+.buscador__item:hover .buscador__nombre{ color:var(--gold); }
+.buscador__item img, .buscador__thumb{
+  width:44px; height:55px; flex:none;
+  object-fit:contain; border-radius:8px;
+  background:#fff;
+}
+.buscador__txt{ flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; }
+.buscador__nombre{ font-weight:600; font-size:.98rem; color:var(--brown); line-height:1.25; }
+.buscador__sub{ font-size:.82rem; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.buscador__precio{ flex:none; font-weight:600; font-size:.95rem; color:var(--brown); white-space:nowrap; }
+.buscador__vertodos{ width:100%; margin-top:14px; }
+
 /* ============================ BARRA DE FILTROS ============================ */
 
 .catnav{
