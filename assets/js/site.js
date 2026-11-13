@@ -588,10 +588,84 @@
      más; el orden solo reordena, nunca esconde nada.
      --------------------------------------------------------------------- */
 
+  let similaresSonNuevos = false;
   const Filtros = { categoria: "todos", busqueda: "", temporada: "todas", aroma: "todos", orden: "relevancia", genero: "todos" };
 
   function normalizarBusqueda(s) {
     return String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  }
+
+  /* ---- Búsqueda tolerante a errores ----------------------------------
+     Se compara "como suena": se sacan acentos y se unifican letras que
+     se confunden al escribir (ph/f, v/b, z/s, c/k/qu, y/i, h muda, letras
+     dobles). Después cada palabra buscada tiene que parecerse a alguna
+     palabra del perfume: la contiene, o difiere en 1-2 letras. Así
+     "jean paulo gaultier" o "sauvaje" encuentran igual. */
+  const BUSQ_IGNORAR = new Set(["de", "del", "la", "le", "el", "y", "the", "for", "por", "pour", "edp", "edt", "in", "en", "eau"]);
+  const BUSQ_ALIAS = { jpg: "jean paul gaultier", ysl: "yves saint laurent", cdn: "club de nuit" };
+
+  function fonetica(s) {
+    return normalizarBusqueda(s)
+      .replace(/ph/g, "f").replace(/qu/g, "k").replace(/c(?=[ei])/g, "s").replace(/c/g, "k")
+      .replace(/z/g, "s").replace(/v/g, "b").replace(/y/g, "i").replace(/w/g, "u").replace(/h/g, "")
+      .replace(/(.)\1+/g, "$1");
+  }
+
+  function palabrasBusqueda(texto) {
+    return normalizarBusqueda(texto).split(/[^a-z0-9]+/).filter(Boolean).map(fonetica).filter(Boolean);
+  }
+
+  function distancia(a, b) {
+    if (Math.abs(a.length - b.length) > 3) return 9;
+    const d = [];
+    for (let i = 0; i <= a.length; i++) d[i] = [i];
+    for (let j = 1; j <= b.length; j++) d[0][j] = j;
+    for (let i = 1; i <= a.length; i++) {
+      for (let j = 1; j <= b.length; j++) {
+        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+      }
+    }
+    return d[a.length][b.length];
+  }
+
+  /* Cuánto se parece una palabra buscada a las palabras de un perfume:
+     0 = nada, 3 = está contenida, 2 = difiere poco, 1 = difiere poco
+     al principio de la palabra (por si todavía está escribiendo). */
+  function parecido(token, palabras, holgura) {
+    let mejor = 0;
+    const tol = (token.length <= 3 ? (holgura ? 1 : 0) : token.length <= 5 ? 1 : 2) + (holgura && token.length > 6 ? 1 : 0);
+    for (const w of palabras) {
+      if (w.includes(token)) return 3;
+      if (!tol || mejor >= 2) continue;
+      if (token.length <= 3 && w[0] !== token[0]) continue;
+      if (distancia(token, w) <= tol) mejor = 2;
+      else if (token.length >= 5 && distancia(token, w.slice(0, token.length)) <= 1) mejor = Math.max(mejor, 1);
+    }
+    return mejor;
+  }
+
+  function tokensDeBusqueda(q) {
+    let toks = normalizarBusqueda(q).split(/[^a-z0-9]+/).filter(Boolean)
+      .flatMap((t) => (BUSQ_ALIAS[t] ? BUSQ_ALIAS[t].split(" ") : [t]));
+    const utiles = toks.filter((t) => t.length > 2 && !BUSQ_IGNORAR.has(t));
+    toks = utiles.length ? utiles : toks;
+    return toks.map(fonetica).filter(Boolean);
+  }
+
+  /* Puntaje de una tarjeta para una búsqueda: null si no es una opción.
+     Sin holgura = lo que realmente se buscó; con holgura se arman las
+     "opciones similares" cuando no hay nada que coincida. */
+  function puntajeBusqueda(card, tokens, holgura) {
+    if (!tokens.length) return null;
+    if (!card._palabras) card._palabras = palabrasBusqueda(`${card.dataset.nombre} ${card.dataset.familia}`);
+    let suma = 0, aciertos = 0;
+    for (const t of tokens) {
+      const p = parecido(t, card._palabras, holgura || tokens.length > 1);
+      if (p) { aciertos++; suma += p; }
+    }
+    const necesarios = holgura ? 1 : tokens.length <= 3 ? tokens.length : tokens.length - 1;
+    return aciertos >= necesarios ? suma : null;
   }
 
   function aplicarOrden() {
@@ -613,6 +687,32 @@
     const catnav = $("#catnav");
     const secciones = $$(".catsec");
     const q = normalizarBusqueda(Filtros.busqueda);
+    const tokens = q ? tokensDeBusqueda(Filtros.busqueda) : [];
+
+    /* Con texto en el buscador se busca en TODO el catálogo (hombre, mujer,
+       stock, diseñador), sin importar la pastilla ni los filtros de aroma
+       o temporada, y un unisex (que está en Hombre y en Mujer) sale una
+       sola vez. Si no hay nada parecido se muestran opciones similares. */
+    let similares = null;
+    if (q) {
+      const todas = $$(".card");
+      const hay = todas.some((c) => puntajeBusqueda(c, tokens, false) !== null);
+      if (!hay) {
+        const vistos = new Set();
+        similares = todas
+          .map((c) => ({ c, p: puntajeBusqueda(c, tokens, true) }))
+          .filter((x) => x.p !== null)
+          .sort((a, b) => b.p - a.p)
+          .filter((x) => !vistos.has(x.c.dataset.slug) && vistos.add(x.c.dataset.slug))
+          .slice(0, 8).map((x) => x.c);
+        similaresSonNuevos = !similares.length;
+        if (!similares.length) {
+          const v2 = new Set();
+          similares = $$('.catsec[data-cat="proximos"] .card').filter((c) => !v2.has(c.dataset.slug) && v2.add(c.dataset.slug)).slice(0, 8);
+        }
+      }
+    }
+    const slugsVistos = new Set();
 
     $$(".pill[data-filtro]", catnav).forEach((p) => p.classList.toggle("is-active", p.dataset.filtro === Filtros.categoria));
     $$(".catshowcase__tile[data-filtro-tile]").forEach((t) => t.classList.toggle("catshowcase__tile--active", t.dataset.filtroTile === Filtros.categoria));
@@ -636,7 +736,7 @@
          Género "Mixto" muestra las dos secciones pero, más abajo,
          matchGenero recorta las tarjetas a solo las unisex. */
       const esSeccionDeGenero = sec.dataset.cat === "hombre" || sec.dataset.cat === "mujer";
-      const mostrarSeccion = Filtros.categoria === "recomendacion"
+      const mostrarSeccion = q ? true : Filtros.categoria === "recomendacion"
         ? esSeccionDeGenero && (Filtros.genero === "todos" || Filtros.genero === "mixto" || sec.dataset.cat === Filtros.genero)
         : Filtros.categoria === "todos" || sec.dataset.cat === Filtros.categoria;
       sec.hidden = !mostrarSeccion;
@@ -644,17 +744,20 @@
 
       let visiblesEnSeccion = 0;
       $$(".card", sec).forEach((card) => {
-        const matchTexto = !q || (card.dataset.nombre && (
-          normalizarBusqueda(card.dataset.nombre).includes(q) ||
-          normalizarBusqueda(card.dataset.familia).includes(q)
-        ));
-        const matchTemporada = Filtros.temporada === "todas" ||
-          (card.dataset.temporadas || "").split(" ").includes(Filtros.temporada);
-        const matchAroma = Filtros.aroma === "todos" ||
-          (card.dataset.aromas || "").split(" ").includes(Filtros.aroma);
-        const matchGenero = Filtros.categoria !== "recomendacion" || Filtros.genero !== "mixto" ||
-          card.dataset.unisex === "1";
-        const visible = matchTexto && matchTemporada && matchAroma && matchGenero;
+        let visible;
+        if (q) {
+          const coincide = similares ? similares.includes(card) : puntajeBusqueda(card, tokens, false) !== null;
+          visible = coincide && !slugsVistos.has(card.dataset.slug);
+          if (visible) slugsVistos.add(card.dataset.slug);
+        } else {
+          const matchTemporada = Filtros.temporada === "todas" ||
+            (card.dataset.temporadas || "").split(" ").includes(Filtros.temporada);
+          const matchAroma = Filtros.aroma === "todos" ||
+            (card.dataset.aromas || "").split(" ").includes(Filtros.aroma);
+          const matchGenero = Filtros.categoria !== "recomendacion" || Filtros.genero !== "mixto" ||
+            card.dataset.unisex === "1";
+          visible = matchTemporada && matchAroma && matchGenero;
+        }
         card.hidden = !visible;
         if (visible) { visiblesEnSeccion++; totalVisible++; perfumesVisibles.add(card.dataset.slug); }
       });
@@ -662,14 +765,15 @@
     });
 
     $("[data-buscador-vacio]")?.remove();
-    if (totalVisible === 0) {
+    if (similares || totalVisible === 0) {
       const cont = $("[data-catalogo]");
       if (cont) {
         const vacio = document.createElement("div");
         vacio.dataset.buscadorVacio = "";
         vacio.className = "wrap";
-        vacio.innerHTML = q
-          ? `<div class="empty"><strong>No encontramos "${escapar(Filtros.busqueda.trim())}"</strong>Probá con otro nombre, o escribinos por WhatsApp y te ayudamos a encontrarlo.</div>`
+        const buscado = escapar(Filtros.busqueda.trim());
+        vacio.innerHTML = similares
+          ? `<div class="empty"><strong>No tenemos "${buscado}" actualmente</strong>${similaresSonNuevos ? "Pero mirá nuestros perfumes de diseñador, que son de lo más nuevo." : "Pero tenemos estas opciones similares."} Si buscabas otro, escribinos por WhatsApp y te ayudamos a encontrarlo.</div>`
           : `<div class="empty"><strong>No hay fragancias con esos filtros</strong>Probá sacar alguno (Aroma, Temporada), o escribinos por WhatsApp y te ayudamos a encontrar algo así.</div>`;
         cont.prepend(vacio);
       }
@@ -722,6 +826,13 @@
        fantasma activo. Elegir "Nuestra Recomendación" hace lo inverso:
        abre el panel de filtros para que ahí elijan a gusto. */
     function irACategoria(id) {
+      const inputBusq = $("[data-buscador-input]");
+      if (inputBusq && inputBusq.value) {
+        inputBusq.value = "";
+        Filtros.busqueda = "";
+        const lim = $("[data-buscador-limpiar]");
+        if (lim) lim.hidden = true;
+      }
       Filtros.categoria = id;
       if (id === "recomendacion") {
         abrirPanelFiltros();
